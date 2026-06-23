@@ -1,0 +1,72 @@
+.floating-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999; /* Taaki ye sabhi components ke upar dikhe */
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.floating-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* WhatsApp Green Color */
+.floating-btn.whatsapp {
+  background-color: #25D366;
+}
+
+/* Phone Blue/Teal Color (Luxury Medical Theme) */
+.floating-btn.phone {
+  background-color: #0077b6; 
+}
+
+/* Scroll Top Gray/Dark Color */
+.floating-btn.scroll-top {
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.7);
+  background: linear-gradient(90deg, #3efce1 0%, #00d2ff 100%);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Chota sa smooth entry animation scroll button ke liye */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .floating-container {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+  }
+}

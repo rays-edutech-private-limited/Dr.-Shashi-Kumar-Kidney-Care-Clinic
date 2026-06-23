@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap');
+
+.about-kidney-section-pro {
+  position: relative;
+
+  background-color: #030712;
+  padding: 90px 0;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #e2e8f0;
+}
+
+/* Sci-Fi Ambient Glow Effects */
+.pro-bg-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(160px);
+  z-index: 1;
+  opacity: 0.25;
+  pointer-events: none;
+}
+.light-cyan {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+  top: 10%; left: -5%;
+}
+.light-purple {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+  top: 40%; right: -5%;
+}
+
+/* Container Layouts */
+.about-container-pro {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 60px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.dashboard-container-pro {
+  max-width: 1440px;
+  margin: 50px auto 0 auto;
+  padding: 0 50px;
+  position: relative;
+  z-index: 5;
+}
+
+/* --- LEFT SIDE: 3D GLASS CAPSULE --- */
+.about-visual-panel-pro {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.biomedical-art-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kidney-3d-capsule {
+  width: 100%;
+  max-width: 340px;
+  height: 520px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(2, 12, 27, 0.8) 100%);
+  border: 2px solid rgba(0, 240, 255, 0.2);
+  border-radius: 110px 110px 100px 100px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.8),
+    inset 0 0 30px rgba(0, 240, 255, 0.1),
+    inset 0 10px 20px rgba(255, 255, 255, 0.05);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: gentleFloat 6s infinite ease-in-out;
+}
+
+.kidney-3d-capsule img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.45));
+}
+
+.radar-scanner-line {
+  position: absolute;
+  top: 50%; left: 0; width: 100%; height: 3px;
+  background: #3efce1;
+  box-shadow: 0 0 15px #3efce1, 0 0 25px #00bcff;
+  animation: scanLaser 4s infinite ease-in-out;
+}
+
+/* --- GLASS FLOATING CARDS --- */
+.pro-glass-card {
+  position: absolute;
+  background: rgba(6, 17, 33, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.card-top { top: 4%; right: -5%; width: 235px; }
+.card-bottom { bottom: 4%; left: -5%; width: 245px; }
+
+.live-badge-pulse { font-size: 11px; color: #3efce1; font-weight: 700; letter-spacing: 1px; }
+
+.mini-graph-simulation { display: flex; align-items: flex-end; gap: 4px; height: 42px; margin-bottom: 12px; }
+.bar { flex: 1; background: rgba(0, 188, 255, 0.2); border-radius: 2px; }
+.bar-1 { height: 40%; animation: barWave 1s infinite alternate; }
+.bar-2 { height: 75%; background: #3efce1; animation: barWave 0.8s infinite alternate 0.1s; }
+.bar-3 { height: 95%; background: #3efce1; animation: barWave 1.2s infinite alternate 0.3s; }
+.bar-4 { height: 50%; animation: barWave 0.7s infinite alternate 0.15s; }
+.bar-5 { height: 85%; background: #3efce1; animation: barWave 1.1s infinite alternate 0.4s; }
+.bar-6 { height: 60%; animation: barWave 0.9s infinite alternate 0.2s; }
+.bar-7 { height: 45%; animation: barWave 1.3s infinite alternate 0.05s; }
+
+.stats-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+.graph-stats-value { margin: 0; font-size: 20px; color: #ffffff; font-weight: 700; }
+.graph-stats-value .unit-txt { font-size: 12px; color: #a0aec0; font-weight: 400; }
+.sub-status-txt { font-size: 11px; color: #3efce1; display: block; margin-top: 2px; }
+.vital-node-indicator { font-size: 11px; color: #f1c40f; font-weight: 600; }
+
+.icon-seal-gold { font-size: 11px; color: #f39c12; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; }
+.seal-flex-inner { display: flex; align-items: center; gap: 14px; }
+.gold-medal-svg {
+  width: 44px; height: 44px; background: linear-gradient(135deg, #f39c12, #f1c40f);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.4); flex-shrink: 0;
+}
+.inner-medal-star { font-size: 18px; color: #020710; font-weight: 900; }
+.seal-details h5 { margin: 0; font-size: 12px; color: #a0aec0; font-weight: 500; }
+.seal-details h4 { margin: 2px 0; font-size: 15px; color: #ffffff; font-weight: 700; }
+.seal-details p { margin: 0; font-size: 11px; color: #f1c40f; }
+
+/* --- RIGHT PANEL: BRANDING & HEADERS --- */
+.premium-neon-pill {
+  display: inline-flex;
+  align-items: center; gap: 8px;
+  background: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: #00f0ff; font-size: 13px; font-weight: 700;
+  padding: 8px 18px; border-radius: 30px; margin-bottom: 16px;
+}
+
+.about-section-title-pro {
+  font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.2;
+  margin-bottom: 15px; letter-spacing: -0.5px;
+}
+.cyber-text-gradient-cyan {
+  background: linear-gradient(90deg, #3efce1 0%, #00bcff 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.about-quote-pro {
+  font-size: 15px; font-style: italic; color: #94a3b8;
+  border-left: 3px solid #00f0ff; padding-left: 15px; margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.about-description-pro {
+  font-size: 14.5px; color: #94a3b8; line-height: 1.6; margin-bottom: 30px;
+}
+
+/* --- SNAPSHOT GRID (Screenshot Design Exact Match) --- */
+.panel-sub-title {
+  font-size: 13px; color: #3efce1; font-weight: 700; letter-spacing: 1px; margin-bottom: 15px;
+}
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.snapshot-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px; padding: 20px 10px; text-align: center;
+  transition: all 0.3s ease;
+}
+.snap-icon { font-size: 22px; display: block; margin-bottom: 10px; }
+.snapshot-card h3 { font-size: 24px; font-weight: 800; margin: 0 0 5px 0; }
+.snapshot-card p { margin: 0; font-size: 12px; color: #748094; font-weight: 500; }
+
+/* Individual Custom Colors for Snapshot Cards */
+.snapshot-cyan h3 { color: #00f0ff; }
+.snapshot-purple h3 { color: #a855f7; }
+.snapshot-green h3 { color: #2ecc71; }
+.snapshot-gold h3 { color: #f1c40f; }
+
+.snapshot-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- LOWER DASHBOARD BOXES --- */
+.dashboard-row-three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 20px; margin-bottom: 20px;
+}
+.dashboard-row-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px; margin-bottom: 40px;
+}
+
+.dashboard-box {
+  background: rgba(3, 12, 22, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px; padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.box-title-flex {
+  margin: 0 0 20px 0; font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+  display: flex; align-items: center; gap: 10px;
+}
+.Box-glow-cyan .box-title-flex { color: #3efce1; }
+.Box-glow-blue .box-title-flex { color: #00bcff; }
+.Box-glow-gold .box-title-flex { color: #f1c40f; }
+.Box-glow-purple .box-title-flex { color: #a855f7; }
+
+/* Lists Styles matching the screenshot */
+.bullet-list-style, .check-list-style, .award-list-style {
+  list-style: none; padding: 0; margin: 0;
+}
+.bullet-list-style li, .check-list-style li, .award-list-style li {
+  font-size: 13.5px; color: #94a3b8; line-height: 1.6; margin-bottom: 12px;
+  position: relative; padding-left: 22px;
+}
+
+/* Custom Bullet / Icons Shapes */
+.bullet-list-style li::before {
+  content: "✦"; position: absolute; left: 0; color: #3efce1;
+}
+.check-list-style li::before {
+  content: "✓"; position: absolute; left: 0; color: #2ecc71; font-weight: bold;
+}
+.award-list-style li::before {
+  content: "🏅"; position: absolute; left: 0; font-size: 12px; top: 1px;
+}
+
+/* Layout for Awards box containing trophy image placeholder */
+.awards-flex-layout { display: flex; gap: 15px; justify-content: space-between; align-items: center; }
+.gold-trophy-illustration {
+  font-size: 65px; filter: drop-shadow(0 0 20px rgba(241, 196, 15, 0.4));
+  animation: gentleFloat 4s infinite ease-in-out;
+}
+
+/* Memberships Logos styling */
+.memberships-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+}
+.member-logo-card {
+  background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 15px; border-radius: 12px; text-align: center;
+}
+.logo-placeholder {
+  width: 45px; height: 45px; margin: 0 auto 10px auto;
+  border-radius: 50%; border: 2px dashed rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #748094;
+}
+.member-logo-card p { margin: 0; font-size: 11px; color: #94a3b8; line-height: 1.3; }
+
+/* --- BUTTON & WRAPPERS --- */
+.pro-btn-wrapper-center { text-align: center; margin-top: 40px; }
+.btn-ultra-premium {
+  background: linear-gradient(90deg, #00d2ff 0%, #00bcff 100%);
+  color: #020710; border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 18px 50px; font-size: 15px; font-weight: 800; border-radius: 30px;
+  cursor: pointer; box-shadow: 0 0 25px rgba(0, 210, 255, 0.35);
+  transition: all 0.3s ease-in-out; letter-spacing: 0.5px;
+}
+.btn-ultra-premium:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.6);
+  background: linear-gradient(90deg, #3efce1 0%, #00d2ff 100%);
+}
+
+/* --- KEYFRAME ANIMATIONS --- */
+@keyframes gentleFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+@keyframes scanLaser { 0%, 100% { top: 12%; } 50% { top: 88%; } }
+@keyframes barWave { 0% { transform: scaleY(0.4); } 100% { transform: scaleY(1.1); } }
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media screen and (max-width: 1200px) {
+  .about-container-pro { grid-template-columns: 1fr; gap: 40px; padding: 0 30px; }
+  .dashboard-container-pro { padding: 0 30px; }
+  .dashboard-row-three-col, .dashboard-row-two-col { grid-template-columns: 1fr; }
+  .about-visual-panel-pro { margin-bottom: 20px; }
+}
+
+@media screen and (max-width: 768px) {
+  .about-section-title-pro { font-size: 34px; }
+  .snapshot-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .biomedical-art-frame { height: 500px; }
+  .kidney-3d-capsule { max-width: 280px; height: 430px; }
+  .card-top { right: -2%; width: 200px; }
+  .card-bottom { left: -2%; width: 210px; }
+}
+
+@media screen and (max-width: 480px) {
+  .about-section-title-pro { font-size: 28px; }
+  .snapshot-grid { grid-template-columns: 1fr; }
+  .biomedical-art-frame { height: auto; flex-direction: column; gap: 15px; }
+  .kidney-3d-capsule { max-width: 250px; height: 380px; margin: 15px auto; position: relative; }
+  .pro-glass-card { position: relative; top: auto!important; bottom: auto!important; left: auto!important; right: auto!important; width: 100%!important; max-width: 280px; }
+  .memberships-grid { grid-template-columns: 1fr; }
+  .btn-ultra-premium { width: 100%; padding: 15px 20px; font-size: 13px; }
+}

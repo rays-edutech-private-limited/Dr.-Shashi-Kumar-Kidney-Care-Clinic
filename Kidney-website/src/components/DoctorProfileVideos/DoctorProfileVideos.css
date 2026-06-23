@@ -1,0 +1,376 @@
+/* Core Structural Blueprint styling */
+.cyber-showcase-wrapper {
+  background: #0f172a; /* Extreme Premium Obsidian Blue-Black */
+  min-height: 100vh;
+  padding: 80px 40px;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Background sci-fi matrix mesh layout */
+.cyber-mesh-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(16, 185, 129, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(16, 185, 129, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Header Text Blocks */
+.cyber-profile-header {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+
+.cyber-status-badge {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10b981; /* High-glow clinical green */
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: cyberPulse 1.8s infinite;
+}
+
+.cyber-main-title {
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin: 16px 0 6px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cyber-main-subtitle {
+  color: #475569;
+  font-size: 18px;
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- Responsive Two-Column Hub System --- */
+.cyber-grid-layout {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  align-items: start;
+}
+
+/* LEFT CONTROLS LIST PANEL */
+.cyber-sidebar-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cyber-tab-row {
+  background-color: rgba(15, 23, 42, 0.3);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glowing-border-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0%;
+  background-color: #10b981;
+  box-shadow: 0 0 12px #10b981;
+  transition: height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cyber-tab-index {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  display: block;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.cyber-tab-heading {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.cyber-tab-arrow {
+  color: #1e293b;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+/* Hover & Active Shared State Mechanics */
+.cyber-tab-row:hover,
+.cyber-tab-row.cyber-tab-active {
+  border-color: rgba(16, 185, 129, 0.35);
+  background-color: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 15px 30px -15px rgba(16, 185, 129, 0.12);
+}
+
+.cyber-tab-row:hover .cyber-tab-heading,
+.cyber-tab-row.cyber-tab-active .cyber-tab-heading {
+  color: #ffffff;
+}
+
+.cyber-tab-row:hover .glowing-border-indicator,
+.cyber-tab-row.cyber-tab-active .glowing-border-indicator {
+  height: 50%;
+}
+
+.cyber-tab-row:hover .cyber-tab-arrow,
+.cyber-tab-row.cyber-tab-active .cyber-tab-arrow {
+  color: #10b981;
+  transform: translateX(4px);
+}
+
+/* RIGHT DISPLAY VIEWPORT PANEL */
+.cyber-display-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cyber-cinema-box {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  background-color: #000000;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.9);
+}
+
+.cyber-native-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cyber-floating-stat {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(3, 7, 18, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 8px 18px;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 700;
+  color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.cyber-hd-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.06);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+/* Card content body blocks */
+.cyber-info-card {
+  background-color: #090f1c;
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.info-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.info-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.verified-badge-seal {
+  font-size: 10px;
+  color: #475569;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.info-card-main-title {
+  margin: 0 0 16px 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.info-card-description {
+  margin: 0 0 35px 0;
+  color: #94a3b8;
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* Footer Section & High-End YouTube Action Button Setup */
+.info-card-footer {
+  border-top: 1px solid #1e293b;
+  padding-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-notice-text {
+  font-size: 13.5px;
+  color: #64748b;
+  max-width: 440px;
+  line-height: 1.5;
+}
+.footer-notice-text strong { color: #cbd5e1; }
+
+/* ULTRA GLOW YOUTUBE NEON BUTTON DESIGN */
+.youtube-neon-btn {
+  background-color: #ff0000; /* Rich YouTube Red Accent */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  box-shadow: 0 10px 25px -10px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.youtube-neon-btn:hover {
+  background-color: #e60000;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.yt-icon-svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Keyframes Core Animations */
+@keyframes cyberPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 12px #10b981; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* ==========================================================================
+   CRITICAL MEDIA QUERY RULES (Makes the Layout Fully Responsive Across All Viewports)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .cyber-grid-layout { 
+    grid-template-columns: 1fr; /* Switch from 2 columns to 1 flat column stacked layout */
+    gap: 30px; 
+  }
+  
+  /* Horizontal scrolling navigation panels for tablets and touch screen devices */
+  .cyber-sidebar-tabs { 
+    flex-direction: row; 
+    overflow-x: auto; 
+    padding-bottom: 12px;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .cyber-tab-row { 
+    min-width: 280px; 
+    scroll-snap-align: start;
+    padding: 18px 20px;
+  }
+  
+  /* Move bar indicators to bottom face of the rows */
+  .glowing-border-indicator { 
+    bottom: 0; 
+    top: auto; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 0%; 
+    height: 3px; 
+  }
+  
+  .cyber-tab-row:hover .glowing-border-indicator,
+  .cyber-tab-row.cyber-tab-active .glowing-border-indicator { 
+    width: 50%; 
+    height: 3px; 
+  }
+  
+  .cyber-tab-arrow { display: none; } /* Hide arrow on sliding horizontal tracks */
+}
+
+@media (max-width: 768px) {
+  .cyber-showcase-wrapper { padding: 50px 20px; }
+  .cyber-main-title { font-size: 36px; }
+  .cyber-main-subtitle { font-size: 15px; }
+  .cyber-cinema-box { height: 300px; }
+  .info-card-main-title { font-size: 24px; }
+  .cyber-info-card { padding: 25px; }
+}
+
+@media (max-width: 550px) {
+  .cyber-cinema-box { height: 210px; }
+  .cyber-floating-stat { top: 12px; right: 12px; padding: 6px 12px; font-size: 11px; }
+  .info-card-footer { flex-direction: column; align-items: stretch; text-align: center; }
+  .youtube-neon-btn { justify-content: center; width: 100%; box-sizing: border-box; }
+  .footer-notice-text { max-width: 100%; }
+}

@@ -1,0 +1,260 @@
+.luxury-navbar {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Stunning Premium Medical Logo Section */
+.luxury-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-icon-wrap {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon-wrap img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.logo-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f2b46;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.logo-main-title .thin {
+  color: #00b8d4;
+  font-weight: 400;
+}
+
+.logo-tag {
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Premium Navigation Links Menu */
+.lux-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lux-nav-links a {
+  text-decoration: none;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.lux-nav-links a:hover, .lux-nav-links .active-link {
+  color: #00b8d4;
+}
+
+/* Modern Minimalist Link Line Animation */
+.lux-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #00b8d4, #00b8d4);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.lux-nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mega Dynamic Dropdown Menu */
+.lux-dropdown {
+  position: relative;
+}
+
+.arrow-down {
+  font-size: 11px;
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
+.lux-dropdown-card {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(15, 43, 70, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  list-style: none;
+  padding: 12px;
+  min-width: 240px;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.lux-dropdown-card li a {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #475569;
+  border-radius: 8px;
+  display: block;
+}
+
+.lux-dropdown-card li a::after { display: none; }
+
+.lux-dropdown-card li a:hover {
+  background-color: #f1f5f9;
+  color: #00b8d4;
+  padding-left: 20px;
+}
+
+.lux-dropdown:hover .lux-dropdown-card {
+  display: block;
+  opacity: 1;
+  top: 100%;
+}
+
+/* 3D Glass Glow Booking Button */
+.btn-glow-effect {
+  background: linear-gradient(135deg, #40bca3 0%, #00b4d8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 184, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-glow-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 119, 194, 0.4);
+}
+
+.btn-glow-effect::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  transition: all 0.6s ease;
+}
+
+.btn-glow-effect:hover::before {
+  left: 150%;
+}
+
+.mobile-only-action { display: none; }
+
+/* Responsive Hamburger Layout */
+.lux-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.lux-hamburger .h-line {
+  width: 26px;
+  height: 3px;
+  background-color: #0f2b46;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media screen and (max-width: 992px) {
+  .lux-cta-zone { display: none; }
+  .lux-hamburger { display: flex; }
+  
+  .lux-hamburger.active .h-line:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .lux-hamburger.active .h-line:nth-child(2) { opacity: 0; }
+  .lux-hamburger.active .h-line:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+  .lux-nav-links {
+    position: absolute;
+    top: 100%; left: -110%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    transition: left 0.4s ease;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    overflow-y: auto;
+  }
+
+  .lux-nav-links.show-menu { left: 0; }
+  .lux-nav-links li { width: 100%; }
+  .lux-nav-links li a {
+    display: block; padding: 16px 12px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .lux-dropdown-card {
+    position: relative; display: block; opacity: 1;
+    box-shadow: none; border: none; background-color: #f8fafc;
+    transform: none; left: 0; margin-top: 4px;
+  }
+  
+  .mobile-only-action { display: block; padding: 24px 12px; }
+  .mobile-cta-glow {
+    width: 100%; background: linear-gradient(135deg, #00b8d4 0%, #0077c2 100%);
+    color: white; border: none; padding: 14px;
+    border-radius: 12px; font-size: 16px; font-weight: 700;
+  }
+}

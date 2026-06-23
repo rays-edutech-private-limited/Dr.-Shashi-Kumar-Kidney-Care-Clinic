@@ -1,0 +1,370 @@
+.vt-prime-container {
+    background: radial-gradient(circle at 50% 35%, #052627 0%, #021113 55%, #000607 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 10px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.vt-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(0, 242, 254, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.012) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.vt-plasma-orb-1, .vt-plasma-orb-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+}
+.vt-plasma-orb-1 { width: 500px; height: 500px; background: #00f2fe; top: 10%; left: -10%; }
+.vt-plasma-orb-2 { width: 400px; height: 400px; background: #ebd09c; bottom: 5%; right: -5%; }
+
+/* Header - Made elegant and clean */
+.vt-cinematic-header {
+    text-align: center;
+    z-index: 10;
+    margin-bottom: 30px;
+}
+.vt-glowing-title {
+    font-size: 2.2rem;
+    color: #ebd09c;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: none;
+    text-shadow: 0 4px 15px rgba(235, 208, 156, 0.15);
+}
+.vt-cyber-subbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.vt-text-cyan { color: #ebd09c; opacity: 0.8; }
+.vt-text-gold { color: #ebd09c; }
+.vt-gold-dot { color: #ebd09c; }
+
+/* 5-Card Slider Engine Viewport */
+.vt-slider-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.vt-cards-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1800px;
+}
+
+/* Premium Clean Medical Card UI (Fits perfectly on dark background) */
+.vt-video-card {
+    position: absolute;
+    width: 280px;  
+    height: 330px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(235, 208, 156, 0.2);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+/* Card Features */
+.vt-card-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.vt-badge-pill {
+    font-size: 0.7rem;
+    color: #765e31;
+    background: rgba(235, 208, 156, 0.15);
+    border: 1px solid rgba(235, 208, 156, 0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.vt-live-pulse { position: relative; width: 8px; height: 8px; display: flex; align-items: center; justify-content: center; }
+.vt-pulse-core { width: 6px; height: 6px; background: #ebd09c; border-radius: 50%; z-index: 2; }
+.vt-pulse-wave { position: absolute; width: 100%; height: 100%; background: #ebd09c; border-radius: 50%; animation: vtPulseAnim 2s infinite ease-in-out; }
+
+@keyframes vtPulseAnim { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(3.5); opacity: 0; } }
+
+.vt-video-frame {
+    width: 100%;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #fdfcf9;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.vt-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95) contrast(1.02);
+    transition: transform 0.6s ease;
+}
+
+/* Scanner line */
+.vt-laser-scanner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(235, 208, 156, 0.4), transparent);
+    animation: vtScan 4s linear infinite;
+}
+@keyframes vtScan { 0% { top: 0%; } 50% { top: 100%; } 100% { top: 0%; } }
+
+/* Play Overlay */
+.vt-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(1, 14, 16, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    opacity: 0; 
+    transition: all 0.4s ease;
+}
+.vt-play-sphere {
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(118, 94, 49, 0.25);
+    transition: transform 0.4s ease, background-color 0.3s;
+}
+.vt-play-icon {
+    width: 0; height: 0;
+    border-top: 8px solid transparent;
+    border-left: 14px solid #765e31;
+    border-bottom: 8px solid transparent;
+    margin-left: 4px;
+}
+.vt-play-text { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+
+/* =========================================
+   CRITICAL 5-SLOT POSITION ENGINE (NO CHANGE)
+   ========================================= */
+
+/* 1. CENTER CARD */
+.vt-video-card.vt-slot-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0) scale(1.12) translateZ(150px);
+    z-index: 10;
+    border: 2px solid #ebd09c;
+    box-shadow: 0 20px 50px rgba(235, 208, 156, 0.25);
+}
+.vt-slot-active .vt-play-overlay { opacity: 1; } 
+.vt-slot-active .vt-badge-pill { color: #ffffff; background: #765e31; border-color: #765e31; }
+.vt-slot-active .vt-pulse-core, .vt-slot-active .vt-pulse-wave { background: #765e31; }
+
+.vt-slot-active:hover .vt-play-sphere { transform: scale(1.1); background: #fdfcf9; }
+.vt-slot-active:hover .vt-thumbnail-img { transform: scale(1.03); }
+
+/* 2. IMMEDIATE LEFT CARD */
+.vt-video-card.vt-slot-left {
+    opacity: 0.8;
+    pointer-events: auto;
+    transform: translateX(-290px) scale(0.92) rotateY(18deg) translateZ(40px);
+    z-index: 5;
+}
+
+/* 3. FAR LEFT CARD */
+.vt-video-card.vt-slot-far-left {
+    opacity: 0.45;
+    pointer-events: auto;
+    transform: translateX(-540px) scale(0.78) rotateY(32deg) translateZ(-40px);
+    z-index: 2;
+}
+
+/* 4. IMMEDIATE RIGHT CARD */
+.vt-video-card.vt-slot-right {
+    opacity: 0.8;
+    pointer-events: auto;
+    transform: translateX(290px) scale(0.92) rotateY(-18deg) translateZ(40px);
+    z-index: 5;
+}
+
+/* 5. FAR RIGHT CARD */
+.vt-video-card.vt-slot-far-right {
+    opacity: 0.45;
+    pointer-events: auto;
+    transform: translateX(540px) scale(0.78) rotateY(-32deg) translateZ(-40px);
+    z-index: 2;
+}
+
+/* HIDDEN CARDS */
+.vt-slot-hidden {
+    opacity: 0;
+    transform: scale(0.6) translateZ(-200px);
+    z-index: 0;
+}
+
+/* Mesh borders */
+.vt-active-mesh-glow .vt-mesh-left, .vt-active-mesh-glow .vt-mesh-right {
+    position: absolute; width: 60px; height: 100px; pointer-events: none; z-index: -1;
+}
+.vt-mesh-left { left: -45px; top: 35%; border-left: 2px dashed rgba(235, 208, 156, 0.3); border-radius: 50% 0 0 50%; }
+.vt-mesh-right { right: -45px; top: 35%; border-right: 2px dashed rgba(235, 208, 156, 0.3); border-radius: 0 50% 50% 0; }
+
+/* Bottom Nav Bars */
+.vt-control-dashboard {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    padding: 0 40px;
+    z-index: 10;
+}
+.vt-dots-row { display: flex; gap: 10px; margin: 0 auto; transform: translateX(50%); }
+.vt-dot-node { width: 10px; height: 10px; border-radius: 50%; background: rgba(235, 208, 156, 0.2); cursor: pointer; transition: all 0.4s ease; }
+.vt-dot-active { background: #ebd09c; box-shadow: 0 0 12px #ebd09c; transform: scale(1.25); }
+
+.vt-orb-group { display: flex; align-items: center; gap: 14px; }
+.vt-orb-label { font-size: 0.75rem; letter-spacing: 1px; color: #799597; font-weight: 600; }
+.vt-orb-btn {
+    width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
+    display: flex; justify-content: center; align-items: center; font-size: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.vt-gold-gradient { background: radial-gradient(circle at 35% 30%, #fffbfa 0%, #ebd09c 45%, #765e31 100%); color: #2b1f06; }
+.vt-cyan-gradient { background: radial-gradient(circle at 35% 30%, #eaffff 0%, #00f2fe 45%, #005c61 100%); color: #001f21; }
+.vt-orb-btn:hover { transform: scale(1.1) translateY(-2px); filter: brightness(1.1); }
+
+/* Trust Strip & Footer Actions (Grounded Clean Style) */
+.vt-trust-horizontal-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 40px auto 25px auto;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    border: 1px solid rgba(235, 208, 156, 0.15);
+    z-index: 10;
+}
+.vt-strip-item { font-size: 0.88rem; color: #fdfcf9; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+.vt-strip-icon { font-size: 1.1rem; }
+
+.vt-footer-action-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 15px;
+    z-index: 10;
+    width: 100%;
+    max-width: 1100px;
+}
+.vt-footer-badge-item { display: flex; align-items: center; gap: 12px; }
+.vt-f-icon {
+    font-size: 1.5rem; color: #ebd09c; background: rgba(255, 255, 255, 0.05); width: 45px; height: 45px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(235, 208, 156, 0.2);
+}
+.vt-f-labels h4 { margin: 0; font-size: 0.9rem; color: #ffffff; font-weight: 600; }
+.vt-f-labels p { margin: 2px 0 0 0; font-size: 0.78rem; color: #a0aec0; }
+
+.vt-main-cta-glow-pill {
+    background: linear-gradient(135deg, #ebd09c 0%, #765e31 100%);
+    border: none; padding: 12px 32px; border-radius: 50px; cursor: pointer;
+    display: flex; align-items: center; gap: 16px; box-shadow: 0 8px 25px rgba(235, 208, 156, 0.25);
+    transition: all 0.3s ease;
+}
+.vt-main-cta-glow-pill:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(235, 208, 156, 0.35); }
+.vt-cta-calendar-box { font-size: 1.3rem; }
+.vt-cta-text-bundle { text-align: left; }
+.vt-cta-text-bundle h4 { margin: 0; color: #2b1f06; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.5px; }
+.vt-cta-text-bundle p { margin: 1px 0 0 0; color: rgba(43, 31, 6, 0.85); font-size: 0.75rem; }
+
+/* Popup Window Modal */
+.vt-popup-overlay {
+    position: fixed; inset: 0; background: rgba(0, 5, 6, 0.85); backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); z-index: 9999; display: flex; justify-content: center; align-items: center;
+}
+.vt-popup-window {
+    position: relative; width: 90%; max-width: 800px; background: #021113;
+    border: 2px solid rgba(235, 208, 156, 0.3); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+.vt-popup-close {
+    position: absolute; top: 12px; right: 20px; background: none; border: none;
+    color: #ebd09c; font-size: 2.2rem; cursor: pointer; z-index: 100; line-height: 1;
+}
+.vt-popup-close:hover { color: #00f2fe; }
+.vt-video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.vt-video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+    .vt-video-card { width: 230px; height: 280px; }
+    .vt-video-card.vt-slot-left { transform: translateX(-210px) scale(0.92) rotateY(15deg); }
+    .vt-video-card.vt-slot-far-left { transform: translateX(-400px) scale(0.78) rotateY(25deg); }
+    .vt-video-card.vt-slot-right { transform: translateX(210px) scale(0.92) rotateY(-15deg); }
+    .vt-video-card.vt-slot-far-right { transform: translateX(400px) scale(0.78) rotateY(-25deg); }
+}
+
+@media (max-width: 900px) {
+    .vt-video-card.vt-slot-far-left, .vt-video-card.vt-slot-far-right { opacity: 0; pointer-events: none; }
+    .vt-video-card.vt-slot-left { transform: translateX(-180px) scale(0.9); opacity: 0.6; }
+    .vt-video-card.vt-slot-right { transform: translateX(180px) scale(0.9); opacity: 0.6; }
+    .vt-footer-action-panel { flex-direction: column; gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    .vt-glowing-title { font-size: 1.5rem; }
+    .vt-video-card.vt-slot-left, .vt-video-card.vt-slot-right { opacity: 0; pointer-events: none; }
+    .vt-video-card.vt-slot-active { transform: scale(1) translateZ(0); width: 290px; height: 320px; }
+    .vt-slider-viewport { height: 340px; }
+    .vt-control-dashboard { flex-direction: column-reverse; gap: 20px; padding: 0; }
+    .vt-dots-row { transform: none; }
+    .vt-trust-horizontal-strip { gap: 15px; padding: 10px; }
+}

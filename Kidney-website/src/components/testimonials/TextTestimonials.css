@@ -1,0 +1,303 @@
+/* Premium Text Testimonials Container */
+.tt-premium-section {
+    background: #0f172a;
+    width: 100%;
+    min-height: 85vh;
+    padding: 60px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ambient Medical Cyber Glow Orbs */
+.tt-glow-orb-top {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+    top: -10%;
+    left: 10%;
+    pointer-events: none;
+}
+.tt-glow-orb-bottom {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(235, 208, 156, 0.06) 0%, transparent 70%);
+    bottom: -5%;
+    right: 10%;
+    pointer-events: none;
+}
+
+/* Header UI Elements */
+.tt-header-area {
+    text-align: center;
+    margin-bottom: 60px;
+    z-index: 10;
+}
+.tt-badge-top {
+    font-size: 0.75rem;
+    color: #00f2fe;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+.tt-main-title {
+    font-size: 2.6rem;
+    color: #ebd09c;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(235, 208, 156, 0.2);
+}
+.tt-subtitle {
+    color: #729199;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Display Arena Engine with 3D Depth */
+.tt-display-arena {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.tt-cards-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1200px;
+}
+
+/* The High-End Pro Level Card Structure */
+.tt-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 620px;
+    height: 320px;
+    background: linear-gradient(145deg, rgba(13, 56, 70, 0.5) 0%, rgba(4, 23, 29, 0.85) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 242, 254, 0.12);
+    border-radius: 20px;
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Cyber Accent Corners for Extra Pro Level Detailing */
+.tt-corner-line {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid transparent;
+    pointer-events: none;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+.tt-corner-line.tl { top: 12px; left: 12px; border-top-color: #00f2fe; border-left-color: #00f2fe; }
+.tt-corner-line.tr { top: 12px; right: 12px; border-top-color: #00f2fe; border-right-color: #00f2fe; }
+.tt-corner-line.bl { bottom: 12px; left: 12px; border-bottom-color: #00f2fe; border-left-color: #00f2fe; }
+.tt-corner-line.br { bottom: 12px; right: 12px; border-bottom-color: #00f2fe; border-right-color: #00f2fe; }
+
+/* Top Header Inside Card */
+.tt-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tt-case-code {
+    font-size: 0.8rem;
+    color: #ebd09c;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.tt-tag-condition {
+    font-size: 0.65rem;
+    background: rgba(0, 242, 254, 0.08);
+    color: #00f2fe;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Giant Floating Quote Style */
+.tt-quote-symbol {
+    position: absolute;
+    font-size: 8rem;
+    color: rgba(235, 208, 156, 0.04);
+    font-family: Georgia, serif;
+    top: 25px;
+    left: 30px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+/* Testimonial Typography */
+.tt-patient-speech {
+    color: #e2f1f5;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    font-weight: 300;
+    font-style: italic;
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* Bottom Bar inside Card */
+.tt-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 18px;
+}
+.tt-timeline-badge {
+    font-size: 0.75rem;
+    color: #8da6ad;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.tt-clock-icon { color: #ebd09c; }
+.tt-verified-stamp {
+    font-size: 0.75rem;
+    color: #26e6a4;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(38, 230, 164, 0.05);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+/* ====================================================
+   3D CARD DECK SLIDER STATES (SABSE ATTRACTIVE LOOK)
+   ==================================================== */
+
+/* 1. THE ACTIVE CENTER CARD */
+.tt-card-active {
+    transform: translate(-50%, -50%) scale(1) translateZ(100px);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+    border-color: rgba(235, 208, 156, 0.4);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.05);
+}
+.tt-card-active .tt-corner-line { opacity: 0.9; }
+
+/* Active Card Hover */
+.tt-card-active:hover {
+    border-color: #00f2fe;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.15);
+}
+.tt-card-active:hover .tt-corner-line {
+    width: 18px;
+    height: 18px;
+}
+
+/* 2. BACKGROUND LEFT WING CARD */
+.tt-card-prev {
+    transform: translate(-115%, -55%) scale(0.85) rotateY(20deg);
+    opacity: 0.35;
+    pointer-events: auto;
+    z-index: 4;
+}
+
+/* 3. BACKGROUND RIGHT WING CARD */
+.tt-card-next {
+    transform: translate(15%, -55%) scale(0.85) rotateY(-20deg);
+    opacity: 0.35;
+    pointer-events: auto;
+    z-index: 4;
+}
+
+/* ALL OTHER HIDDEN CARDS */
+.tt-card-hidden {
+    transform: translate(-50%, -50%) scale(0.6) translateZ(-150px);
+    opacity: 0;
+    z-index: 0;
+}
+
+/* ====================================================
+   TIMELINE NAVIGATOR DASHBOARD (HORIZONTAL LINES)
+   ==================================================== */
+.tt-navigator-dashboard {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    z-index: 10;
+}
+
+.tt-nav-bar-line {
+    width: 60px;
+    height: 3px;
+    background: rgba(0, 242, 254, 0.15);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.tt-bar-active {
+    background: rgba(235, 208, 156, 0.2);
+    width: 80px; /* Expands when active */
+}
+
+.tt-progress-fill {
+    position: absolute;
+    top: 0; left: 0; height: 100%; width: 100%;
+    background: linear-gradient(90deg, #00f2fe, #ebd09c);
+    animation: ttProgress linear 6s forwards;
+}
+
+@keyframes ttProgress {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* ====================================================
+   RESPONSIVE DESIGN SYSTEM (MOBILE FRIENDLY)
+   ==================================================== */
+@media (max-width: 1200px) {
+    .tt-card { width: 500px; height: 340px; padding: 25px 30px; }
+    .tt-card-prev { transform: translate(-110%, -50%) scale(0.85); }
+    .tt-card-next { transform: translate(10%, -50%) scale(0.85); }
+}
+
+@media (max-width: 900px) {
+    .tt-card-prev, .tt-card-next { opacity: 0; pointer-events: none; } /* Mobile/Tablet par left-right hide ho jayenge */
+    .tt-card { width: 90%; max-width: 480px; height: auto; min-height: 300px; }
+    .tt-card-active { transform: translate(-50%, -50%) scale(1); }
+    .tt-display-arena { height: 360px; }
+    .tt-main-title { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+    .tt-patient-speech { font-size: 1rem; line-height: 1.5; }
+    .tt-card { padding: 20px; }
+    .tt-card-footer { flex-direction: column; gap: 10px; align-items: flex-start; }
+}
