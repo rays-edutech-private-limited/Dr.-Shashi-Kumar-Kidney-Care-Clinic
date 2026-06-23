@@ -547,11 +547,11 @@
     flex-direction: column;
     gap: 15px;
     padding: 20px;
+    align-items: baseline;
+    text-align: left;
   }
 
-  .stat-card-box {
-    text-align: center;
-  }
+ 
 
   .stat-card-box h3 {
     font-size: 24px;
