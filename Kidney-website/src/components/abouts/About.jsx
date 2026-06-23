@@ -2,59 +2,52 @@ import React from 'react';
 import './About.css';
 import kidney from "../../assets/image/aboutkideny.png";
 
-const About = ({onBookClick}) => {
+const About = ({ onBookClick }) => {
   return (
-    <section className="about-kidney-section-pro">
-      {/* Background Cinematic Aura Lights */}
-      <div className="pro-bg-blur light-cyan"></div>
-      <div className="pro-bg-blur light-purple"></div>
+    <section className="cinematic-about-section">
+      {/* Cinematic Glowing Background Aura Grid */}
+  
 
-      <div className="about-container-pro">
+      <div className="cine-wrapper">
         
-        {/* LEFT PANEL: 3D Capsule & Glowing Kidney Simulation */}
-        <div className="about-visual-panel-pro">
-          <div className="biomedical-art-frame">
+        {/* LEFT PANEL: The Showstopper 3D Levitating Bio-Pod */}
+        <div className="cine-visual-container">
+          <div className="cine-canvas-stage">
             
-            {/* The Main 3D Glossy Capsule Glass */}
-            <div className="kidney-3d-capsule">
-              <img src={kidney} alt="Kidney Bio Art" />
-              <div className="radar-scanner-line"></div>
-            </div>
-
-            {/* Float Card 1: EXPERT EXPERIENCE */}
-            <div className="pro-glass-card card-top">
-              <div className="card-header-flex">
-                <span className="live-badge-pulse">● CLINICAL EXPERIENCE</span>
-              </div>
-              <div className="mini-graph-simulation">
-                <div className="bar bar-1"></div>
-                <div className="bar bar-2"></div>
-                <div className="bar bar-3"></div>
-                <div className="bar bar-4"></div>
-                <div className="bar bar-5"></div>
-                <div className="bar bar-6"></div>
-                <div className="bar bar-7"></div>
-              </div>
-              <div className="stats-footer">
-                <div>
-                  <p className="graph-stats-value">11+ <span className="unit-txt">Years</span></p>
-                  <span className="sub-status-txt">Senior Specialist</span>
-                </div>
-                <span className="vital-node-indicator">⚡ Paras Health</span>
+            {/* The Floating Medical Hologram Pod */}
+            <div className="cine-hologram-pod">
+              <div className="cine-scanner-beam"></div>
+              <div className="pod-internal-core"></div>
+              <img src={kidney} alt="Kidney Bio Architecture" className="cine-main-kidney-img" />
+              
+              {/* Audio / Pulse Wave Grid inside Pod */}
+              <div className="pod-wave-grid">
+                <span></span><span></span><span></span><span></span><span></span>
               </div>
             </div>
 
-            {/* Float Card 2: LEADERSHIP TRUST SEAL */}
-            <div className="pro-glass-card card-bottom">
-              <div className="icon-seal-gold">🏆 DEPT. HEAD & DIRECTOR</div>
-              <div className="seal-flex-inner">
-                <div className="gold-medal-svg">
-                  <div className="inner-medal-star">✦</div>
-                </div>
-                <div className="seal-details">
-                  <h5>SGPGIMS Alumni</h5>
+            {/* Float Badge 1: Realtime Stats Tracker */}
+            <div className="cine-glass-card card-top-right">
+              <div className="cine-badge-glow"></div>
+              <div className="cine-card-header">
+                <span className="pulse-dot-red"></span>
+                <p className="cine-label-gold">DIRECTOR & DEPT. HEAD</p>
+              </div>
+              <div className="cine-live-counter">
+                <h3>11+ <span className="cine-mini-unit">Years of Trust</span></h3>
+              </div>
+              <span className="cine-hospital-tag">🏢 Paras Health, Patna</span>
+            </div>
+
+            {/* Float Badge 2: Legacy Education Badge */}
+            <div className="cine-glass-card card-bottom-left">
+              <div className="cine-badge-glow"></div>
+              <div className="cine-alumni-row">
+                <div className="cine-gold-crest">SG</div>
+                <div className="cine-alumni-meta">
+                  <h5>SGPGIMS Lucknow Alumnus</h5>
                   <h4>Dr. Shashi Kumar</h4>
-                  <p>Top Nephrologist</p>
+                  <p className="cine-sub-txt">Top Tier Renowned Nephrologist</p>
                 </div>
               </div>
             </div>
@@ -62,151 +55,167 @@ const About = ({onBookClick}) => {
           </div>
         </div>
 
-        {/* RIGHT PANEL: Matches Screenshot 2026-06-20 173533.jpg Header & Snapshot */}
-        <div className="about-content-panel-pro">
-          <div className="premium-neon-pill">
-            <span className="earth-icon">🌐</span> MEET DR. SHASHI KUMAR
+        {/* RIGHT PANEL: The High-Converting Masterclass Content */}
+        <div className="cine-content-container">
+          <div className="cine-super-badge">
+            <span className="cine-sparkle-icon">✨</span> Bihar's Leading Kidney Care Destination
           </div>
           
-          <h2 className="about-section-title-pro">
-            Director & Head, <span className="cyber-text-gradient-cyan">Nephrology</span>
+          <h2 className="cine-main-headline">
+            Restoring Health. <br />
+            <span className="text-gradient-cyan-blue">Renewing Hope.</span>
           </h2>
           
-          <p className="about-quote-pro">
-            "Dedicated to transforming kidney care through advanced treatment, compassionate patient management, and clinical excellence."
+          <blockquote className="cine-luxury-quote">
+            "Every patient deserves world-class renal care. We combine advanced global science with absolute precision to give your life a fresh start."
+          </blockquote>
+          
+          <p className="cine-narrative">
+            Dr. Shashi Kumar is a distinguished pioneer in Nephrology, widely recognized for his unmatched clinical expertise and breakthrough treatments. As the <strong>Director & Head of Department at Paras Health, Patna</strong>, he has engineered state-of-the-art dialysis units and spearheaded highly successful kidney transplant systems, saving thousands of critical renal patients across Eastern India.
           </p>
 
-          <p className="about-description-pro">
-            Dr. Shashi Kumar is one of Bihar's leading nephrologists with more than 11 years of clinical experience in diagnosing and managing complex kidney diseases. He currently serves as Director & Head of Department (Nephrology) at Paras Health, Patna. Throughout his career, he has successfully treated thousands of patients suffering from chronic kidney disease, kidney failure, and dialysis-related complications while contributing significantly to kidney transplant programs.
-          </p>
-
-          {/* PROFESSIONAL SNAPSHOT MATRIX */}
-          <div className="snapshot-container">
-            <h4 className="panel-sub-title">📊 PROFESSIONAL SNAPSHOT</h4>
-            <div className="snapshot-grid">
-              <div className="snapshot-card snapshot-cyan">
-                <span className="snap-icon">🩺</span>
-                <h3>11+</h3>
-                <p>Years of Experience</p>
-              </div>
-              <div className="snapshot-card snapshot-purple">
-                <span className="snap-icon">👥</span>
-                <h3>10,000+</h3>
-                <p>Patients Treated</p>
-              </div>
-              <div className="snapshot-card snapshot-green">
-                <span className="snap-icon">⚡</span>
-                <h3>5,000+</h3>
-                <p>Dialysis Cases</p>
-              </div>
-              <div className="snapshot-card snapshot-gold">
-                <span className="snap-icon">🫁</span>
-                <h3>500+</h3>
-                <p>Kidney Transplants</p>
-              </div>
+          {/* THE 4-COLUMN ILLUMINATED MATRIX GRID */}
+          <div className="cine-stats-matrix">
+            
+            <div className="cine-stat-item border-cyan">
+              <div className="item-bg-glow"></div>
+              <span className="stat-emoji">🩺</span>
+              <h2>11+</h2>
+              <p>Years Clinical Leadership</p>
             </div>
-          </div>
-        </div>
 
+            <div className="cine-stat-item border-purple">
+              <div className="item-bg-glow"></div>
+              <span className="stat-emoji">👥</span>
+              <h2>10K+</h2>
+              <p>Satisfied Healed Patients</p>
+            </div>
+
+            <div className="cine-stat-item border-emerald">
+              <div className="item-bg-glow"></div>
+              <span className="stat-emoji">⚡</span>
+              <h2>5K+</h2>
+              <p>Advanced Dialysis Sessions</p>
+            </div>
+
+            <div className="cine-stat-item border-gold">
+              <div className="item-bg-glow"></div>
+              <span className="stat-emoji">🫁</span>
+              <h2>500+</h2>
+              <p>Successful Transplants</p>
+            </div>
+
+          </div>
+
+        </div>
       </div>
 
-      {/* LOWER DASHBOARD: Grid layout from Screenshot 2026-06-20 173533.jpg */}
-      <div className="dashboard-container-pro">
+      {/* LOWER LEVEL: Advanced Medical Dashboard Blocks */}
+      <div className="cine-dashboard-wrapper">
         
-        {/* ROW 1: Qualifications, Expertise, Awards */}
-        <div className="dashboard-row-three-col">
+        {/* ROW 1: 3 Column Interactive Panels */}
+        <div className="cine-layout-3col">
           
-          {/* Box 1: Qualifications */}
-          <div className="dashboard-box Box-glow-cyan">
-            <h4 className="box-title-flex"><span>🎓</span> QUALIFICATIONS</h4>
-            <ul className="bullet-list-style">
-              <li>MBBS</li>
-              <li>MD (Internal Medicine)</li>
-              <li>DM (Nephrology) – SGPGIMS, Lucknow</li>
-              <li>Specialized Training in Interventional Nephrology</li>
-              <li>Specialized Training in Peritoneal Dialysis (CAPD)</li>
+          {/* Panel 1 */}
+          <div className="cine-dashboard-block glow-accent-cyan">
+            <div className="block-header">
+              <div className="block-icon accent-cyan">🎓</div>
+              <h3>ACADEMIC PEDIGREE</h3>
+            </div>
+            <ul className="cine-list list-type-star">
+              <li><strong>MBBS</strong> — Premier Medical Institution</li>
+              <li><strong>MD (Internal Medicine)</strong> — Clinical Excellence</li>
+              <li><strong>DM (Nephrology)</strong> — SGPGIMS, Lucknow</li>
+              <li>Specialized Fellowship in Interventional Nephrology</li>
+              <li>Advanced Expert Training in Peritoneal Dialysis (CAPD)</li>
             </ul>
           </div>
 
-          {/* Box 2: Areas of Expertise */}
-          <div className="dashboard-box Box-glow-blue">
-            <h4 className="box-title-flex"><span>🧬</span> AREAS OF EXPERTISE</h4>
-            <ul className="check-list-style">
-              <li>Chronic Kidney Disease (CKD)</li>
-              <li>Kidney Transplant Care</li>
-              <li>Acute Kidney Injury (AKI)</li>
-              <li>Diabetic Kidney Disease</li>
-              <li>Kidney Failure Management</li>
-              <li>Renal Biopsy</li>
-              <li>Hemodialysis</li>
-              <li>Critical Care Nephrology</li>
-              <li>Peritoneal Dialysis (CAPD)</li>
+          {/* Panel 2 */}
+          <div className="cine-dashboard-block glow-accent-blue">
+            <div className="block-header">
+              <div className="block-icon accent-blue">🧬</div>
+              <h3>CLINICAL CORE SPECIALTIES</h3>
+            </div>
+            <ul className="cine-list list-type-check">
+              <li>Chronic Kidney Disease (CKD) Management</li>
+              <li>End-to-End Kidney Transplant Protocols</li>
+              <li>Acute Kidney Injury (AKI) Intensive Care</li>
+              <li>Diabetic Nephrology & Hypertension Care</li>
+              <li>Precision Renal Biopsy & Critical Care Nephrology</li>
+              <li>Advanced Maintenance Hemodialysis Networks</li>
             </ul>
           </div>
 
-          {/* Box 3: Awards & Recognition */}
-          <div className="dashboard-box Box-glow-gold">
-            <h4 className="box-title-flex"><span>🏆</span> AWARDS & RECOGNITION</h4>
-            <div className="awards-flex-layout">
-              <ul className="award-list-style">
-                <li>Excellence in Kidney Care Award</li>
-                <li>Outstanding Nephrology Service Recognition</li>
-                <li>Distinguished Speaker at National Nephrology Conferences</li>
-                <li>Recognition for Advanced Dialysis & Transplant Management</li>
+          {/* Panel 3 */}
+          <div className="cine-dashboard-block glow-accent-gold">
+            <div className="block-header">
+              <div className="block-icon accent-gold">🏆</div>
+              <h3>NATIONAL LAURELS</h3>
+            </div>
+            <div className="cine-awards-flex">
+              <ul className="cine-list list-type-medal">
+                <li>Excellence in Kidney Care National Award</li>
+                <li>Distinguished Service Award in Nephrology</li>
+                <li>Keynote Speaker at National Renal Conclaves</li>
+                <li>Pioneer in Advanced Dialysis Ecosystems</li>
               </ul>
-              <div className="gold-trophy-illustration">🏆</div>
+              <div className="cine-animated-trophy">🏆</div>
             </div>
           </div>
 
         </div>
 
-        {/* ROW 2: Memberships & Achievements */}
-        <div className="dashboard-row-two-col">
+        {/* ROW 2: 2 Column Wide Institutional Panels */}
+        <div className="cine-layout-2col">
           
-          {/* Box 4: Professional Memberships */}
-          <div className="dashboard-box">
-            <h4 className="box-title-flex"><span>🤝</span> PROFESSIONAL MEMBERSHIPS</h4>
-            <div className="memberships-grid">
-              <div className="member-logo-card">
-                <div className="logo-placeholder">ISN</div>
-                <p>Indian Society of Nephrology (ISN)</p>
+          {/* Panel 4 */}
+          <div className="cine-dashboard-block">
+            <div className="block-header">
+              <div className="block-icon accent-gray">🤝</div>
+              <h3>ELITE INSTITUTIONAL AFFILIATIONS</h3>
+            </div>
+            <div className="cine-logos-grid">
+              <div className="cine-logo-node">
+                <div className="node-circle">ISN</div>
+                <p>Indian Society of Nephrology</p>
               </div>
-              <div className="member-logo-card">
-                <div className="logo-placeholder">IMA</div>
-                <p>Indian Medical Association (IMA)</p>
+              <div className="cine-logo-node">
+                <div className="node-circle">IMA</div>
+                <p>Indian Medical Association</p>
               </div>
-              <div className="member-logo-card">
-                <div className="logo-placeholder">API</div>
-                <p>Association of Physicians of India (API)</p>
+              <div className="cine-logo-node">
+                <div className="node-circle">API</div>
+                <p>Association of Physicians of India</p>
               </div>
-              <div className="member-logo-card">
-                <div className="logo-placeholder">ISN</div>
+              <div className="cine-logo-node">
+                <div className="node-circle">INT</div>
                 <p>International Society of Nephrology</p>
               </div>
             </div>
           </div>
 
-          {/* Box 5: Professional Achievements */}
-          <div className="dashboard-box Box-glow-purple">
-            <h4 className="box-title-flex"><span>⭐</span> PROFESSIONAL ACHIEVEMENTS</h4>
-            <div className="achievements-flex-layout">
-              <ul className="check-list-style colored-check">
-                <li>Successfully managed thousands of dialysis patients.</li>
-                <li>Participated in numerous kidney transplant procedures.</li>
-                <li>Expertise in advanced nephrology interventions.</li>
-                <li>Active contributor to kidney disease awareness programs.</li>
-                <li>Speaker and participant in national medical conferences.</li>
-                <li>Mentor for young nephrology professionals.</li>
-              </ul>
+          {/* Panel 5 */}
+          <div className="cine-dashboard-block glow-accent-purple">
+            <div className="block-header">
+              <div className="block-icon accent-purple">⭐</div>
+              <h3>MAJOR CAREER MILESTONES</h3>
             </div>
+            <ul className="cine-list list-type-spark">
+              <li>Successfully managed thousands of complex dialysis cycles</li>
+              <li>Pioneered low-cost high-efficiency renal frameworks</li>
+              <li>Organized mega-awareness programs for rural kidney health</li>
+              <li>Active investigator in global nephrology clinical trials</li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Core CTA Action Button */}
-        <div className="pro-btn-wrapper-center">
-          <button className="btn-ultra-premium" onClick={onBookClick}>
-            BOOK AN APPOINTMENT WITH DR. SHASHI KUMAR
+        {/* THE HYPNOTIC CALL TO ACTION BUTTON */}
+        <div className="cine-cta-container">
+          <button className="cine-btn-luxury" onClick={onBookClick}>
+            <span className="cine-btn-shimmer"></span>
+            <span className="cine-btn-text">REQUEST A PRIORITY APPOINTMENT WITH DR. SHASHI KUMAR</span>
           </button>
         </div>
 

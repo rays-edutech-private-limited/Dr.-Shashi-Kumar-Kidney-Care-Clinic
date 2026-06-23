@@ -1,9 +1,9 @@
 /* Layout Wrapper & Medical Theme Canvas */
 .contact-page-wrapper {
-   background: linear-gradient(135deg, #020617, #0f172a); /* Dark Navy Blue Background */
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9); /* Clean Light Slate/White Background */
     width: 100%;
     min-height: 100vh;
-    padding: 60px 20px; /* Adjusted padding for better universal spacing */
+    padding: 60px 20px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,9 +23,9 @@
     padding: 0 10px;
 }
 .top-badge {
-    display: inline-block; /* Secure padding rendering */
+    display: inline-block; 
     font-size: 0.8rem;
-    color: #10b981; /* Medical Emerald Green */
+    color: #059669; /* Slightly darker Emerald for better contrast on white */
     background: rgba(16, 185, 129, 0.1);
     padding: 8px 18px;
     border-radius: 20px;
@@ -34,15 +34,15 @@
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 .main-heading {
-    font-size: 2.5rem; /* Better scale across default screen heights */
-    color: #ffffff;
+    font-size: 2.5rem; 
+    color: #0f172a; /* Dark Slate for clean typography */
     font-weight: 800;
     margin: 18px 0 10px 0;
     letter-spacing: -1px;
     line-height: 1.2;
 }
 .sub-heading-desc {
-    color: #94a3b8;
+    color: #475569; /* Readable Charcoal gray text */
     font-size: 1.05rem;
     max-width: 650px;
     margin: 0 auto 20px auto;
@@ -59,13 +59,13 @@
 .line-dot {
     width: 30px;
     height: 3px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(15, 23, 42, 0.1);
     border-radius: 2px;
 }
 .circle-dot {
     width: 6px;
     height: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(15, 23, 42, 0.1);
     border-radius: 50%;
 }
 .circle-dot.active {
@@ -84,13 +84,13 @@
     align-items: start;
 }
 
-/* Left Form Box Custom Design (Deep Blue Teal Slate) */
+/* Left Form Box Custom Design (Premium White Card) */
 .form-container-card {
-    background: #1c2541; /* Dark Slate Blue */
-    border: 1px solid rgba(16, 185, 129, 0.3); /* Emerald Border Accent */
+    background: #ffffff; /* Solid White Card */
+    border: 1px solid #e2e8f0; /* Soft Border Line */
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(148, 163, 184, 0.15); /* Light modern shadow */
 }
 .form-intro-header {
     display: flex;
@@ -101,24 +101,24 @@
 .icon-bubble {
     width: 48px;
     height: 48px;
-    background: rgba(16, 185, 129, 0.15);
+    background: rgba(16, 185, 129, 0.1);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
-    flex-shrink: 0; /* Prevents squeezing on small rows */
+    flex-shrink: 0; 
 }
 .intro-text-block .tagline {
     font-size: 0.75rem;
     font-weight: 700;
-    color: #10b981;
+    color: #059669;
     letter-spacing: 0.5px;
 }
 .intro-text-block h3 {
     margin: 2px 0 0 0;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: #0f172a;
     font-weight: 700;
 }
 
@@ -141,7 +141,7 @@
 .custom-field-group label {
     font-size: 0.72rem;
     font-weight: 700;
-    color: #94a3b8;
+    color: #475569;
     letter-spacing: 0.5px;
 }
 .input-with-icon {
@@ -154,17 +154,17 @@
     position: absolute;
     left: 16px;
     font-size: 1rem;
-    opacity: 0.6;
+    opacity: 0.7;
     z-index: 2;
 }
 .input-with-icon input, .input-with-icon textarea {
     width: 100%;
     padding: 14px 16px 14px 46px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #cbd5e1; /* Clear input borders */
     border-radius: 10px;
     font-size: 0.95rem;
-    color: #ffffff;
-    background-color: #0b132b;
+    color: #0f172a;
+    background-color: #f8fafc; /* Subtle input background */
     outline: none;
     transition: all 0.3s ease;
 }
@@ -178,10 +178,11 @@
 /* Input Focus States */
 .input-with-icon input:focus, .input-with-icon textarea:focus {
     border-color: #10b981;
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+    background-color: #ffffff; /* Whitens on focus */
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
 }
 
-/* Primary Button Design (Dark Green Glow) */
+/* Primary Button Design (Solid Emerald Green) */
 .submit-action-btn {
     width: 100%;
     padding: 16px;
@@ -196,13 +197,13 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25);
     transition: all 0.3s ease;
 }
 .submit-action-btn:hover {
     background: #059669;
     transform: translateY(-1px);
-    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.35);
 }
 
 /* Right Sidebar Grid Components */
@@ -214,11 +215,11 @@
 
 /* Map Card */
 .embedded-map-card {
-    height: 350px; /* Adjusted from 450px for balanced look on laptops/tablets */
+    height: 350px; 
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px rgba(148, 163, 184, 0.1);
 }
 .embedded-map-card iframe {
     width: 100%;
@@ -226,27 +227,28 @@
     display: block;
 }
 
-/* Quick Action Informative Info Pills */
+/* Quick Action Informative Info Pills (White Base) */
 .quick-action-cards-row {
     display: flex;
     gap: 16px;
     width: 100%;
 }
 .action-pill-card {
-    flex: 1; /* Makes both buttons take equal width */
-    background: #1c2541;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex: 1; 
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 14px; /* Balanced padding */
+    padding: 14px; 
     display: flex;
     align-items: center;
     text-decoration: none;
     transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.05);
 }
 .action-pill-card:hover {
     border-color: #10b981;
-    transform: translateY(-2px); /* Switched to vertical shift for flex grids */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(148, 163, 184, 0.15);
 }
 .pill-icon-bubble {
     width: 40px;
@@ -259,29 +261,29 @@
     margin-right: 12px;
     flex-shrink: 0;
 }
-.blue-tint { background: rgba(59, 130, 246, 0.15); }
-.green-tint { background: rgba(16, 185, 129, 0.15); }
+.blue-tint { background: rgba(59, 130, 246, 0.1); }
+.green-tint { background: rgba(16, 185, 129, 0.1); }
 
 .pill-data-info {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    min-width: 0; /* Fixes text truncation issues in flexbox */
+    min-width: 0; 
 }
 .pill-data-info small {
     font-size: 0.65rem;
     font-weight: 700;
-    color: #10b981;
+    color: #059669;
     letter-spacing: 0.5px;
 }
 .pill-data-info strong {
     font-size: 0.85rem;
-    color: #ffffff;
+    color: #0f172a;
     margin-top: 2px;
-    word-break: break-all; /* Long emails break securely on tiny devices */
+    word-break: break-all; 
 }
 .arrow-trigger {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 1.1rem;
     margin-left: 8px;
     transition: color 0.2s;
@@ -291,13 +293,13 @@
 }
 
 /* ==========================================================================
-   Responsive Viewports - Media Queries
+    Responsive Viewports - Media Queries
    ========================================================================== */
 
 /* Tablet & Smaller Laptops */
 @media (max-width: 1024px) {
     .contact-grid-layout {
-        grid-template-columns: 1fr; /* Form tops Map column */
+        grid-template-columns: 1fr; 
         gap: 35px;
     }
     
@@ -309,11 +311,11 @@
 /* Mobile Devices (Phones) */
 @media (max-width: 768px) {
     .form-container-card {
-        padding: 30px 20px; /* Reduced padding on small screens */
+        padding: 30px 20px; 
     }
 
     .quick-action-cards-row {
-        flex-direction: column; /* Stacks Call and Email cards vertically */
+        flex-direction: column; 
         gap: 12px;
     }
 
@@ -322,7 +324,7 @@
     }
     
     .embedded-map-card {
-        height: 300px; /* Shorter map for mobile viewports */
+        height: 300px; 
     }
 }
 
@@ -341,7 +343,7 @@
     }
 
     .input-row-dual {
-        grid-template-columns: 1fr; /* Form inputs stack individually */
+        grid-template-columns: 1fr; 
         gap: 24px;
     }
 

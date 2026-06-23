@@ -1,9 +1,9 @@
-/* Base Page Container Styling */
+/* Base Page Container Styling - Premium Clean White Theme */
 .pinterest-gallery-wrapper {
- background: #0f172a;/* Deep Dark Blue background */
+  background: #dbf0ff; /* Ultra-clean, modern light gray background */
   min-height: 100vh;
   padding: 60px 24px;
-  color: #ffffff;
+  color: #1e293b; /* Dark slate text for better readability */
   font-family: 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -15,27 +15,28 @@
 }
 
 .branding-badge {
-  background-color: rgba(16, 185, 129, 0.1);
-  color: #10b981; /* Neon Green Accent */
+  background-color: rgba(16, 185, 129, 0.08);
+  color: #059669; /* Slightly darker rich emerald green for readable light-mode contrast */
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  padding: 5px 14px;
+  padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   display: inline-block;
 }
 
 .doctor-main-title {
   font-size: 38px;
   font-weight: 800;
+  color: #0f172a; /* Deep bold black-slate */
   margin: 12px 0 4px 0;
   letter-spacing: -0.5px;
 }
 
 .clinic-sub-tag {
-  color: #10b981;
+  color: #059669;
   font-size: 18px;
   margin: 0;
   font-weight: 500;
@@ -45,7 +46,7 @@
   width: 60px;
   height: 3px;
   background: #10b981;
-  box-shadow: 0 0 10px #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
   margin: 18px auto 0 auto;
   border-radius: 4px;
 }
@@ -54,21 +55,21 @@
 .pinterest-grid {
   max-width: 1300px;
   margin: 0 auto;
-  column-count: 4; /* Desktop par fix 4 columns */
-  column-gap: 20px; /* Column ke beech ki khali jagah */
+  column-count: 4; /* Desktop columns */
+  column-gap: 20px;
 }
 
 .pinterest-item {
-  background-color: #0b1325;
+  background-color: #ffffff; /* Crisp white card surface */
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid #1e293b;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #e2e8f0; /* Soft border */
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02); /* Smooth light shadow */
   cursor: pointer;
   position: relative;
-  display: inline-block; /* Critical layout break fix */
+  display: inline-block;
   width: 100%;
-  margin-bottom: 20px; /* Niche wali image se exact gap */
+  margin-bottom: 20px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -80,20 +81,20 @@
 
 .pinterest-img {
   width: 100%;
-  height: auto; /* Taki image apni original vertical height auto-scale kare */
+  height: auto;
   display: block;
   transition: transform 0.6s ease;
 }
 
-/* Hover Glowing Green Outlines */
+/* Hover Active State - Premium Lift */
 .pinterest-item:hover {
   border-color: #10b981;
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
-  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.15); /* Soft emerald ambient glow */
+  transform: translateY(-5px);
 }
 
 .pinterest-item:hover .pinterest-img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 /* Text Details Layer inside image box */
@@ -102,8 +103,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 30px 20px 20px 20px;
-  background: linear-gradient(transparent, rgba(5, 10, 18, 0.95) 75%);
+  padding: 40px 20px 20px 20px;
+  /* Smooth light-to-shadow gradient for white theme readability */
+  background: linear-gradient(transparent, rgba(15, 23, 42, 0.85) 60%);
   z-index: 2;
   box-sizing: border-box;
 }
@@ -111,7 +113,7 @@
 .media-tag {
   font-size: 10px;
   font-weight: 700;
-  color: #10b981;
+  color: #34d399; /* Vibrant green on dark gradient overlay */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -120,14 +122,15 @@
   margin: 4px 0 0 0;
   font-size: 15px;
   font-weight: 600;
-  color: #f1f5f9;
+  color: #ffffff; /* Pure white text to stand out against the bottom gradient */
 }
 
 /* --- Eye Hover Overlay System --- */
 .eye-hover-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(6, 78, 59, 0.45);
+  background-color: rgba(248, 250, 252, 0.35); /* Elegant crisp frosty overlay */
+  backdrop-filter: blur(1px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,9 +144,9 @@
 }
 
 .eye-icon-glow-circle {
-  background: #050a12;
-  border: 2px solid #10b981;
-  box-shadow: 0 0 15px #10b981;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
   padding: 13px;
   border-radius: 50%;
   transform: scale(0.8);
@@ -161,8 +164,8 @@
 .center-popup-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(3, 7, 13, 0.94);
-  backdrop-filter: blur(6px);
+  background-color: rgba(15, 23, 42, 0.6); /* Modern dim-dark backdrop blur */
+  backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -172,10 +175,10 @@
 }
 
 .center-popup-box {
-  background-color: #0b1325;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
-  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
   max-width: 800px;
   width: 100%;
   position: relative;
@@ -187,10 +190,10 @@
   position: absolute;
   top: 16px;
   right: 16px;
-  background-color: rgba(6, 11, 19, 0.7);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -200,33 +203,35 @@
   justify-content: center;
   transition: all 0.2s ease;
   z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .popup-close-btn:hover {
-  background-color: #10b981;
-  border-color: #10b981;
-  box-shadow: 0 0 10px #10b981;
+  background-color: #ef4444; /* Premium crimson-red alert tone on close hover */
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .popup-image-container {
   width: 100%;
   max-height: 65vh;
-  background-color: #03070d;
+  background-color: #f1f5f9; /* Soft gray loader background tone */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .popup-full-img {
-  max-w: 100%;
+  max-width: 100%;
   max-height: 65vh;
   object-fit: contain;
 }
 
 .popup-details-footer {
-  padding: 20px 24px;
-  background-color: #050a12;
-  border-t: 1px solid #1e293b;
+  padding: 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -237,24 +242,26 @@
 .popup-badge-tag {
   font-size: 10px;
   font-weight: 700;
-  color: #10b981;
+  color: #059669;
   background-color: rgba(16, 185, 129, 0.1);
   padding: 4px 10px;
   border-radius: 6px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .popup-display-title {
-  margin: 4px 0 0 0;
-  font-size: 18px;
+  margin: 6px 0 0 0;
+  font-size: 19px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .popup-brand-text {
   margin: 0;
   font-size: 13px;
-  color: #64748b;
+  font-weight: 500;
+  color: #94a3b8;
 }
 
 /* Animations Core Rules */
@@ -264,21 +271,21 @@
 }
 
 @keyframes modalScaleUp {
-  from { transform: scale(0.9); opacity: 0; }
+  from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
-/* Responsive Columns Control for Tablets & Small Phones */
+/* Responsive Columns Control */
 @media (max-width: 1100px) {
-  .pinterest-grid { column-count: 3; } /* Medium screen par 3 lines */
+  .pinterest-grid { column-count: 3; }
 }
 
 @media (max-width: 768px) {
-  .pinterest-grid { column-count: 2; } /* Tablets par 2 lines */
+  .pinterest-grid { column-count: 2; }
   .doctor-main-title { font-size: 30px; }
 }
 
 @media (max-width: 480px) {
-  .pinterest-grid { column-count: 1; } /* Mobile phones par pure 1 fluid single column grid */
+  .pinterest-grid { column-count: 1; }
   .popup-details-footer { flex-direction: column; align-items: flex-start; }
 }

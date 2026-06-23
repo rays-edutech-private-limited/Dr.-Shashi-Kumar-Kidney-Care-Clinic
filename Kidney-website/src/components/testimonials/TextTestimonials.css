@@ -1,6 +1,6 @@
-/* Premium Text Testimonials Container */
+/* Premium Text Testimonials Container - Light Mode Revamp */
 .tt-premium-section {
-    background: #0f172a;
+   background: #dbf0ff; /* Ultra clean light slate grey */
     width: 100%;
     min-height: 85vh;
     padding: 60px 20px;
@@ -13,12 +13,12 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Ambient Medical Cyber Glow Orbs */
+/* Ambient Medical Light Glow Orbs */
 .tt-glow-orb-top {
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%); /* Soft medical blue */
     top: -10%;
     left: 10%;
     pointer-events: none;
@@ -27,7 +27,7 @@
     position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(235, 208, 156, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(217, 119, 6, 0.05) 0%, transparent 70%); /* Soft warm glow */
     bottom: -5%;
     right: 10%;
     pointer-events: none;
@@ -41,27 +41,25 @@
 }
 .tt-badge-top {
     font-size: 0.75rem;
-    color: #00f2fe;
+    color: #0284c7; /* Clinical Cyan/Blue */
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 12px;
-    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
 }
 .tt-main-title {
     font-size: 2.6rem;
-    color: #ebd09c;
-    font-weight: 300;
-    letter-spacing: 2px;
+    color: #1e293b; /* Dark charcoal blue for strong hierarchy */
+    font-weight: 400;
+    letter-spacing: 1px;
     margin: 0;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(235, 208, 156, 0.2);
 }
 .tt-subtitle {
-    color: #729199;
+    color: #64748b; /* Soft muted text color */
     font-size: 0.95rem;
     margin-top: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 /* Display Arena Engine with 3D Depth */
@@ -83,23 +81,23 @@
     perspective: 1200px;
 }
 
-/* The High-End Pro Level Card Structure */
+/* The High-End Pro Level Card Structure (Premium White Glassmorphism) */
 .tt-card {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 620px;
     height: 320px;
-    background: linear-gradient(145deg, rgba(13, 56, 70, 0.5) 0%, rgba(4, 23, 29, 0.85) 100%);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(14, 165, 233, 0.15); /* Light blue border */
     border-radius: 20px;
     padding: 35px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06); /* Soft elegant shadow */
     cursor: pointer;
     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -111,13 +109,13 @@
     height: 12px;
     border: 2px solid transparent;
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.4;
     transition: all 0.4s ease;
 }
-.tt-corner-line.tl { top: 12px; left: 12px; border-top-color: #00f2fe; border-left-color: #00f2fe; }
-.tt-corner-line.tr { top: 12px; right: 12px; border-top-color: #00f2fe; border-right-color: #00f2fe; }
-.tt-corner-line.bl { bottom: 12px; left: 12px; border-bottom-color: #00f2fe; border-left-color: #00f2fe; }
-.tt-corner-line.br { bottom: 12px; right: 12px; border-bottom-color: #00f2fe; border-right-color: #00f2fe; }
+.tt-corner-line.tl { top: 12px; left: 12px; border-top-color: #0ea5e9; border-left-color: #0ea5e9; }
+.tt-corner-line.tr { top: 12px; right: 12px; border-top-color: #0ea5e9; border-right-color: #0ea5e9; }
+.tt-corner-line.bl { bottom: 12px; left: 12px; border-bottom-color: #0ea5e9; border-left-color: #0ea5e9; }
+.tt-corner-line.br { bottom: 12px; right: 12px; border-bottom-color: #0ea5e9; border-right-color: #0ea5e9; }
 
 /* Top Header Inside Card */
 .tt-card-meta {
@@ -127,15 +125,15 @@
 }
 .tt-case-code {
     font-size: 0.8rem;
-    color: #ebd09c;
+    color: #b45309; /* Elegant Bronze/Gold */
     font-weight: 700;
     letter-spacing: 1.5px;
 }
 .tt-tag-condition {
     font-size: 0.65rem;
-    background: rgba(0, 242, 254, 0.08);
-    color: #00f2fe;
-    border: 1px solid rgba(0, 242, 254, 0.2);
+    background: rgba(14, 165, 233, 0.06);
+    color: #0284c7;
+    border: 1px solid rgba(14, 165, 233, 0.15);
     padding: 4px 12px;
     border-radius: 4px;
     font-weight: 600;
@@ -146,7 +144,7 @@
 .tt-quote-symbol {
     position: absolute;
     font-size: 8rem;
-    color: rgba(235, 208, 156, 0.04);
+    color: rgba(14, 165, 233, 0.05); /* Very subtle medical blue giant quote */
     font-family: Georgia, serif;
     top: 25px;
     left: 30px;
@@ -156,10 +154,10 @@
 
 /* Testimonial Typography */
 .tt-patient-speech {
-    color: #e2f1f5;
+    color: #334155; /* Sharp readable slate text */
     font-size: 1.15rem;
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
     font-style: italic;
     margin: 20px 0;
     text-align: left;
@@ -170,31 +168,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-top: 18px;
 }
 .tt-timeline-badge {
     font-size: 0.75rem;
-    color: #8da6ad;
+    color: #64748b;
     display: flex;
     align-items: center;
     gap: 6px;
 }
-.tt-clock-icon { color: #ebd09c; }
+.tt-clock-icon { color: #d97706; }
 .tt-verified-stamp {
     font-size: 0.75rem;
-    color: #26e6a4;
+    color: #10b981; /* Fresh Emerald Green */
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 5px;
-    background: rgba(38, 230, 164, 0.05);
+    background: rgba(16, 185, 129, 0.08);
     padding: 3px 10px;
     border-radius: 20px;
 }
 
 /* ====================================================
-   3D CARD DECK SLIDER STATES (SABSE ATTRACTIVE LOOK)
+   3D CARD DECK SLIDER STATES (LIGHT MODE DEPTH)
    ==================================================== */
 
 /* 1. THE ACTIVE CENTER CARD */
@@ -203,15 +201,15 @@
     opacity: 1;
     pointer-events: auto;
     z-index: 10;
-    border-color: rgba(235, 208, 156, 0.4);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.05);
+    border-color: rgba(14, 165, 233, 0.35);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12), 0 0 30px rgba(14, 165, 233, 0.04);
 }
 .tt-card-active .tt-corner-line { opacity: 0.9; }
 
 /* Active Card Hover */
 .tt-card-active:hover {
-    border-color: #00f2fe;
-    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.15);
+    border-color: #0ea5e9;
+    box-shadow: 0 35px 70px rgba(15, 23, 42, 0.16), 0 0 40px rgba(14, 165, 233, 0.1);
 }
 .tt-card-active:hover .tt-corner-line {
     width: 18px;
@@ -221,7 +219,7 @@
 /* 2. BACKGROUND LEFT WING CARD */
 .tt-card-prev {
     transform: translate(-115%, -55%) scale(0.85) rotateY(20deg);
-    opacity: 0.35;
+    opacity: 0.55; /* Slightly higher opacity for light mode visibility */
     pointer-events: auto;
     z-index: 4;
 }
@@ -229,7 +227,7 @@
 /* 3. BACKGROUND RIGHT WING CARD */
 .tt-card-next {
     transform: translate(15%, -55%) scale(0.85) rotateY(-20deg);
-    opacity: 0.35;
+    opacity: 0.55;
     pointer-events: auto;
     z-index: 4;
 }
@@ -253,8 +251,8 @@
 
 .tt-nav-bar-line {
     width: 60px;
-    height: 3px;
-    background: rgba(0, 242, 254, 0.15);
+    height: 4px;
+    background: rgba(14, 165, 233, 0.15);
     border-radius: 2px;
     cursor: pointer;
     position: relative;
@@ -263,14 +261,14 @@
 }
 
 .tt-bar-active {
-    background: rgba(235, 208, 156, 0.2);
-    width: 80px; /* Expands when active */
+    background: rgba(14, 165, 233, 0.2);
+    width: 80px; 
 }
 
 .tt-progress-fill {
     position: absolute;
     top: 0; left: 0; height: 100%; width: 100%;
-    background: linear-gradient(90deg, #00f2fe, #ebd09c);
+    background: linear-gradient(90deg, #0ea5e9, #b45309);
     animation: ttProgress linear 6s forwards;
 }
 
@@ -289,7 +287,7 @@
 }
 
 @media (max-width: 900px) {
-    .tt-card-prev, .tt-card-next { opacity: 0; pointer-events: none; } /* Mobile/Tablet par left-right hide ho jayenge */
+    .tt-card-prev, .tt-card-next { opacity: 0; pointer-events: none; }
     .tt-card { width: 90%; max-width: 480px; height: auto; min-height: 300px; }
     .tt-card-active { transform: translate(-50%, -50%) scale(1); }
     .tt-display-arena { height: 360px; }
