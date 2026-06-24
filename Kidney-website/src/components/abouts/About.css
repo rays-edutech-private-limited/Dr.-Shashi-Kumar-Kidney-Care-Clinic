@@ -3,23 +3,21 @@
 .cinematic-about-section {
   position: relative;
   background: #fff;
-  padding: 130px 0;
+  /* fluid padding: screen के हिसाब से खुद एडजस्ट होगी */
+  padding: clamp(60px, 8vw, 60px) 0;
   overflow: hidden;
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #1e293b;
 }
 
-
-
-
-/* Layout Core Architecture */
+/* --- Layout Core Architecture --- */
 .cine-wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 clamp(20px, 4vw, 60px);
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  gap: clamp(40px, 6vw, 80px);
   align-items: center;
   position: relative;
   z-index: 5;
@@ -27,8 +25,8 @@
 
 .cine-dashboard-wrapper {
   max-width: 1440px;
-  margin: 100px auto 0 auto;
-  padding: 0 60px;
+  margin: clamp(50px, 6vw, 100px) auto 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
   position: relative;
   z-index: 5;
 }
@@ -40,11 +38,12 @@
   position: relative;
   width: 100%;
 }
+
 .cine-canvas-stage {
   position: relative;
   width: 100%;
   max-width: 480px;
-  height: 620px;
+  height: clamp(450px, 50vw, 620px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +51,9 @@
 
 /* Futuristic White & Glass Biological Pod */
 .cine-hologram-pod {
-  width: 100%; max-width: 340px; height: 540px;
+  width: 100%; 
+  max-width: 340px; 
+  height: clamp(380px, 45vw, 540px);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(241, 245, 249, 0.4) 100%);
   border: 2px solid #ffffff;
   border-radius: 140px 140px 110px 110px;
@@ -70,20 +71,29 @@
 }
 
 .pod-internal-core {
-  position: absolute; width: 160px; height: 160px;
+  position: absolute; 
+  width: 160px; 
+  height: 160px;
   background: radial-gradient(circle, rgba(0, 180, 216, 0.4) 0%, transparent 70%);
-  filter: blur(40px); z-index: 1;
+  filter: blur(40px); 
+  z-index: 1;
 }
 
 .cine-main-kidney-img {
-  width: 88%; height: auto; z-index: 3;
+  width: 85%; 
+  height: auto; 
+  z-index: 3;
   filter: drop-shadow(0 20px 45px rgba(0, 180, 216, 0.35));
   animation: kidneyPulse 4s infinite ease-in-out;
 }
 
 /* Scanning Moving Grid */
 .cine-scanner-beam {
-  position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 4px;
   background: linear-gradient(90deg, transparent, #00b4d8, #00f5d4, #00b4d8, transparent);
   box-shadow: 0 0 20px rgba(0, 180, 216, 0.8);
   animation: fastScan 3s infinite ease-in-out;
@@ -92,11 +102,20 @@
 
 /* Living Medical Audio Pulse Bars inside Pod */
 .pod-wave-grid {
-  position: absolute; bottom: 35px; display: flex; gap: 6px; z-index: 2; height: 35px;
+  position: absolute; 
+  bottom: clamp(20px, 3vw, 35px); 
+  display: flex; 
+  gap: 6px; 
+  z-index: 2; 
+  height: 35px;
 }
 .pod-wave-grid span {
-  width: 3px; height: 100%; background: rgba(0, 180, 216, 0.4); border-radius: 2px;
-  transform-origin: bottom; animation: waveGrow 1.2s infinite alternate;
+  width: 3px; 
+  height: 100%; 
+  background: rgba(0, 180, 216, 0.4); 
+  border-radius: 2px;
+  transform-origin: bottom; 
+  animation: waveGrow 1.2s infinite alternate;
 }
 .pod-wave-grid span:nth-child(2) { animation-delay: 0.2s; height: 60%; background: #00b4d8; }
 .pod-wave-grid span:nth-child(3) { animation-delay: 0.5s; height: 90%; background: #00f5d4; }
@@ -111,14 +130,17 @@
 /* Ultra Glossy Floating Badges */
 .cine-glass-card {
   position: absolute;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid #ffffff;
-  padding: 20px; border-radius: 26px;
+  padding: 16px 20px; 
+  border-radius: 24px;
   box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(20px); z-index: 10; overflow: hidden;
+  backdrop-filter: blur(20px); 
+  z-index: 10; 
+  overflow: hidden;
 }
-.card-top-right { top: 4%; right: -8%; width: 240px; animation: badgeBounce 6s infinite ease-in-out; }
-.card-bottom-left { bottom: 4%; left: -8%; width: 275px; animation: badgeBounce 6s infinite ease-in-out -3s; }
+.card-top-right { top: 2%; right: -5%; width: min(240px, 90vw); animation: badgeBounce 6s infinite ease-in-out; }
+.card-bottom-left { bottom: 2%; left: -5%; width: min(275px, 90vw); animation: badgeBounce 6s infinite ease-in-out -3s; }
 
 @keyframes badgeBounce { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
 
@@ -132,7 +154,7 @@
 @keyframes flash { 0% { opacity: 0.3; } 100% { opacity: 1; } }
 .cine-label-gold { font-size: 10px; color: #b45309; font-weight: 800; letter-spacing: 0.5px; margin: 0; }
 
-.cine-live-counter h3 { margin: 0; font-size: 26px; font-weight: 800; color: #0f172a; }
+.cine-live-counter h3 { margin: 0; font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; color: #0f172a; }
 .cine-mini-unit { font-size: 13px; color: #64748b; font-weight: 500; display: block; margin-top: 2px; }
 .cine-hospital-tag { display: inline-block; font-size: 11px; color: #0077b6; font-weight: 700; background: #e0f2fe; padding: 3px 10px; border-radius: 12px; margin-top: 8px; }
 
@@ -157,7 +179,12 @@
 @keyframes rotation { 100% { transform: rotate(360deg); } }
 
 .cine-main-headline {
-  font-size: 52px; font-weight: 800; color: #0f172a; line-height: 1.15; margin-bottom: 25px; letter-spacing: -1.5px;
+  font-size: clamp(32px, 4.5vw, 52px); 
+  font-weight: 800; 
+  color: #0f172a; 
+  line-height: 1.2; 
+  margin-bottom: 25px; 
+  letter-spacing: -1px;
 }
 .text-gradient-cyan-blue {
   background: linear-gradient(135deg, #00b4d8 0%, #0056b3 100%);
@@ -168,18 +195,20 @@
   background: rgba(255, 255, 255, 0.8); border-left: 5px solid #00b4d8;
   padding: 20px; border-radius: 4px 24px 24px 4px;
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.03); margin: 0 0 30px 0;
-  font-size: 17px; font-style: italic; color: #334155; line-height: 1.6; font-weight: 500;
+  font-size: clamp(15px, 1.8vw, 17px); font-style: italic; color: #334155; line-height: 1.6; font-weight: 500;
 }
 
-.cine-narrative { font-size: 16px; color: #475569; line-height: 1.8; margin-bottom: 45px; }
+.cine-narrative { font-size: clamp(15px, 1.6vw, 16px); color: #475569; line-height: 1.8; margin-bottom: clamp(30px, 4vw, 45px); }
 
 /* --- THE EYE-MAGNET STATS MATRIX --- */
 .cine-stats-matrix {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+  gap: 10px;
 }
 .cine-stat-item {
   position: relative; background: #ffffff;
-  border: 1px solid #e2e8f0; border-radius: 24px; padding: 26px 10px;
+  border: 1px solid #e2e8f0; border-radius: 24px; padding: 26px 15px;
   text-align: center; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.01);
 }
@@ -193,7 +222,7 @@
 .border-gold .item-bg-glow { background: #f59e0b; }
 
 .stat-emoji { font-size: 28px; display: block; margin-bottom: 8px; }
-.cine-stat-item h2 { font-size: 32px; font-weight: 800; margin: 0 0 4px 0; line-height: 1; }
+.cine-stat-item h2 { font-size: clamp(26px, 3vw, 32px); font-weight: 800; margin: 0 0 4px 0; line-height: 1; }
 .cine-stat-item p { margin: 0; font-size: 12px; color: #64748b; font-weight: 600; line-height: 1.4; }
 
 /* Interactive Hover States */
@@ -213,11 +242,21 @@
 .border-gold h2 { color: #d97706; }
 
 /* --- INTERACTIVE LOWER DASHBOARD BLOCKS --- */
-.cine-layout-3col { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 24px; margin-bottom: 24px; }
-.cine-layout-2col { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 60px; }
+.cine-layout-3col { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px; 
+  margin-bottom: 24px; 
+}
+.cine-layout-2col { 
+  display: grid; 
+  grid-template-columns: 1fr 1.2fr; 
+  gap: 24px; 
+  margin-bottom: 60px; 
+}
 
 .cine-dashboard-block {
-  background: #ffffff; border: 1px solid #e2e8f0; border-radius: 28px; padding: 35px;
+  background: #ffffff; border: 1px solid #e2e8f0; border-radius: 28px; padding: clamp(20px, 3vw, 35px);
   box-shadow: 0 10px 40px rgba(15, 23, 42, 0.02); transition: all 0.3s ease;
 }
 .cine-dashboard-block:hover {
@@ -227,7 +266,7 @@
 .block-header { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
 .block-icon {
   width: 44px; height: 44px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center; font-size: 20px;
+  display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
 }
 .accent-cyan { background: #e0f7fa; color: #00b4d8; }
 .accent-blue { background: #e0f2fe; color: #0284c7; }
@@ -235,7 +274,7 @@
 .accent-purple { background: #f3e8ff; color: #7c3aed; }
 .accent-gray { background: #f1f5f9; color: #475569; }
 
-.block-header h3 { margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 1px; color: #0f172a; }
+.block-header h3 { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: 1px; color: #0f172a; }
 
 /* Premium Micro-Bullets */
 .cine-list { list-style: none; padding: 0; margin: 0; }
@@ -250,8 +289,8 @@
 .list-type-medal li::before { content: "🎖️"; position: absolute; left: 0; font-size: 14px; }
 .list-type-spark li::before { content: "✨"; position: absolute; left: 0; font-size: 13px; top: 1px; }
 
-.cine-awards-flex { display: flex; gap: 15px; justify-content: space-between; align-items: center; }
-.cine-animated-trophy { font-size: 80px; filter: drop-shadow(0 15px 20px rgba(217,119,6,0.2)); }
+.cine-awards-flex { display: flex; gap: 15px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.cine-animated-trophy { font-size: clamp(50px, 6vw, 80px); filter: drop-shadow(0 15px 20px rgba(217,119,6,0.2)); }
 
 /* Institutional Networks Grid */
 .cine-logos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -266,14 +305,16 @@
 .cine-logo-node p { margin: 0; font-size: 12px; color: #475569; font-weight: 600; line-height: 1.4; }
 
 /* --- THE CINEMATIC HYPNOTIC CTA BUTTON --- */
-.cine-cta-container { text-align: center; margin-top: 60px; }
+.cine-cta-container { text-align: center; margin-top: clamp(40px, 6vw, 60px); padding: 0 20px; }
 .cine-btn-luxury {
   position: relative; overflow: hidden;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #ffffff; border: none;
-  padding: 22px 60px; font-size: 14px; font-weight: 800; border-radius: 45px;
+  padding: 20px clamp(30px, 5vw, 60px); 
+  font-size: 14px; font-weight: 800; border-radius: 45px;
   cursor: pointer; box-shadow: 0 20px 55px rgba(15, 23, 42, 0.2);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); letter-spacing: 0.8px;
+  width: auto; max-width: 100%;
 }
 .cine-btn-luxury:hover {
   transform: translateY(-4px) scale(1.02);
@@ -289,27 +330,27 @@
 }
 @keyframes loopShine { 0% { left: -150%; } 100% { left: 250%; } }
 
-/* --- FULL RESPONSIVE MEDIA QUERIES --- */
-@media screen and (max-width: 1300px) {
-  .cine-wrapper { grid-template-columns: 1fr; gap: 60px; padding: 0 40px; }
-  .cine-dashboard-wrapper { padding: 0 40px; }
+/* ==========================================================================
+   BREAKPOINTS / MEDIA QUERIES (PERFECT FOR ALL HANDSETS)
+   ========================================================================== */
+
+/* Medium & Large Tablets / iPad Pro / Small Laptops (992px - 1200px) */
+@media screen and (max-width: 1100px) {
+  .cine-wrapper { grid-template-columns: 1fr; gap: 50px; }
+  .cine-layout-3col { grid-template-columns: 1fr 1fr; } /* Converts to 2 columns for comfortable breathing space */
+}
+
+/* Small Tablets / iPad Portrait / Foldables (768px - 991px) */
+@media screen and (max-width: 991px) {
   .cine-layout-3col, .cine-layout-2col { grid-template-columns: 1fr; gap: 20px; }
+  .card-top-right { right: 0; }
+  .card-bottom-left { left: 0; }
 }
 
-@media screen and (max-width: 768px) {
-  .cine-main-headline { font-size: 38px; }
-  .cine-stats-matrix { grid-template-columns: 1fr 1fr; }
-  .cine-hologram-pod { max-width: 290px; height: 460px; }
-  .card-top-right { right: -3%; width: 210px; }
-  .card-bottom-left { left: -3%; width: 230px; }
+
+@media screen and (max-width: 767px) {
+  .cine-stats-matrix { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .cine-canvas-stage { height: 500px; }
+  .cine-hologram-pod { max-width: 280px; height: 440px; }
 }
 
-@media screen and (max-width: 480px) {
-  .cine-main-headline { font-size: 30px; }
-  .cine-stats-matrix { grid-template-columns: 1fr; }
-  .cine-canvas-stage { height: auto; flex-direction: column; gap: 20px; }
-  .cine-hologram-pod { max-width: 250px; height: 380px; margin: 20px auto; }
-  .cine-glass-card { position: relative; top: auto!important; bottom: auto!important; left: auto!important; right: auto!important; width: 100%!important; max-width: 280px; }
-  .cine-logos-grid { grid-template-columns: 1fr; }
-  .cine-btn-luxury { width: 100%; padding: 20px 15px; font-size: 11.5px; }
-}

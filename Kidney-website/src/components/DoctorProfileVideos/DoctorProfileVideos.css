@@ -254,6 +254,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 10px 0;
 }
 
 .menu-header-hint {
@@ -268,7 +269,7 @@
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid #e2e8f0;
   border-radius: 24px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -390,13 +391,18 @@
 
 @media (max-width: 768px) {
   .kiosk-layout-container { padding: 50px 20px; }
+  .kiosk-menu-item{
+    padding: 15px;
+  }
   .kiosk-title { font-size: 38px; }
   .kiosk-cinema-viewport { height: 320px; }
   .kiosk-info-title { font-size: 26px; }
   .kiosk-info-details { padding: 30px; }
+  
 }
 
 @media (max-width: 550px) {
+  
   .kiosk-cinema-viewport { height: 220px; }
   .kiosk-footer-strip { flex-direction: column; align-items: stretch; }
   .kiosk-action-btn { justify-content: center; }
