@@ -1,26 +1,40 @@
+/* ==========================================================================
+   1. Luxury Navbar Base Styles (Desktop & Universal)
+   ========================================================================== */
 .luxury-navbar {
   background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(176, 177, 180, 0.8);
+  border-bottom: 1px solid rgba(176, 177, 180, 0.3);
   position: sticky;
   top: 0;
   z-index: 9999;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  padding: 16px 0;
+  padding: 14px 0;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* बॉक्स साइजिंग रीसेट ताकि पैडिंग विड्थ को न बढ़ाए */
+.luxury-navbar *, 
+.luxury-navbar *::before, 
+.luxury-navbar *::after {
+  box-sizing: border-box;
 }
 
 .navbar-wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-/* Stunning Premium Medical Logo Section */
+/* Premium Medical Logo Section */
 .luxury-logo {
   display: flex;
   align-items: center;
@@ -30,18 +44,18 @@
 }
 
 .logo-icon-wrap {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.logo-icon-wrap img{
+.logo-icon-wrap img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
 }
 
 .logo-brand {
@@ -50,11 +64,12 @@
 }
 
 .logo-main-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   color: #0f2b46;
   letter-spacing: 0.5px;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .logo-main-title .thin {
@@ -63,15 +78,16 @@
 }
 
 .logo-tag {
-  font-size: 10px;
+  font-size: 9px;
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
   margin-top: 4px;
+  white-space: nowrap;
 }
 
-/* Premium Navigation Links Menu */
+/* Premium Navigation Links Menu (Desktop) */
 .lux-nav-links {
   display: flex;
   align-items: center;
@@ -91,7 +107,8 @@
   padding: 6px 0;
 }
 
-.lux-nav-links a:hover, .lux-nav-links .active-link {
+.lux-nav-links a:hover, 
+.lux-nav-links .active-link {
   color: #00b8d4;
 }
 
@@ -103,7 +120,7 @@
   left: 0;
   width: 0;
   height: 2.5px;
-  background: linear-gradient(90deg, #00b8d4, #00b8d4);
+  background: #00b8d4;
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -112,7 +129,7 @@
   width: 100%;
 }
 
-/* Mega Dynamic Dropdown Menu */
+/* Mega Dynamic Dropdown Menu (Desktop) */
 .lux-dropdown {
   position: relative;
 }
@@ -148,7 +165,9 @@
   display: block;
 }
 
-.lux-dropdown-card li a::after { display: none; }
+.lux-dropdown-card li a::after { 
+  display: none; 
+}
 
 .lux-dropdown-card li a:hover {
   background-color: #f1f5f9;
@@ -162,12 +181,12 @@
   top: 100%;
 }
 
-/* 3D Glass Glow Booking Button */
+/* 3D Glass Glow Booking Button (Desktop) */
 .btn-glow-effect {
   background: linear-gradient(135deg, #40bca3 0%, #00b4d8 100%);
   color: #ffffff;
   border: none;
-  padding: 12px 26px;
+  padding: 12px 24px;
   font-size: 14px;
   font-weight: 700;
   border-radius: 12px;
@@ -176,6 +195,7 @@
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 184, 212, 0.3);
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-glow-effect:hover {
@@ -196,9 +216,11 @@
   left: 150%;
 }
 
-.mobile-only-action { display: none; }
+.mobile-only-action { 
+  display: none; 
+}
 
-/* Responsive Hamburger Layout */
+/* Responsive Hamburger Menu */
 .lux-hamburger {
   display: none;
   flex-direction: column;
@@ -207,54 +229,124 @@
 }
 
 .lux-hamburger .h-line {
-  width: 26px;
+  width: 24px;
   height: 3px;
   background-color: #0f2b46;
   border-radius: 4px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@media screen and (max-width: 992px) {
-  .lux-cta-zone { display: none; }
-  .lux-hamburger { display: flex; }
+/* ==========================================================================
+   2. Responsive Media Queries (For Navbar Only)
+   ========================================================================== */
+
+/* --- मिड-रेंज लैपटॉप और बड़ी टैबलेट स्क्रीन्स (1024px से 1200px) --- */
+@media (max-width: 1200px) {
+  .lux-nav-links { gap: 20px; }
+  .lux-nav-links a { font-size: 14px; }
+  .btn-glow-effect { padding: 10px 20px; font-size: 13px; }
+}
+
+/* --- आईपैड, टैबलेट और स्मार्टफोन्स (992px से नीचे) --- */
+@media (max-width: 992px) {
+  .lux-cta-zone { 
+    display: none; 
+  }
   
+  .lux-hamburger { 
+    display: flex; 
+    z-index: 10000;
+  }
+  
+  /* Hamburger X Animation on Click (.active क्लास के लिए) */
   .lux-hamburger.active .h-line:nth-child(1) { transform: translateY(9px) rotate(45deg); }
   .lux-hamburger.active .h-line:nth-child(2) { opacity: 0; }
   .lux-hamburger.active .h-line:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
+  /* Premium Mobile Slide Drawer Setup */
   .lux-nav-links {
-    position: absolute;
-    top: 100%; left: -110%;
-    width: 100%;
-    height: calc(100vh - 80px);
+    position: fixed;
+    top: 0; 
+    left: -100%;
+    width: 300px; /* एक बेहतरीन प्रीमियम साइड ड्रॉअर विड्थ */
+    height: 100vh;
     background-color: #ffffff;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding: 24px;
+    padding: 80px 24px 40px 24px;
     box-sizing: border-box;
-    transition: left 0.4s ease;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 5px 0 30px rgba(0,0,0,0.1);
     overflow-y: auto;
   }
 
-  .lux-nav-links.show-menu { left: 0; }
-  .lux-nav-links li { width: 100%; }
+  .lux-nav-links.show-menu { 
+    left: 0; 
+  }
+  
+  .lux-nav-links li { 
+    width: 100%; 
+  }
+  
   .lux-nav-links li a {
-    display: block; padding: 16px 12px;
+    display: block; 
+    padding: 16px 12px;
     border-bottom: 1px solid #f1f5f9;
+    color: #0f2b46;
   }
   
+  /* मोबाइल पर टेक्स्ट के नीचे की लाइन एनिमेसन बंद */
+  .lux-nav-links a::after { 
+    display: none; 
+  } 
+  
+  /* Mobile Dropdown Layout */
   .lux-dropdown-card {
-    position: relative; display: block; opacity: 1;
-    box-shadow: none; border: none; background-color: #f8fafc;
-    transform: none; left: 0; margin-top: 4px;
+    position: relative; 
+    display: block; 
+    opacity: 1;
+    box-shadow: none; 
+    border: none; 
+    background-color: #f8fafc;
+    transform: none; 
+    left: 0; 
+    margin-top: 4px;
+    padding: 6px;
+    min-width: 100%;
   }
   
-  .mobile-only-action { display: block; padding: 24px 12px; }
-  .mobile-cta-glow {
-    width: 100%; background: linear-gradient(135deg, #00b8d4 0%, #0077c2 100%);
-    color: white; border: none; padding: 14px;
-    border-radius: 12px; font-size: 16px; font-weight: 700;
+  /* Mobile Display Action Button */
+  .mobile-only-action { 
+    display: block; 
+    width: 100%; 
+    padding: 20px 12px; 
   }
+  
+  .mobile-cta-glow {
+    width: 100%;
+    background: linear-gradient(135deg, #40bca3 0%, #00b4d8 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 184, 212, 0.2);
+  }
+}
+
+/* --- छोटे मोबाइल स्क्रीन (576px से नीचे) --- */
+@media (max-width: 576px) {
+  .luxury-navbar { padding: 10px 0; }
+  .logo-main-title { font-size: 18px; }
+  .logo-icon-wrap { width: 38px; height: 38px; gap: 8px; }
+  .logo-tag { font-size: 8px; letter-spacing: 1px; }
+}
+
+/* --- अति छोटे स्मार्टफोन्स (380px से नीचे जैसे iPhone SE) --- */
+@media (max-width: 380px) {
+  .lux-nav-links { width: 100%; } /* साइड मेनू फुल विड्थ हो जायेगा */
+  
 }

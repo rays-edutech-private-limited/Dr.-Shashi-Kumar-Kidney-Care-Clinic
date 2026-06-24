@@ -109,6 +109,7 @@ const Footer = ({onBookClick}) => {
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Doctor</a></li>
               <li><a href="#services">Our Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
               <li><a href="#contact">Contact Us</a></li>
             </ul>

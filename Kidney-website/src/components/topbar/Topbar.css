@@ -1,12 +1,12 @@
 /* ==========================================================================
-   1. Base Layout & Typography (सभी स्क्रीन्स के लिए)
+   1. Base Layout & Typography (Universal & Large Screens)
    ========================================================================== */
 .premium-topbar {
   background: linear-gradient(90deg, #0f2b46 0%, #1a4d6c 100%);
   color: #e2f1f8;
   font-size: 13px;
   font-weight: 500;
-  padding: 6px 0;
+  padding: 8px 0;
   width: 100%;
   font-family: 'Plus Jakarta Sans', Arial, sans-serif;
   letter-spacing: 0.4px;
@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-/* डिब्बों के अंदर पैडिंग गड़बड़ न करे इसलिए यूनिवर्सल बॉक्स साइजिंग */
+/* यूनिवर्सल बॉक्स साइजिंग (पैडिंग फिक्स के लिए) */
 .premium-topbar *, 
 .premium-topbar *::before, 
 .premium-topbar *::after {
@@ -22,7 +22,7 @@
 }
 
 .topbar-wrapper {
-  max-width: 1280px;
+  max-width: 1440px; /* बड़े डेस्कटॉप (1440px+) के लिए परफेक्ट विड्थ */
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -40,14 +40,14 @@
 .topbar-right {
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* कोई भी एलिमेंट जबरदस्ती न सिकुड़े */
+  flex-shrink: 0; 
 }
 
 .topbar-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  white-space: nowrap; /* टेक्स्ट को जबरदस्ती नीचे की लाइन में जाने से रोकेगा */
+  white-space: nowrap; 
 }
 
 /* Phone Button Styling */
@@ -63,6 +63,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .topbar-phone:hover {
@@ -115,68 +116,86 @@
 .sm-icon-link.twitter:hover { background: #000000; border-color: #111111; }
 
 /* ==========================================================================
-   4. Fully Responsive Media Queries
+   4. Highly Responsive Media Queries (For All Devices)
    ========================================================================== */
 
-/* --- टैबलेट और छोटी लैपटॉप स्क्रीन (992px से नीचे) --- */
+/* --- 1. टैबलेट और आईपैड लैंडस्केप (992px से नीचे) --- */
 @media (max-width: 992px) {
   .topbar-wrapper {
     padding: 0 16px;
-    gap: 10px;
+    gap: 15px;
   }
 }
 
-/* --- स्मार्टफोन (768px से नीचे) --- */
+/* --- 2. आईपैड पोर्ट्रेट और छोटे टैबलेट्स (768px से नीचे) --- */
 @media (max-width: 768px) {
- 
-  
   .topbar-wrapper {
-    flex-direction: row; /* एलिमेंट्स एक के नीचे एक आ जाएंगे */
-    gap: 10px;
-    padding: 8px 16px;
+    flex-wrap: wrap; /* कंटेंट को स्क्रीन से बाहर जाने से रोकेगा */
+    justify-content: space-between;
+    padding: 10px 16px;
+    gap: 12px;
   }
 
-  /* क्लीन लुक के लिए क्रम (Order) को बदला गया है */
   .topbar-left { 
-    order: 1; /* सबसे ऊपर फोन नंबर */
+    order: 1; /* फोन बटन लेफ्ट में रहेगा */
   }
   
   .topbar-right { 
-    order: 2; /* बीच में सोशल मीडिया आइकन्स */
+    order: 2; /* सोशल मीडिया राइट में रहेगा */
   }
   
   .topbar-middle { 
-   display: none;
+    display: none;
   }
 }
 
-/* --- छोटे स्मार्टफोन (480px से नीचे जैसे iPhone SE, Android Mini) --- */
-@media (max-width: 480px) {
+/* --- 3. बड़े मोबाइल फोन्स (576px से नीचे) --- */
+@media (max-width: 576px) {
   .premium-topbar {
     font-size: 12px;
   }
   
   .topbar-wrapper {
-    gap: 8px;
+    gap: 10px;
   }
 
   .topbar-phone {
-    padding: 5px 12px;
+    padding: 5px 10px;
     font-size: 12px;
-  }
-
-  .topbar-middle {
-    font-size: 11px;
-    padding: 4px 12px;
+    gap: 6px;
   }
 
   .sm-icon-link {
-    width: 30px; 
-    height: 30px;
-    font-size: 13px;
+    width: 32px; 
+    height: 32px;
+    font-size: 14px;
   }
-  
-  .topbar-actions {
-    gap: 8px;
+}
+
+/* --- 4. छोटे स्मार्टफोन (400px से नीचे जैसे iPhone SE, Android Mini) --- */
+@media (max-width: 400px) {
+  .topbar-wrapper {
+    flex-wrap: nowrap; /* सब कुछ एक के नीचे एक सेंटर में आ जाएगा */
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .topbar-left, .topbar-middle, .topbar-right {
+    order: unset; /* डिफॉल्ट आर्डर */
+    width: auto;
+    justify-content: center;
+   
+  }
+
+.topbar-actions p{
+  display: none;
+}
+
+  .sm-icon-link {
+    width: 25px; 
+    height: 25px;
+    font-size: 13px;
   }
 }
