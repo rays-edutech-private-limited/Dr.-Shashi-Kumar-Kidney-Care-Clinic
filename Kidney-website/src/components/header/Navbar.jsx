@@ -39,7 +39,7 @@ const Navbar = ({onBookClick}) => {
           <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact Us</a></li>
           
           <li className="mobile-only-action">
-            <button className="mobile-cta-glow">Instant Appointment</button>
+            <button className="mobile-cta-glow" onClick={onBookClick}>Book Appointment</button>
           </li>
         </ul>
 

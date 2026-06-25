@@ -3,13 +3,12 @@
 
 .sk-premium-footer {
   /* Exact Deep Sea Dark Teal Radial Gradient from Image */
-  background: radial-gradient(circle at 50% 50%, #003747 0%, #002531 60%, #001720 100%);
+   background-color: #011834;
   color: #e2e8f0;
   font-family: 'Montserrat', sans-serif;
   padding: 60px 0 20px 0;
   position: relative;
   overflow: hidden;
-  border-top: 3px solid #00d2ff ; /* Royal gold border header line */
 }
 
 .sk-premium-footer * {

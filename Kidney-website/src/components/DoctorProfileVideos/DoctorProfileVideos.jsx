@@ -6,130 +6,269 @@ const DoctorCyberHub = () => {
     {
       id: "intro",
       tabTitle: "01. LEGACY",
-      title: "Medical Legacy & Philosophy",
-      subtitle: "The Vision of Dr. Shashi Kumar",
-      desc: "An overview of Dr. Shashi Kumar's clinical background, his patient-centric healthcare philosophy, and his dedication to introducing advanced clinical standards.",
+      title: "How to Protect Your Kidneys Naturally | Expert Tips",
+      subtitle: "Expert Medical Insights",
+      tagline: "Trusted by thousands",
+      desc: "Evidence-based knowledge, advanced treatments, and patient-first care.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-a-patient-in-a-clinic-41617-large.mp4",
-      youtubeUrl: "https://youtube.com/c/DrShashiKumarProfile",
-      stat: "15+ Yrs Experience"
+      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFMOQA4BcK6kVvtW7MoBvJy7ViGBJGvnEEUYr3ovR3vw&s=10",
+      stat: "25+",
+      statLabel: "Years Experience",
+      iconType: "experience",
+      duration: "8:45",
+      views: "3.2K views",
+      timeAgo: "3 days ago"
     },
     {
       id: "kidney",
       tabTitle: "02. NEPHROLOGY",
-      title: "Advanced Kidney & Dialysis Care",
-      subtitle: "Critical Care Specialization",
-      desc: "Deep-dive into advanced therapies for chronic kidney diseases (CKD), modern automated dialysis setups, and personalized treatment frameworks.",
+      title: "Dialysis Explained Step by Step | Patient Guide",
+      subtitle: "Advanced Treatment",
+      tagline: "Latest & safest care",
+      desc: "Deep-dive into advanced therapies for chronic kidney diseases (CKD).",
       url: "https://assets.mixkit.co/videos/preview/mixkit-medical-equipment-in-a-surgical-room-40544-large.mp4",
-      youtubeUrl: "https://youtube.com/c/DrShashiKumarKidneyCare",
-      stat: "10k+ Happy Patients"
+      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdjVr2V6frloB97B49uDzOD8VFeOcE-wcFhMa5XE4H4g&s=10",
+      stat: "10K+",
+      statLabel: "Patients Treated",
+      iconType: "patients",
+      duration: "10:12",
+      views: "5.6K views",
+      timeAgo: "1 week ago"
     },
     {
       id: "lab",
       tabTitle: "03. DIAGNOSTICS",
-      title: "Precision Diagnostic Labs",
-      subtitle: "High-Tech Diagnostics",
-      desc: "Exploring our fully automated testing systems that ensure zero manual errors, super-fast turn-around time, and accurate healthcare reporting.",
+      title: "Inside Our Advanced ICU Infrastructure",
+      subtitle: "Patient Education",
+      tagline: "Empowering better health",
+      desc: "Exploring our fully automated testing systems.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-scientist-working-with-a-microscope-in-a-laboratory-40552-large.mp4",
-      youtubeUrl: "https://youtube.com/c/DrShashiKumarLabTour",
-      stat: "99.9% Lab Accuracy"
+      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQluZB_x1DzYAAD-uzoU3KRGcOt6FXDvp5Tt6E88YxXzw&s=10",
+      stat: "1M+",
+      statLabel: "YouTube Views",
+      iconType: "views",
+      duration: "9:18",
+      views: "4.7K views",
+      timeAgo: "2 weeks ago"
     },
     {
       id: "facility",
       tabTitle: "04. INFRASTRUCTURE",
-      title: "Premium Patient & Recovery Wards",
-      subtitle: "World Class Architecture",
-      desc: "A presentation of our high-hygiene recovery beds, centralized oxygen supply systems, and fully responsive nursing units optimized for rapid recovery.",
+      title: "Best Diet for Kidney Patients | Dr. Shashi Kumar",
+      subtitle: "Compassionate Care",
+      tagline: "Patients come first",
+      desc: "A presentation of our high-hygiene recovery beds.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-hospital-ward-with-empty-beds-and-medical-equipment-40548-large.mp4",
-      youtubeUrl: "https://youtube.com/c/DrShashiKumarClinicTour",
-      stat: "24/7 ICU Support"
+      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVdf5PXy2gargIR4HPrx63eE0ZfKsvvSJk00yr970q4A&s=10",
+      stat: "15+",
+      statLabel: "Awards & Honors",
+      iconType: "awards",
+      duration: "7:36",
+      views: "6.1K views",
+      timeAgo: "3 weeks ago"
     }
   ];
 
   const [activeSegment, setActiveSegment] = useState(profileSegments[0]);
+  const [isPlaying, setIsPlaying] = useState(false); // Bada video play ho raha hai ya nahi
+
+  // Icons Helper function
+  const renderIcon = (type) => {
+    switch (type) {
+      case 'experience':
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        );
+      case 'patients':
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        );
+      case 'views':
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
+          </svg>
+        );
+      case 'awards':
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="8" r="7" />
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+          </svg>
+        );
+      default: return null;
+    }
+  };
 
   return (
-    <div className="kiosk-layout-container">
-      {/* Background Soft Gradients */}
-      <div className="kiosk-blur-bg-emerald"></div>
-      <div className="kiosk-blur-bg-cyan"></div>
+    <div className="dark-kiosk-wrapper">
+      {/* Top Split Hero Section */}
+      <div className="dark-kiosk-hero">
+        
+        {/* Left Side Info Panel */}
+        <div className="dark-kiosk-hero-left">
+          <h1 className="dark-kiosk-headline">
+            EXPERT INSIGHTS.<br />
+            BETTER KIDNEY CARE.<br />
+            <span className="accent-teal">HEALTHIER LIVES.</span>
+          </h1>
+          <div className="accent-bar-teal"></div>
+          
+          <p className="dark-kiosk-description">
+            Evidence-based knowledge, advanced treatments, and patient-first care.<br />
+            Watch, Learn & Stay Healthy.
+          </p>
 
-      <header className="kiosk-header-section">
-        <div className="kiosk-badge">
-          <span className="badge-pulse"></span>
-          <span>EXCELLENCE CENTRE PRESENTATION</span>
-        </div>
-        <h1 className="kiosk-title">DR. SHASHI KUMAR</h1>
-        <p className="kiosk-subtitle">Interactive clinical showcase of premium hospital infrastructure, data benchmarks, and core specialties.</p>
-      </header>
-
-      <main className="kiosk-workspace-grid">
-        {/* Left Side: Large Immersive Cinema Viewport & Data Deck */}
-        <div className="kiosk-left-panel">
-          <div className="kiosk-cinema-viewport">
-            <video
-              key={activeSegment.id}
-              src={activeSegment.url}
-              className="kiosk-video-element"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-            />
-            <div className="kiosk-floating-stat-card">
-              <span className="stat-subtext">Verified Benchmark</span>
-              <span className="stat-main-text">{activeSegment.stat}</span>
-            </div>
-            <div className="kiosk-hd-indicator">LIVE HD BROADCAST</div>
+          <div className="dark-kiosk-cta-row">
+            <button onClick={() => setIsPlaying(true)} className="btn-solid-teal" style={{ border: 'none', cursor: 'pointer' }}>
+              <svg className="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Watch Latest Video
+            </button>
+            <button className="btn-outline-dark">Subscribe</button>
           </div>
 
-          <div className="kiosk-info-details">
-            <div className="kiosk-meta-row">
-              <span className="kiosk-meta-tag">{activeSegment.subtitle}</span>
-              <span className="kiosk-official-seal">✓ OFFICIAL RECORDS</span>
-            </div>
-            <h2 className="kiosk-info-title">{activeSegment.title}</h2>
-            <p className="kiosk-info-desc">{activeSegment.desc}</p>
-
-            <div className="kiosk-footer-strip">
-              <div className="kiosk-notice-block">
-                <strong>Patient Information:</strong> You can play full visual walk-throughs or choose chapters instantly from the menu.
+          {/* Quick Stats Grid Row */}
+          <div className="dark-kiosk-stats-row">
+            {profileSegments.map((seg) => (
+              <div key={seg.id} className="stat-item-box">
+                <div className="stat-icon-wrapper">
+                  {renderIcon(seg.iconType)}
+                </div>
+                <div className="stat-text-group">
+                  <span className="stat-number-text">{seg.stat}</span>
+                  <span className="stat-label-text">{seg.statLabel}</span>
+                </div>
               </div>
-              <a href={activeSegment.youtubeUrl} target="_blank" rel="noopener noreferrer" className="kiosk-action-btn">
-                <svg className="kiosk-yt-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span>Watch Full Video</span>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Right Side: Interactive Structural Segment Menu */}
-        <div className="kiosk-right-menu">
-          <div className="menu-header-hint">SELECT DEPT. CHANNELS</div>
-          {profileSegments.map((segment) => {
-            const isActive = activeSegment.id === segment.id;
-            return (
-              <div
-                key={segment.id}
-                className={`kiosk-menu-item ${isActive ? 'kiosk-menu-item-active' : ''}`}
-                onMouseEnter={() => setActiveSegment(segment)}
-                onClick={() => setActiveSegment(segment)}
+        {/* Right Side Immersive Video Player Window (MAIN PLAYER) */}
+        <div className="dark-kiosk-hero-right">
+          <div className="cinema-viewport-card" style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+            
+            {isPlaying ? (
+              /* Play karne par asli video load hogi bina muted tag ke (Full Audio) */
+              <video
+                key={activeSegment.id}
+                src={activeSegment.url}
+                className="viewport-video-element"
+                autoPlay
+                controls
+                playsInline
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            ) : (
+              /* Default State: Pehle Thumbnail image aur play button dikhega */
+              <div 
+                className="video-thumbnail-placeholder" 
+                onClick={() => setIsPlaying(true)} 
+                style={{ width: '100%', height: '100%', cursor: 'pointer', position: 'relative' }}
               >
-                <div className="kiosk-indicator-dot"></div>
-                <div className="kiosk-menu-body">
-                  <div className="kiosk-menu-top-meta">
-                    <span className="kiosk-menu-index">{segment.tabTitle}</span>
-                    <span className="kiosk-menu-inline-stat">{segment.stat.split(' ')[0]}</span>
+                <img 
+                  src={activeSegment.youtubeUrl} 
+                  alt={activeSegment.title} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+                
+                {/* Custom Circular Play Button Overlay */}
+                <div className="video-play-overlay" style={{
+                  position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: 'rgba(0, 0, 0, 0.4)'
+                }}>
+                  <div className="play-circle" style={{
+                    width: '70px', height: '70px', backgroundColor: '#008080',
+                    borderRadius: '50%', display: 'flex', alignItems: 'center', 
+                    justifyContent: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.5)'
+                  }}>
+                    <svg viewBox="0 0 24 24" fill="white" width="40" height="40">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
                   </div>
-                  <h3 className="kiosk-menu-title">{segment.title}</h3>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </div>
+      </div>
+
+      {/* Middle Core Features Horizontal Ribbon Bar */}
+      <div className="dark-kiosk-features-ribbon">
+        {profileSegments.map((seg) => (
+          <div key={seg.id} className="ribbon-feature-card">
+            <div className="feature-icon-wrapper">
+              {renderIcon(seg.iconType)}
+            </div>
+            <div className="feature-card-text">
+              <h4 className="feature-main-title">{seg.subtitle}</h4>
+              <p className="feature-sub-tagline">{seg.tagline}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom Layout Gallery View Grid */}
+      <div className="dark-kiosk-gallery-section">
+        <div className="gallery-header-row">
+          <h2 className="gallery-section-title">LATEST VIDEOS</h2>
+          <span className="gallery-view-all-link">
+            View all videos 
+            <svg className="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </div>
+
+        <div className="gallery-thumbnails-grid">
+          {profileSegments.map((seg) => {
+            const isCardActive = activeSegment.id === seg.id;
+            return (
+              <div 
+                key={seg.id} 
+                className={`thumbnail-video-card ${isCardActive ? 'thumbnail-card-active' : ''}`}
+                onClick={() => {
+                  setActiveSegment(seg);
+                  setIsPlaying(false); // Naya video select hote hi use pehle thumbnail state me lao
+                }}
+              >
+                <div className="thumbnail-preview-frame" style={{ position: 'relative', overflow: 'hidden', height: '180px' }}>
+                  {/* Niche sirf static thumbnails photo dikhenge */}
+                  <img 
+                    src={seg.youtubeUrl} 
+                    alt={seg.title} 
+                    className="thumbnail-bg-video" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                  <div className="thumbnail-duration-badge">{seg.duration}</div>
+                </div>
+                <div className="thumbnail-card-body">
+                  <h3 className="thumbnail-video-title">{seg.title}</h3>
+                  <div className="thumbnail-meta-row">
+                    <span>{seg.views}</span>
+                    <span className="meta-separator">•</span>
+                    <span>{seg.timeAgo}</span>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
-      </main>
+      </div>
+
     </div>
   );
 };

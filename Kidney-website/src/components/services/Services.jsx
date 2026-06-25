@@ -1,138 +1,182 @@
 import React from 'react';
 import './Services.css';
 
-const Services = ({ onBookClick }) => {
+const Services = () => {
   const serviceCards = [
-    { 
-      title: "Chronic Kidney Disease (CKD)", 
-      icon: "🩺", 
-      badge: "MANAGEMENT", 
-      borderColor: "#0284c7",
-      desc: "Long-term tracking, slowing disease progression, and therapeutic mapping." 
-    },
-    { 
-      title: "Kidney Failure Treatment", 
-      icon: "⚡", 
-      badge: "CRITICAL CARE", 
-      borderColor: "#dc2626",
-      desc: "Immediate protocol management and full evaluation for advanced uremia." 
-    },
-    { 
-      title: "Hemodialysis", 
-      icon: "💧", 
-      badge: "24/7 LIVE SUPPORT", 
-      borderColor: "#0d9488",
-      desc: "Ultra-pure state-of-the-art blood filtration setup with infection control." 
-    },
-    { 
-      title: "Peritoneal Dialysis (CAPD)", 
-      icon: "🏠", 
-      badge: "HOME THERAPY", 
-      borderColor: "#7c3aed",
-      desc: "Continuous Ambulatory training and expert surgical line placement." 
-    },
-    { 
-      title: "Kidney Transplant Consultation", 
-      icon: "👥", 
-      badge: "ADVANCED PROGRAM", 
-      borderColor: "#d97706",
-      desc: "Pre-transplant cross-matching evaluation and post-operative follow-up." 
-    },
-    { 
-      title: "Acute Kidney Injury Treatment", 
-      icon: "⚠️", 
-      badge: "EMERGENCY INDEX", 
-      borderColor: "#ea580c",
-      desc: "Rapid reversal therapies for sudden renal shutdown in ICU environments." 
-    },
-    { 
-      title: "Diabetic Kidney Disease", 
-      icon: "📈", 
-      badge: "METABOLIC FOCUS", 
-      borderColor: "#16a34a",
-      desc: "Monitoring of microalbuminuria and intensive nephropathy shield." 
-    },
-    { 
-      title: "Hypertension Kidney Disorders", 
-      icon: "❤️", 
-      badge: "HYPERTENSION HUB", 
-      borderColor: "#db2777",
-      desc: "Managing secondary hypertension related to narrowing of renovascular channels." 
-    },
-    { 
-      title: "Interventional Nephrology", 
-      icon: "💉", 
-      badge: "VASCULAR ACCESS", 
-      borderColor: "#0891b2",
-      desc: "Expert creation, salvage, and management of AV fistulas and catheters." 
-    },
-    { 
-      title: "Renal Biopsy & Advanced Access", 
-      icon: "🔬", 
-      badge: "DIAGNOSTIC MATRIX", 
-      borderColor: "#4f46e5",
-      desc: "Ultrasound-guided precision tissue sampling to evaluate glomerular diseases." 
-    }
-  ];
+  { 
+    title: "Chronic Kidney Disease (CKD)", 
+    icon: "fas fa-stethoscope", 
+    badge: "MANAGEMENT", 
+    themeColor: "#6d28d9",
+    bgColor: "#f3e8ff",
+    desc: "Long-term care & management to protect kidney function and improve quality of life." 
+  },
+  { 
+    title: "Kidney Failure Treatment", 
+    icon: "fa-solid fa-bolt", 
+    badge: "CARE & TREATMENT", 
+    themeColor: "#ea580c",
+    bgColor: "#ffedd5",
+    desc: "Personalized treatment plans for kidney failure with advanced medical support." 
+  },
+  { 
+    title: "Hemodialysis", 
+    icon: "fa-solid fa-droplet", 
+    badge: "DIALYSIS SUPPORT", 
+    themeColor: "#0284c7",
+    bgColor: "#e0f2fe",
+    desc: "State-of-the-art dialysis facilities ensuring safety, comfort, and better outcomes." 
+  },
+  { 
+    title: "Peritoneal Dialysis (CAPD)", 
+    icon: "fa-solid fa-house", 
+    badge: "HOME THERAPY", 
+    themeColor: "#16a34a",
+    bgColor: "#dcfce7",
+    desc: "Gentle, effective dialysis you can do at home for a more flexible life." 
+  },
+  { 
+    title: "Kidney Transplant Consultation", 
+    icon: "fa-solid fa-user-doctor", 
+    badge: "ADVANCED CARE", 
+    themeColor: "#d97706",
+    bgColor: "#fef3c7",
+    desc: "Expert guidance for kidney transplant evaluation, preparation, and post-transplant care." 
+  },
+  { 
+    title: "Acute Kidney Injury Treatment", 
+    icon: "fa-solid fa-triangle-exclamation", 
+    badge: "EMERGENCY CARE", 
+    themeColor: "#dc2626",
+    bgColor: "#fee2e2",
+    desc: "Rapid diagnosis and treatment for sudden loss of kidney function." 
+  },
+  { 
+    title: "Diabetic Kidney Disease", 
+    icon: "fa-solid fa-chart-line", 
+    badge: "DIABETIC CARE", 
+    themeColor: "#0891b2",
+    bgColor: "#cffafe",
+    desc: "Specialized monitoring and treatment to prevent diabetes-related kidney damage." 
+  },
+  { 
+    title: "Hypertension Kidney Disorders", 
+    icon: "fa-solid fa-heart-pulse", 
+    badge: "BLOOD PRESSURE CARE", 
+    themeColor: "#db2777",
+    bgColor: "#fce7f3",
+    desc: "Managing kidney complications caused by high blood pressure and vascular disorders." 
+  },
+  { 
+    title: "Interventional Nephrology", 
+    icon: "fa-solid fa-syringe", 
+    badge: "SPECIALIZED PROCEDURES", 
+    themeColor: "#0d9488",
+    bgColor: "#ccfbf1",
+    desc: "Advanced procedures including dialysis access creation and catheter management." 
+  },
+  { 
+    title: "Renal Biopsy & Diagnostics", 
+    icon: "fa-solid fa-microscope", 
+    badge: "ADVANCED DIAGNOSTICS", 
+    themeColor: "#4f46e5",
+    bgColor: "#e0e7ff",
+    desc: "Precision diagnostic testing and renal biopsy for accurate kidney disease evaluation." 
+  }
+];
+
+  const features = [
+  {
+    title: "Expert Nephrologists",
+    desc: "Highly experienced care team",
+    icon: "fa-solid fa-user-doctor",
+    bgColor: "#eff6ff",
+    textColor: "#2563eb"
+  },
+  {
+    title: "Patient First Approach",
+    desc: "Compassionate & personalized care",
+    icon: "fa-solid fa-heart-pulse",
+    bgColor: "#fdf2f8",
+    textColor: "#db2777"
+  },
+  {
+    title: "Advanced Technology",
+    desc: "Modern equipment & facilities",
+    icon: "fa-solid fa-microscope",
+    bgColor: "#ecfeff",
+    textColor: "#0891b2"
+  },
+  {
+    title: "Complete Kidney Care",
+    desc: "From prevention to recovery",
+    icon: "fas fa-stethoscope",
+    bgColor: "#f0fdf4",
+    textColor: "#16a34a"
+  }
+];
 
   return (
     <section className="services-hybrid-section">
       <div className="hybrid-container">
         
-      {/* Symmetric Centered Header Block */}
-<div className="hybrid-header-block central-mode">
-  <span className="hybrid-tag">DEPARTMENT OF NEPHROLOGY</span>
-  <h2 className="hybrid-title">Renal Specialities, <span>Redefined.</span></h2>
-  <div className="title-divider-line"></div>
-  <p className="hybrid-subtitle">
-    Dr. Shashi Kumar's elite clinical architecture framework optimized for total kidney rejuvenation.
-  </p>
-</div>
+        {/* Header Block */}
+        <div className="hybrid-header-block central-mode">
+          <span className="hybrid-tag">
+            <span className="tag-icon"><i className='fas fa-stethoscope'></i></span> DEPARTMENT OF NEPHROLOGY
+          </span>
+          <h2 className="hybrid-title">Renal Specialities, <span>Redefined.</span></h2>
+          <p className="hybrid-subtitle">
+            Advanced care. Expert nephrologists. Better outcomes.<br/>
+            Compassionate kidney care for a healthier tomorrow.
+          </p>
+        </div>
 
-        {/* 4-Column Original Grid Structure */}
+        {/* 4-Column Cards Grid */}
         <div className="hybrid-services-grid">
           {serviceCards.map((service, index) => (
             <div 
               key={index} 
               className="hybrid-pro-card"
-              style={{ '--accent-glow-line': service.borderColor }}
+              style={{ '--theme-color': service.themeColor, '--bg-color': service.bgColor }}
             >
-              {/* ORIGINAL DESIGN TOP BAR: Left Icon & Right Badge */}
+              {/* Card Top: Icon & Badge */}
               <div className="card-top-flex-row">
-                <div className="hybrid-icon-box">
-                  <span className="card-icon-render">{service.icon}</span>
+                <div className="hybrid-icon-box" style={{ backgroundColor: service.bgColor, color: service.themeColor }}>
+                  <span className="card-icon-render"><i className={service.icon}></i></span>
                 </div>
-                <span className="card-hybrid-badge">{service.badge}</span>
+                <span className="card-hybrid-badge" style={{ backgroundColor: service.bgColor, color: service.themeColor }}>
+                  {service.badge}
+                </span>
               </div>
               
-              {/* CORE CONTENT: Clean Structured Typography */}
+              {/* Card Content */}
               <div className="card-body-flex-row">
-                <h3 className="card-heading-title">{service.title}</h3>
+                <h3 className="card-heading-title" >{service.title}</h3>
                 <p className="card-heading-desc">{service.desc}</p>
               </div>
 
-              {/* CARD FOOTER */}
+              {/* Card Footer Link */}
               <div className="card-footer-flex-row">
-                <span className="explore-action-txt">
-                  Explore Details <i className="fa-solid fa-arrow-right-long transition-arrow"></i>
+                <span className="explore-action-txt" style={{ color: service.themeColor }}>
+                  Explore Details <span className="transition-arrow">→</span>
                 </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Crisp White Theme CTA Ribbon */}
-        <div className="hybrid-cta-ribbon">
-          <div className="cta-left-stack">
-            <div className="live-status">
-              <span className="pulse-circle"></span>
-              <span>24/7 Immediate Emergency Support Active</span>
+        {/* Bottom Feature Ribbon */}
+        <div className="hybrid-feature-ribbon">
+          {features.map((feature, index) => (
+            <div className="feature-item" key={index}>
+              <div className="feature-icon " style={{ backgroundColor: feature.bgColor, color: feature.textColor }}><i className={feature.icon}></i></div>
+              <div className="feature-text">
+                <h4>{feature.title}</h4>
+                <p>{feature.desc}</p>
+              </div>
             </div>
-            <h4>Need Executive Medical Guidance for Kidney Care?</h4>
-          </div>
-          <button className="cta-primary-btn" onClick={onBookClick}>
-            Book Appointment <i className="fa-solid fa-arrow-right-long"></i>
-          </button>
+          ))}
         </div>
 
       </div>

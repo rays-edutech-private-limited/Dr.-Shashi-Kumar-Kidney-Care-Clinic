@@ -1,5 +1,5 @@
 .vt-prime-container {
-    background: radial-gradient(circle at 50% 35%, #052627 0%, #021113 55%, #000607 100%);
+    background-color: #011834;
     color: #ffffff;
     min-height: 100vh;
     width: 100%;
@@ -33,7 +33,7 @@
     z-index: 1;
 }
 .vt-plasma-orb-1 { width: 500px; height: 500px; background: #00f2fe; top: 10%; left: -10%; }
-.vt-plasma-orb-2 { width: 400px; height: 400px; background: #ebd09c; bottom: 5%; right: -5%; }
+.vt-plasma-orb-2 { width: 400px; height: 400px; background: #00f2fe; bottom: 5%; right: -5%; }
 
 /* Header - Made elegant and clean */
 .vt-cinematic-header {
@@ -43,7 +43,7 @@
 }
 .vt-glowing-title {
     font-size: 2.2rem;
-    color: #ebd09c;
+    color: #00f2fe;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: none;
@@ -59,9 +59,9 @@
     letter-spacing: 2px;
     font-weight: 500;
 }
-.vt-text-cyan { color: #ebd09c; opacity: 0.8; }
-.vt-text-gold { color: #ebd09c; }
-.vt-gold-dot { color: #ebd09c; }
+.vt-text-cyan { color: #00f2fe; opacity: 0.8; }
+.vt-text-gold { color: #00f2fe; }
+.vt-gold-dot { color: #00f2fe; }
 
 /* 5-Card Slider Engine Viewport */
 .vt-slider-viewport {
@@ -112,7 +112,7 @@
 }
 .vt-badge-pill {
     font-size: 0.7rem;
-    color: #765e31;
+    color: #00f2fe;
     background: rgba(235, 208, 156, 0.15);
     border: 1px solid rgba(235, 208, 156, 0.4);
     padding: 4px 12px;
@@ -121,8 +121,8 @@
     font-weight: 600;
 }
 .vt-live-pulse { position: relative; width: 8px; height: 8px; display: flex; align-items: center; justify-content: center; }
-.vt-pulse-core { width: 6px; height: 6px; background: #ebd09c; border-radius: 50%; z-index: 2; }
-.vt-pulse-wave { position: absolute; width: 100%; height: 100%; background: #ebd09c; border-radius: 50%; animation: vtPulseAnim 2s infinite ease-in-out; }
+.vt-pulse-core { width: 6px; height: 6px; background: #00f2fe; border-radius: 50%; z-index: 2; }
+.vt-pulse-wave { position: absolute; width: 100%; height: 100%; background: #00f2fe; border-radius: 50%; animation: vtPulseAnim 2s infinite ease-in-out; }
 
 @keyframes vtPulseAnim { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(3.5); opacity: 0; } }
 
@@ -179,7 +179,7 @@
 .vt-play-icon {
     width: 0; height: 0;
     border-top: 8px solid transparent;
-    border-left: 14px solid #765e31;
+    border-left: 14px solid #00f2fe;
     border-bottom: 8px solid transparent;
     margin-left: 4px;
 }
@@ -195,12 +195,12 @@
     pointer-events: auto;
     transform: translateX(0) scale(1.12) translateZ(150px);
     z-index: 10;
-    border: 2px solid #ebd09c;
+    border: 2px solid #00f2fe;
     box-shadow: 0 20px 50px rgba(235, 208, 156, 0.25);
 }
 .vt-slot-active .vt-play-overlay { opacity: 1; } 
-.vt-slot-active .vt-badge-pill { color: #ffffff; background: #765e31; border-color: #765e31; }
-.vt-slot-active .vt-pulse-core, .vt-slot-active .vt-pulse-wave { background: #765e31; }
+.vt-slot-active .vt-badge-pill { color: #000; font-weight: 700; background: #00f2fe; border-color: #00f2fe; }
+.vt-slot-active .vt-pulse-core, .vt-slot-active .vt-pulse-wave { background: #00f2fe; }
 
 .vt-slot-active:hover .vt-play-sphere { transform: scale(1.1); background: #fdfcf9; }
 .vt-slot-active:hover .vt-thumbnail-img { transform: scale(1.03); }
@@ -264,7 +264,7 @@
 }
 .vt-dots-row { display: flex; gap: 10px; margin: 0 auto; transform: translateX(50%); }
 .vt-dot-node { width: 10px; height: 10px; border-radius: 50%; background: rgba(235, 208, 156, 0.2); cursor: pointer; transition: all 0.4s ease; }
-.vt-dot-active { background: #ebd09c; box-shadow: 0 0 12px #ebd09c; transform: scale(1.25); }
+.vt-dot-active { background: #00f2fe; box-shadow: 0 0 12px #00f2fe; transform: scale(1.25); }
 
 .vt-orb-group { display: flex; align-items: center; gap: 14px; }
 .vt-orb-label { font-size: 0.75rem; letter-spacing: 1px; color: #799597; font-weight: 600; }
@@ -306,15 +306,15 @@
 }
 .vt-footer-badge-item { display: flex; align-items: center; gap: 12px; }
 .vt-f-icon {
-    font-size: 1.5rem; color: #ebd09c; background: rgba(255, 255, 255, 0.05); width: 45px; height: 45px;
+    font-size: 1.5rem; color: #00f2fe; background: rgba(255, 255, 255, 0.05); width: 45px; height: 45px;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     border: 1px solid rgba(235, 208, 156, 0.2);
 }
-.vt-f-labels h4 { margin: 0; font-size: 0.9rem; color: #ffffff; font-weight: 600; }
+.vt-f-labels h4 { margin: 0; font-size: 0.9rem; color: #00f2fe; font-weight: 600; }
 .vt-f-labels p { margin: 2px 0 0 0; font-size: 0.78rem; color: #a0aec0; }
 
 .vt-main-cta-glow-pill {
-    background: linear-gradient(135deg, #ebd09c 0%, #765e31 100%);
+    background: linear-gradient(135deg, #00f2fe 0%, #00f2fe 100%);
     border: none; padding: 12px 32px; border-radius: 50px; cursor: pointer;
     display: flex; align-items: center; gap: 16px; box-shadow: 0 8px 25px rgba(235, 208, 156, 0.25);
     transition: all 0.3s ease;
@@ -337,7 +337,7 @@
 }
 .vt-popup-close {
     position: absolute; top: 12px; right: 20px; background: none; border: none;
-    color: #ebd09c; font-size: 2.2rem; cursor: pointer; z-index: 100; line-height: 1;
+    color: #00f2fe; font-size: 2.2rem; cursor: pointer; z-index: 100; line-height: 1;
 }
 .vt-popup-close:hover { color: #00f2fe; }
 .vt-video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
