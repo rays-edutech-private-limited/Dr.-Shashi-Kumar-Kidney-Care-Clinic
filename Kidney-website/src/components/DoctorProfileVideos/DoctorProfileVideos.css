@@ -440,6 +440,11 @@
     font-size: 26px;
   }
 
+  .dark-kiosk-stats-row {
+    gap: 10px;
+  }
+
+ 
   .dark-kiosk-cta-row {
     flex-direction: column; /* Buttons stack up beautifully on small touchscreens */
     gap: 10px;
@@ -464,7 +469,5 @@
     border-radius: 10px;
   }
 
-  .stat-item-box {
-    min-width: 100%; /* Individual stats stacked cleanly */
-  }
+  
 }
