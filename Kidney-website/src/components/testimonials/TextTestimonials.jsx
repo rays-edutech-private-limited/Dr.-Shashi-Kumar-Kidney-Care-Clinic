@@ -130,6 +130,36 @@ function TextTestimonials() {
           </div>
         ))}
       </div>
+       <div className="tt-trust-footer-bar">
+        <div className="tt-trust-item">
+          <div className="tt-trust-icon-box blue-bg">🏅</div>
+          <div>
+            <h4>Verified Patients</h4>
+            <p>Real & Authentic Reviews</p>
+          </div>
+        </div>
+        <div className="tt-trust-item">
+          <div className="tt-trust-icon-box light-blue-bg">💙</div>
+          <div>
+            <h4>Compassionate Care</h4>
+            <p>You're in Safe Hands</p>
+          </div>
+        </div>
+        <div className="tt-trust-item">
+          <div className="tt-trust-icon-box navy-bg">🛡️</div>
+          <div>
+            <h4>Clinical Excellence</h4>
+            <p>International Standards</p>
+          </div>
+        </div>
+        <div className="tt-trust-item">
+          <div className="tt-trust-icon-box lock-bg">🔒</div>
+          <div>
+            <h4>Privacy First</h4>
+            <p>Your Health, Our Priority</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
