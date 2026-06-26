@@ -65,7 +65,7 @@
 
 .logo-main-title {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
   color: #0f2b46;
   letter-spacing: 0.5px;
   line-height: 1;
@@ -74,7 +74,6 @@
 
 .logo-main-title .thin {
   color: #00b8d4;
-  font-weight: 400;
 }
 
 .logo-tag {
