@@ -2,7 +2,7 @@
 .contact-page-wrapper {
     background: linear-gradient(180deg, #edf5ff 100%, #ffffff 12%, #ffffff 88%, #edf5ff 100%);
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 60px 20px; 
     display: flex;
     flex-direction: column;
@@ -306,7 +306,7 @@
    ========================================================================== */
 
 /* Tablet & Smaller Laptops */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
     .contact-grid-layout {
         grid-template-columns: 1fr; 
         gap: 35px;
@@ -340,7 +340,7 @@
 /* Extra Small Devices (Tiny/Older Phones) */
 @media (max-width: 480px) {
     .contact-page-wrapper {
-        padding: 40px 12px;
+        padding: 40px 20px;
     }
 
     .main-heading {

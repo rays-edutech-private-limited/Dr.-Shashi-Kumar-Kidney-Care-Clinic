@@ -173,6 +173,7 @@
 .sk-menu-list li {
   position: relative;
   padding-left: 15px;
+  
 }
 
 .sk-menu-list li::before {
@@ -188,13 +189,7 @@
 .sk-menu-list li.active-tick {
   padding-left: 20px;
 }
-.sk-menu-list li.active-tick::before {
-  content: '✓';
-  color: #00d2ff ;
-  font-weight: bold;
-  font-size: 13px;
-  left: 0;
-}
+
 
 .sk-menu-list li a {
   color: #cbd5e1;
@@ -287,4 +282,14 @@
     flex-direction: column;
     text-align: center;
   }
+  .sk-menu-heading{
+    text-align: center;
+  }
+  .sk-premium-footer *{
+    text-align: center;
+  }
+  .sk-menu-list li::before {
+  content: '';
+
+}
 }

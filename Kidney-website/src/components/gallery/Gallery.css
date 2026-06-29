@@ -1,7 +1,7 @@
 /* Base Page Container Styling - Premium Clean White Theme */
 .pinterest-gallery-wrapper {
   background: #fff; /* Ultra-clean, modern light gray background */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 60px 24px;
   color: #1e293b; /* Dark slate text for better readability */
   font-family: 'Segoe UI', Roboto, sans-serif;
@@ -283,9 +283,18 @@
 @media (max-width: 768px) {
   .pinterest-grid { column-count: 2; }
   .doctor-main-title { font-size: 30px; }
+
+
 }
 
 @media (max-width: 480px) {
-  .pinterest-grid { column-count: 1; }
+  .media-tag {
+  font-size: 10px;
+}
+
+.media-title {
+
+  font-size: 12px;
+}
   .popup-details-footer { flex-direction: column; align-items: flex-start; }
 }

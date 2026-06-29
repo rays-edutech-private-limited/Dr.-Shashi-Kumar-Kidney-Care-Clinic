@@ -20,7 +20,6 @@ const DoctorModal = ({ isOpen, toggleModal }) => {
 
     const whatsappNumber = "917368059080"; 
 
-   
     const message = `*New Appointment Request*%0A%0A` +
                     `*Name:* ${formData.name}%0A` +
                     `*Phone:* ${formData.phone}%0A` +
@@ -38,9 +37,9 @@ const DoctorModal = ({ isOpen, toggleModal }) => {
         <div className="modal-header">
           <div>
             <span className="badge">Specialist Care</span>
-            <h2>Kidney Care Consultation </h2>
+            <h2>Kidney Care Consultation</h2>
           </div>
-          <button className="close-btn" onClick={toggleModal}>&times;</button>
+          <button className="close-btn" onClick={toggleModal} aria-label="Close modal">&times;</button>
         </div>
 
         <form onSubmit={handleSubmit} className="modal-form">
@@ -70,7 +69,7 @@ const DoctorModal = ({ isOpen, toggleModal }) => {
             />
           </div>
 
-          {/* 3. Preferred Date (New) */}
+          {/* 3. Preferred Date */}
           <div className="form-group">
             <label>Preferred Date</label>
             <input 
@@ -82,7 +81,7 @@ const DoctorModal = ({ isOpen, toggleModal }) => {
             />
           </div>
 
-          {/* 4. Problem Description (New) */}
+          {/* 4. Problem Description */}
           <div className="form-group">
             <label>Describe the Problem / Symptoms</label>
             <textarea 

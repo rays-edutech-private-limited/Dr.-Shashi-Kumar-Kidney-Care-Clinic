@@ -40,6 +40,10 @@ function VideosTestimonials({onBookClick}) {
   const [activeVideo, setActiveVideo] = useState(null); 
   const autoPlayRef = useRef(null);
 
+  // Drag and Swipe Refs
+  const dragStartX = useRef(0);
+  const isDragging = useRef(false);
+
   const startAutoPlay = () => {
     stopAutoPlay();
     if (isPaused || activeVideo) return; 
@@ -80,6 +84,30 @@ function VideosTestimonials({onBookClick}) {
     setActiveVideo(null);
   };
 
+  // Drag / Swipe Handlers
+  const handleDragStart = (clientX) => {
+    dragStartX.current = clientX;
+    isDragging.current = true;
+  };
+
+  const handleDragMove = (clientX) => {
+    if (!isDragging.current) return;
+    const diff = clientX - dragStartX.current;
+
+    // 50px ड्रैग करने पर स्लाइड चेंज होगी
+    if (diff > 50) {
+      prevSlide();
+      isDragging.current = false; // बार-बार ट्रिगर होने से रोकने के लिए
+    } else if (diff < -50) {
+      nextSlide();
+      isDragging.current = false;
+    }
+  };
+
+  const handleDragEnd = () => {
+    isDragging.current = false;
+  };
+
   const getPositionClass = (index) => {
     const total = testimonialsData.length;
     
@@ -96,7 +124,6 @@ function VideosTestimonials({onBookClick}) {
 
   return (
     <div className="vt-prime-container">
-      {/* Background patterns simplified for clean medical feel */}
       <div className="vt-grid-overlay"></div>
       <div className="vt-plasma-orb-1"></div>
 
@@ -109,7 +136,17 @@ function VideosTestimonials({onBookClick}) {
         </div>
       </div>
 
-      <div className="vt-slider-viewport">
+      {/* Drag & Touch events added here */}
+      <div 
+        className="vt-slider-viewport"
+        onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
+        onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
+        onTouchEnd={handleDragEnd}
+        onMouseDown={(e) => handleDragStart(e.clientX)}
+        onMouseMove={(e) => handleDragMove(e.clientX)}
+        onMouseUp={handleDragEnd}
+        onMouseLeave={() => { handleDragEnd(); setIsPaused(false); }}
+      >
         <div className="vt-cards-wrapper">
           {testimonialsData.map((item, index) => {
             const positionClass = getPositionClass(index);
@@ -121,7 +158,6 @@ function VideosTestimonials({onBookClick}) {
                 className={`vt-video-card ${positionClass}`}
                 onClick={() => !isActive ? handleDotClick(index) : openVideoPopup(item.videoUrl)}
                 onMouseEnter={() => isActive && setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
               >
                 
                 {isActive && (
@@ -140,7 +176,13 @@ function VideosTestimonials({onBookClick}) {
                 </div>
 
                 <div className="vt-video-frame">
-                  <img src={item.image} alt="Patient Testimonial" className="vt-thumbnail-img" />
+                  {/* draggable="false" handles browser native image dragging conflicts */}
+                  <img 
+                    src={item.image} 
+                    alt="Patient Testimonial" 
+                    className="vt-thumbnail-img" 
+                    draggable="false" 
+                  />
                   <div className="vt-laser-scanner"></div>
                   
                   <div className="vt-play-overlay">

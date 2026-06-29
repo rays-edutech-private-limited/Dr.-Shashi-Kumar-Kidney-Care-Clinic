@@ -8,11 +8,11 @@ const About = ({ onBookClick }) => {
     <section className="cinematic-about-section">
       <div className="cine-wrapper">
         
-        {/* --- LEFT PANEL: IMAGE 1 EXACT ARCHITECTURE --- */}
+        {/* --- LEFT PANEL: IMAGE 1 ARCHITECTURE --- */}
         <div className="cine-visual-container">
           <div className="cine-canvas-stage">
             
-            {/* The main glowing capsule frame from image */}
+            {/* The main glowing capsule frame */}
             <div className="cine-hologram-pod">
               <div className="cine-scanner-beam"></div>
               <div className="pod-internal-core"></div>
@@ -23,10 +23,10 @@ const About = ({ onBookClick }) => {
               </div>
             </div>
 
-            {/* Float Floating Badge: Top Right (11+ Years of Trust) */}
+            {/* Floating Badge: Top Right */}
             <div className="cine-glass-card card-top-right">
               <div className="card-badge-header">
-                <span className="badge-star-icon"><i class="fas fa-star"></i></span>
+                <span className="badge-star-icon"><i className="fas fa-star"></i></span>
                 <span className="badge-title-text">DIRECTOR & DEPT. HEAD</span>
               </div>
               <div className="card-counter-value">
@@ -37,25 +37,25 @@ const About = ({ onBookClick }) => {
               </div>
             </div>
 
-            {/* Doctor Profile Card Frame: Bottom Left overlaying the pod */}
+            {/* Doctor Profile Card Frame: Bottom Left */}
             <div className="cine-doctor-profile-card">
               <div className="doc-avatar-wrapper">
-                <img className='doc-avatar-fallback'  src={doctor} alt="" />
+                <img className='doc-avatar-fallback' src={doctor} alt="Dr. Shashi Kumar" />
               </div>
               <div className="doc-profile-details">
                 <h4>Dr. Shashi Kumar</h4>
                 <h5>Director & Head, Nephrology</h5>
-                <span className="doc-status-tag">🛡️ Top Tier Renowned Nephrologist</span>
+                <span className="doc-status-tag">🛡️ Top Tier Nephrologist</span>
               </div>
             </div>
 
           </div>
         </div>
 
-        {/* --- RIGHT PANEL: IMAGE 1 EXACT TYPOGRAPHY & STATS --- */}
+        {/* --- RIGHT PANEL: TYPOGRAPHY & STATS --- */}
         <div className="cine-content-container">
           <div className="cine-super-badge">
-            <span className="badge-star-icon"><i class="fas fa-star"></i></span> BIHAR'S LEADING KIDNEY CARE DESTINATION
+            <span className="badge-star-icon"><i className="fas fa-star"></i></span> BIHAR'S LEADING KIDNEY CARE DESTINATION
           </div>
           
           <h2 className="cine-main-headline">
@@ -72,32 +72,32 @@ const About = ({ onBookClick }) => {
             Dr. Shashi Kumar is a distinguished pioneer in Nephrology, widely recognized for his unmatched clinical expertise and breakthrough treatments. As the <strong>Director & Head of Department at Paras Health, Patna</strong>, he has engineered state-of-the-art dialysis units and spearheaded highly successful kidney transplant systems, saving thousands of critical renal patients across Eastern India.
           </p>
 
-          {/* Image 1 Exact Bottom 4 Colored Pillar Stats Grid */}
+          {/* 4 Colored Pillar Stats Grid */}
           <div className="cine-stats-matrix">
             
             <div className="cine-stat-item border-cyan">
-              <div className="stat-icon-circle cyan-bg"><i class="fa-solid fa-stethoscope"></i></div>
+              <div className="stat-icon-circle cyan-bg"><i className="fa-solid fa-stethoscope"></i></div>
               <div className="stat-num cyan-text">11+</div>
               <div className="stat-p">Years Clinical Leadership</div>
               <div className="stat-bottom-line bg-cyan"></div>
             </div>
 
             <div className="cine-stat-item border-purple">
-              <div className="stat-icon-circle purple-bg"><i class="fa-solid fa-users"></i></div>
+              <div className="stat-icon-circle purple-bg"><i className="fa-solid fa-users"></i></div>
               <div className="stat-num purple-text">10K+</div>
               <div className="stat-p">Satisfied Healed Patients</div>
               <div className="stat-bottom-line bg-purple"></div>
             </div>
 
             <div className="cine-stat-item border-orange">
-              <div className="stat-icon-circle orange-bg"><i class="fa-solid fa-bolt"></i></div>
+              <div className="stat-icon-circle orange-bg"><i className="fa-solid fa-bolt"></i></div>
               <div className="stat-num orange-text">5K+</div>
               <div className="stat-p">Advanced Dialysis Sessions</div>
               <div className="stat-bottom-line bg-orange"></div>
             </div>
 
             <div className="cine-stat-item border-red">
-              <div className="stat-icon-circle red-bg"><i class="fa-solid fa-shield-heart"></i></div>
+              <div className="stat-icon-circle red-bg"><i className="fa-solid fa-shield-heart"></i></div>
               <div className="stat-num red-text">500+</div>
               <div className="stat-p">Successful Transplants</div>
               <div className="stat-bottom-line bg-red"></div>
@@ -108,39 +108,41 @@ const About = ({ onBookClick }) => {
         </div>
       </div>
 
-      {/* --- IMAGE 1 BOTTOM HORIZONTAL CORE FEATURES FULL ROW --- */}
-      <div className="cine-features-bar">
-        <div className="feature-bar-item">
-          <div className="f-icon-circle f-cyan"><i class="fa-solid fa-circle-check"></i></div>
-          <div className="f-text-block">
-            <h4>Expert Care</h4>
-            <p>Evidence-based treatment by leading nephrologist</p>
+      {/* --- HORIZONTAL CORE FEATURES ROW --- */}
+      <div className="cine-features-wrapper">
+        <div className="cine-features-bar">
+          <div className="feature-bar-item">
+            <div className="f-icon-circle f-cyan"><i className="fa-solid fa-circle-check"></i></div>
+            <div className="f-text-block">
+              <h4>Expert Care</h4>
+              <p>Evidence-based treatment by leading nephrologist</p>
+            </div>
           </div>
-        </div>
-        <div className="feature-bar-item">
-          <div className="f-icon-circle f-blue"><i class="fa-solid fa-microscope"></i></div>
-          <div className="f-text-block">
-            <h4>Advanced Technology</h4>
-            <p>State-of-the-art dialysis & transplant facilities</p>
+          <div className="feature-bar-item">
+            <div className="f-icon-circle f-blue"><i className="fa-solid fa-microscope"></i></div>
+            <div className="f-text-block">
+              <h4>Advanced Technology</h4>
+              <p>State-of-the-art dialysis & transplant facilities</p>
+            </div>
           </div>
-        </div>
-        <div className="feature-bar-item">
-          <div className="f-icon-circle f-purple"><i class="fa-solid fa-heart-circle-check"></i></div>
-          <div className="f-text-block">
-            <h4>Patient First</h4>
-            <p>Compassionate care every step of the way</p>
+          <div className="feature-bar-item">
+            <div className="f-icon-circle f-purple"><i className="fa-solid fa-heart-circle-check"></i></div>
+            <div className="f-text-block">
+              <h4>Patient First</h4>
+              <p>Compassionate care every step of the way</p>
+            </div>
           </div>
-        </div>
-        <div className="feature-bar-item">
-          <div className="f-icon-circle f-green"><i class="fa-solid fa-chart-column"></i></div>
-          <div className="f-text-block">
-            <h4>Better Outcomes</h4>
-            <p>Proven results that improve lives</p>
+          <div className="feature-bar-item">
+            <div className="f-icon-circle f-green"><i className="fa-solid fa-chart-column"></i></div>
+            <div className="f-text-block">
+              <h4>Better Outcomes</h4>
+              <p>Proven results that improve lives</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* --- IMAGE 2 LOWER LEVEL Professional Dashboard Grid --- */}
+      {/* --- Professional Dashboard Grid --- */}
       <div className="cine-dashboard-wrapper">
         
         {/* ROW 1: 3 Segmented Presentation Blocks */}
@@ -149,7 +151,7 @@ const About = ({ onBookClick }) => {
           {/* Block 1: Academic Pedigree */}
           <div className="cine-dashboard-block bg-image-about1">
             <div className="block-header-row">
-              <div className="header-icon-box b-blue"><i class="fas fa-user-graduate"></i></div>
+              <div className="header-icon-box b-blue"><i className="fas fa-user-graduate"></i></div>
               <h3>ACADEMIC EXCELLENCE & QUALIFICATIONS</h3>
             </div>
             <ul className="cine-list list-type-blue-diamond">
@@ -164,7 +166,7 @@ const About = ({ onBookClick }) => {
           {/* Block 2: Clinical Core Specialties */}
           <div className="cine-dashboard-block bg-image-about2">
             <div className="block-header-row">
-              <div className="header-icon-box b-green"><i class="fas fa-stethoscope"></i></div>
+              <div className="header-icon-box b-green"><i className="fas fa-stethoscope"></i></div>
               <h3>ADVANCED KIDNEY CARE SPECIALTIES</h3>
             </div>
             <ul className="cine-list list-type-green-check">
@@ -177,11 +179,10 @@ const About = ({ onBookClick }) => {
             </ul>
           </div>
 
-          {/* Block 3: National Laurels with Trophy Graphic */}
-          <div className="cine-dashboard-block bg-image-about3 ">
+          {/* Block 3: National Laurels */}
+          <div className="cine-dashboard-block bg-image-about3">
             <div className="block-header-row">
-              <div className="header-icon-box b-gold"><i class="fas fa-trophy"></i>
-</div>
+              <div className="header-icon-box b-gold"><i className="fas fa-trophy"></i></div>
               <h3>CLINICAL EXCELLENCE & ACHIEVEMENTS</h3>
             </div>
             <div className="laurels-content-wrapper">
@@ -191,7 +192,6 @@ const About = ({ onBookClick }) => {
                 <li>Keynote Speaker at National Renal Conclaves</li>
                 <li>Pioneer in Advanced Dialysis Ecosystems</li>
               </ul>
-            
             </div>
           </div>
 
@@ -200,10 +200,10 @@ const About = ({ onBookClick }) => {
         {/* ROW 2: Double Grid Dynamic Blocks */}
         <div className="cine-layout-2col">
           
-          {/* Block 4: Elite Institutional Affiliations Network Nodes */}
+          {/* Block 4: Elite Institutional Affiliations */}
           <div className="cine-dashboard-block bg-image-about4">
             <div className="block-header-row">
-              <div className="header-icon-box b-purple"><i class="fas fa-university"></i></div>
+              <div className="header-icon-box b-purple"><i className="fas fa-university"></i></div>
               <h3>PROFESSIONAL MEMBERSHIPS & AFFILIATIONS</h3>
             </div>
             <div className="cine-logos-grid">
@@ -226,10 +226,10 @@ const About = ({ onBookClick }) => {
             </div>
           </div>
 
-          {/* Block 5: Major Career Milestones Node-Linked Timeline */}
+          {/* Block 5: Major Career Milestones */}
           <div className="cine-dashboard-block bg-image-about5">
             <div className="block-header-row">
-              <div className="header-icon-box b-teal"><i class="fas fa-mountain"></i></div>
+              <div className="header-icon-box b-teal"><i className="fas fa-mountain"></i></div>
               <h3>CLINICAL LEADERSHIP & CAREER MILESTONES</h3>
             </div>
             
@@ -237,19 +237,19 @@ const About = ({ onBookClick }) => {
               <div className="timeline-vertical-line"></div>
               
               <div className="timeline-row-node">
-                <div className="node-indicator-circle"><i class="fas fa-award i1"></i></div>
+                <div className="node-indicator-circle"><i className="fas fa-award i1"></i></div>
                 <p>Successfully managed thousands of complex dialysis cycles</p>
               </div>
               <div className="timeline-row-node">
-                <div className="node-indicator-circle"><i class="fas fa-flask i2"></i></div>
+                <div className="node-indicator-circle"><i className="fas fa-flask i2"></i></div>
                 <p>Pioneered low-cost high-efficiency renal frameworks</p>
               </div>
               <div className="timeline-row-node">
-                <div className="node-indicator-circle"><i class="fas fa-bullhorn i3"></i></div>
+                <div className="node-indicator-circle"><i className="fas fa-bullhorn i3"></i></div>
                 <p>Organized mega-awareness programs for rural kidney health</p>
               </div>
               <div className="timeline-row-node">
-                <div className="node-indicator-circle"><i class="fas fa-microscope i4"></i></div>
+                <div className="node-indicator-circle"><i className="fas fa-microscope i4"></i></div>
                 <p>Active investigator in global nephrology clinical trials</p>
               </div>
             </div>
@@ -257,11 +257,11 @@ const About = ({ onBookClick }) => {
 
         </div>
 
-        {/* --- IMAGE 2 FOOTER FULL COMPACT APPOINTMENT ACTION BAR --- */}
+        {/* --- FOOTER ACTION BAR --- */}
         <div className="cine-cta-container">
           <button className="cine-btn-luxury" onClick={onBookClick}>
             <div className="action-left-icon">
-              <span><i class="fas fa-book-open"></i></span>
+              <span><i className="fas fa-book-open"></i></span>
             </div>
             <span className="action-center-text">REQUEST A PRIORITY APPOINTMENT WITH DR. SHASHI KUMAR</span>
             <div className="action-right-icon-arrow">

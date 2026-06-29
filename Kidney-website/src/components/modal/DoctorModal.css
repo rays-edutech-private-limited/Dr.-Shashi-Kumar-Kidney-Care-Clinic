@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px; /* मोबाइल पर कम पैडिंग ताकि ज्यादा जगह मिले */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 /* Modal Overlay (Background Blur) */
@@ -20,34 +21,40 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  padding: 16px; /* मोबाइल स्क्रीन के किनारों से सटने से बचाएगा */
+  box-sizing: border-box;
 }
 
 /* Modal Content Box */
 .modal-content {
   background: #ffffff;
   width: 100%;
-  max-width: 440px;
-  border-radius: 24px;
+  max-width: 460px; /* डेस्कटॉप के लिए मैक्सिमम चौड़ाई */
+  max-height: calc(100vh - 32px); /* मोबाइल पर स्क्रीन से बाहर न जाए */
+  display: flex;
+  flex-direction: column; /* हेडर और फॉर्म को अलग रखने के लिए */
+  border-radius: 20px; /* थोड़े मॉडर्न और थोड़े गोल किनारे */
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  animation: slideUp 0.4s ease-out;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Header Gradient */
 .modal-header {
   background: linear-gradient(135deg, #0d9488, #059669); /* Teal to Emerald */
   color: white;
-  padding: 24px;
-  position: relative;
+  padding: 20px 24px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  flex-shrink: 0; /* हेडर अपनी जगह फिक्स रखेगा */
 }
 
 .modal-header h2 {
-  margin: 6px 0 0 0;
-  font-size: 22px;
+  margin: 4px 0 0 0;
+  font-size: 20px;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .badge {
@@ -58,6 +65,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: inline-block;
 }
 
 /* Close Window Cross Button */
@@ -66,14 +74,16 @@
   border: none;
   color: white;
   font-size: 24px;
-  width: 36px;
-  height: 36px;
+  width: 40px; /* थोड़ा बड़ा किया ताकि मोबाइल पर उंगली से आसानी से क्लिक हो */
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s;
+  flex-shrink: 0;
+  margin-left: 12px;
 }
 
 .close-btn:hover {
@@ -83,10 +93,12 @@
 /* Form Styles */
 .modal-form {
   padding: 24px;
+  overflow-y: auto; /* अगर मोबाइल स्क्रीन बहुत छोटी है तो फॉर्म के अंदर स्क्रॉल आ जाएगा */
+  -webkit-overflow-scrolling: touch; /* iOS पर स्मूथ स्क्रॉल के लिए */
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
 }
@@ -100,14 +112,16 @@
 
 .form-group input, 
 .form-group textarea {
-  padding: 11px 14px;
+  padding: 12px 14px; /* मोबाइल टाइपिंग के लिए आरामदायक स्पेस */
   border: 1px solid #d1d5db;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 16px; /* 16px रखने से iOS/iPhone पर ज़ूम-इन की समस्या नहीं होती */
   color: #1f2937;
   outline: none;
   font-family: inherit;
   transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group textarea {
@@ -131,9 +145,13 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 8px;
   box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
   transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .submit-btn:hover {
@@ -141,10 +159,30 @@
   transform: translateY(-1px);
 }
 
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Media Queries (for very small screens) */
+@media (max-width: 380px) {
+  .modal-content {
+    border-radius: 16px; /* छोटी स्क्रीन पर हल्के कर्व्स */
+  }
+  .modal-header {
+    padding: 16px 20px;
+  }
+  .modal-header h2 {
+    font-size: 18px;
+  }
+  .modal-form {
+    padding: 16px 20px;
+  }
+}
+
 /* Animations */
 @keyframes slideUp {
   from {
-    transform: translateY(30px);
+    transform: translateY(20px);
     opacity: 0;
   }
   to {

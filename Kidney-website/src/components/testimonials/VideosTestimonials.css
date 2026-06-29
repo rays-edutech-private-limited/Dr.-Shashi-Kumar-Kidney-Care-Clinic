@@ -1,7 +1,7 @@
 .vt-prime-container {
     background-color: #011834;
     color: #ffffff;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -9,9 +9,11 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 60px 10px;
+    padding: 60px 20px;
     font-family: system-ui, -apple-system, sans-serif;
 }
+
+
 
 .vt-grid-overlay {
     position: absolute;
@@ -73,6 +75,13 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
+    cursor: grab; /* माउस ले जाने पर हाथ का निशान दिखेगा */
+    user-select: none; /* ड्रैग करते समय टेक्स्ट सेलेक्ट न हो */
+    -webkit-user-select: none;
+}
+
+.vt-slider-viewport:active {
+    cursor: grabbing; /* ड्रैग करते समय बंद मुट्ठी का निशान */
 }
 
 .vt-cards-wrapper {
@@ -367,4 +376,11 @@
     .vt-control-dashboard { flex-direction: column-reverse; gap: 20px; padding: 0; }
     .vt-dots-row { transform: none; }
     .vt-trust-horizontal-strip { gap: 15px; padding: 10px; }
+}
+
+
+@media (max-width: 480px) {
+.vt-cyber-subbar{
+    font-size: 0.5rem;
+}
 }

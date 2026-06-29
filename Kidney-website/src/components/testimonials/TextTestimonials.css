@@ -2,7 +2,7 @@
 .tt-premium-section {
    background: #fff; 
     width: 100%;
-    min-height: 85vh;
+    /* min-height: 85vh; */
     padding: 60px 20px;
     position: relative;
     display: flex;
@@ -64,7 +64,7 @@
 
 /* Display Arena Engine with 3D Depth */
 .tt-display-arena {
-    position: relative;
+   position: relative;
     width: 100%;
     max-width: 1100px;
     height: 380px;
@@ -72,8 +72,14 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
+    cursor: grab;
+    user-select: none; 
+    -webkit-user-select: none;
 }
 
+.tt-display-arena:active {
+    cursor: grabbing; 
+}
 .tt-cards-container {
     position: relative;
     width: 100%;
@@ -364,5 +370,32 @@
 @media (max-width: 480px) {
     .tt-patient-speech { font-size: 1rem; line-height: 1.5; }
     .tt-card { padding: 20px; }
-    .tt-card-footer { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .tt-card-footer { flex-direction: row; gap: 10px; align-items: flex-start; }
+    .tt-case-code{
+        font-size: 0.6rem;
+    }
+    .tt-tag-condition{
+        font-size: 0.55rem;
+    }
+
+    /* .tt-timeline-badge{
+        font-size: 0.65rem;
+    } */
+}
+
+@media (max-width: 380px) {
+    .tt-case-code{
+        font-size: 0.5rem;
+    }
+    .tt-tag-condition{
+        font-size: 0.5rem;
+    }
+    .tt-timeline-badge{
+        font-size: 0.5rem;
+    }
+    .tt-verified-stamp{
+        font-size: 0.6rem;
+    }
+
+   
 }

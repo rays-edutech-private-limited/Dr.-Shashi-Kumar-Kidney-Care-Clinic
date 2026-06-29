@@ -132,7 +132,7 @@
   .topbar-wrapper {
     flex-wrap: wrap; /* कंटेंट को स्क्रीन से बाहर जाने से रोकेगा */
     justify-content: space-between;
-    padding: 10px 16px;
+    /* padding: 10px 16px; */
     gap: 12px;
   }
 
@@ -152,12 +152,10 @@
 /* --- 3. बड़े मोबाइल फोन्स (576px से नीचे) --- */
 @media (max-width: 576px) {
   .premium-topbar {
-    font-size: 12px;
+    font-size: 11px;
   }
   
-  .topbar-wrapper {
-    gap: 10px;
-  }
+  
 
   .topbar-phone {
     padding: 5px 10px;
@@ -179,7 +177,6 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
   }
 
   .topbar-left, .topbar-middle, .topbar-right {

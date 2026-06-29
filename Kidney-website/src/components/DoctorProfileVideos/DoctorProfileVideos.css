@@ -3,7 +3,7 @@
 /* Deep Premium Dark Canvas Blueprint */
 .dark-kiosk-wrapper {
   background-color: #011834; /* Dark Navy Background */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 60px 4%; /* Responsive fluid padding */
   color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -307,7 +307,7 @@
 /* Grid System Responsive Tuning Blueprint */
 .gallery-thumbnails-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Core system for auto layout resizing */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Core system for auto layout resizing */
   gap: 20px;
 }
 
@@ -333,7 +333,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.75;
+  
 }
 
 .thumbnail-duration-badge {
@@ -390,11 +390,17 @@
    ========================================== */
 
 /* Laptops & Tablets Landscape Mode (Under 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .dark-kiosk-hero {
     grid-template-columns: 1fr; /* Stack Left/Right content vertically */
     gap: 32px;
   }
+
+  .gallery-thumbnails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    gap: 20px;
+}
   
   .dark-kiosk-hero-right {
     order: -1; /* Puts Active Video Player on Top position for Mobile/Tablets view */
@@ -408,66 +414,109 @@
   .ribbon-feature-card::after {
     display: none !important; /* Hide separator lines */
   }
+
+.thumbnail-video-title {
+  font-size: 13px;
 }
 
-/* Medium Tablets & iPads (Under 768px) */
-@media (max-width: 768px) {
-  .dark-kiosk-wrapper {
-    padding: 30px 5%;
-    gap: 35px;
+  .dark-kiosk-cta-row{
+    justify-content: center;
   }
 
   .dark-kiosk-headline {
     font-size: 32px;
+    text-align: center;
+  }
+
+  .accent-bar-teal{
+    margin: 24px auto;
+  }
+  .dark-kiosk-description{
+    text-align: center;
   }
 
   .dark-kiosk-stats-row {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* Medium Tablets & iPads (Under 768px) */
+@media (max-width: 768px) {
+  
+
+  .dark-kiosk-cta-row{
+    justify-content: center;
+  }
+
+  .dark-kiosk-headline {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .accent-bar-teal{
+    margin: 24px auto;
+  }
+  .dark-kiosk-description{
+    text-align: center;
+  }
+
+  .dark-kiosk-stats-row {
+    justify-content: center;
     gap: 20px;
   }
   
-  .stat-item-box {
-    min-width: 45%; /* Fits 2 columns nicely on smaller screens */
-  }
+  
 }
 
 /* Compact Smartphones & Small Screens (Under 480px) */
 @media (max-width: 480px) {
-  .dark-kiosk-wrapper {
-    padding: 20px 4%;
-  }
+
 
   .dark-kiosk-headline {
     font-size: 26px;
   }
 
+  
+
+  .thumbnail-meta-row{
+    font-size: 10px;
+  }
+
   .dark-kiosk-stats-row {
     gap: 10px;
   }
 
- 
   .dark-kiosk-cta-row {
-    flex-direction: column; /* Buttons stack up beautifully on small touchscreens */
-    gap: 10px;
-  }
+    flex-wrap: nowrap;
+    
+  } 
 
   .btn-solid-teal, .btn-outline-dark {
-    width: 100%; /* Full screen width tap zones */
+    font-size: 11px;
     text-align: center;
   }
-
-  .dark-kiosk-features-ribbon {
-    grid-template-columns: 1fr; /* Streamlined 1 column list */
-    background: transparent;
-    border: none;
-    padding: 0;
-    gap: 10px;
-  }
+  
 
   .ribbon-feature-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
   }
+  
+  .ribbon-feature-card .feature-icon-wrapper svg {
+  width:17px;
+  height: 17px;
+  color: #00bfa5;
+  flex-shrink: 0;
+}
 
+.feature-main-title{
+  font-size: 11px;
+}
+
+.feature-sub-tagline{
+  font-size: 9px;
+}
   
 }

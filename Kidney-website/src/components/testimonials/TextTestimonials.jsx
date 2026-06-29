@@ -40,6 +40,10 @@ function TextTestimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const timeoutRef = useRef(null);
 
+  // Drag and Swipe Refs
+  const dragStartX = useRef(0);
+  const isDragging = useRef(false);
+
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -61,6 +65,38 @@ function TextTestimonials() {
     };
   }, [activeIndex]);
 
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % textData.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + textData.length) % textData.length);
+  };
+
+  // Drag / Swipe Handlers
+  const handleDragStart = (clientX) => {
+    dragStartX.current = clientX;
+    isDragging.current = true;
+  };
+
+  const handleDragMove = (clientX) => {
+    if (!isDragging.current) return;
+    const diff = clientX - dragStartX.current;
+
+    // 50px ड्रैग करने पर नेक्स्ट या प्रीवियस स्लाइड होगी
+    if (diff > 50) {
+      prevSlide();
+      isDragging.current = false; // बार-बार ट्रिगर होने से रोकने के लिए
+    } else if (diff < -50) {
+      nextSlide();
+      isDragging.current = false;
+    }
+  };
+
+  const handleDragEnd = () => {
+    isDragging.current = false;
+  };
+
   return (
     <div className="tt-premium-section">
       {/* Background Lights */}
@@ -74,8 +110,17 @@ function TextTestimonials() {
         <p className="tt-subtitle">Real recovery experiences from our verified kidney care patients</p>
       </div>
 
-      {/* Main Testimonial Showcase Arena */}
-      <div className="tt-display-arena">
+      {/* Main Testimonial Showcase Arena with Drag/Touch events */}
+      <div 
+        className="tt-display-arena"
+        onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
+        onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
+        onTouchEnd={handleDragEnd}
+        onMouseDown={(e) => handleDragStart(e.clientX)}
+        onMouseMove={(e) => handleDragMove(e.clientX)}
+        onMouseUp={handleDragEnd}
+        onMouseLeave={handleDragEnd}
+      >
         <div className="tt-cards-container">
           {textData.map((item, index) => {
             let cardClass = "tt-card tt-card-hidden";
@@ -84,7 +129,7 @@ function TextTestimonials() {
             else if (index === (activeIndex + 1) % textData.length) cardClass = "tt-card tt-card-next";
 
             return (
-              <div key={item.id} className={cardClass} onClick={() => setActiveIndex(index)}>
+              <div key={item.id} className={cardClass} onClick={() => index !== activeIndex && setActiveIndex(index)}>
                 {/* Cyber Matrix Corner Lines */}
                 <div className="tt-corner-line tl"></div>
                 <div className="tt-corner-line tr"></div>
@@ -130,7 +175,8 @@ function TextTestimonials() {
           </div>
         ))}
       </div>
-       <div className="tt-trust-footer-bar">
+
+      <div className="tt-trust-footer-bar">
         <div className="tt-trust-item">
           <div className="tt-trust-icon-box blue-bg">🏅</div>
           <div>

@@ -245,7 +245,7 @@ const DoctorCyberHub = () => {
                   setIsPlaying(false); // Naya video select hote hi use pehle thumbnail state me lao
                 }}
               >
-                <div className="thumbnail-preview-frame" style={{ position: 'relative', overflow: 'hidden', height: '180px' }}>
+                <div className="thumbnail-preview-frame" >
                   {/* Niche sirf static thumbnails photo dikhenge */}
                   <img 
                     src={seg.youtubeUrl} 

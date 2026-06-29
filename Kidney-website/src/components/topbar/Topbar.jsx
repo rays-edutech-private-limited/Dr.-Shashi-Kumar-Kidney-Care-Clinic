@@ -10,7 +10,7 @@ const Topbar = () => {
         {/* Left Section: Call */}
         <div className="topbar-left">
           <a href="tel:+919876543210" className="topbar-item topbar-phone">
-            <span className="icon">📞</span> 
+            <span className="icon"><i class="fa-solid fa-phone" ></i></span> 
             <span className="text">+91 98765 43210</span>
           </a>
         </div>
