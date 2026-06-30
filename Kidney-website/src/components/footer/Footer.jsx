@@ -3,12 +3,12 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/image/logo.png";
 
-const Footer = ({onBookClick}) => {
+const Footer = ({ onBookClick }) => {
   return (
     <footer className="sk-premium-footer">
       <div className="sk-footer-container">
         
-        {/* Row Blocks Wrapper */}
+        {/* Main Grid Wrapper */}
         <div className="sk-footer-main-grid">
           
           {/* Column 1: Brand Info & Contact */}
@@ -20,12 +20,12 @@ const Footer = ({onBookClick}) => {
               <p className="sk-brand-tagline">Advanced Kidney Care & Dialysis Solutions</p>
             </div>
 
-            {/* Glowing Book Appointment Button */}
-            <button className="sk-appointment-btn"  onClick={onBookClick}>
-              <i className="fa-solid fa-calendar-days"></i> [Book Appointment]
+            {/* Appointment Button */}
+            <button className="sk-appointment-btn" onClick={onBookClick}>
+              <i className="fa-solid fa-calendar-days"></i> Book Appointment
             </button>
 
-            {/* Contact Information Details */}
+            {/* Contact Details */}
             <div className="sk-contact-details">
               <div className="sk-contact-item">
                 <i className="fa-solid fa-phone-flip sk-icon-gold"></i>
@@ -33,35 +33,27 @@ const Footer = ({onBookClick}) => {
               </div>
               <div className="sk-contact-item">
                 <i className="fa-solid fa-location-dot sk-icon-gold"></i>
-                <span>Plot 10, Main Street,<br />Patna, Bihar</span>
+                <span>Plot 10, Main Street, Patna, Bihar</span>
               </div>
               <div className="sk-contact-item">
                 <i className="fa-solid fa-envelope sk-icon-gold"></i>
-                <span>dr.kumar.kidney@care.com</span>
+                <span className="sk-email-text">dr.kumar.kidney@care.com</span>
               </div>
             </div>
           </div>
 
-          {/* Vertical Separator Divider Line */}
-          <div className="sk-vertical-divider"></div>
-
-          {/* Column 2: Center Menu & Links */}
+          {/* Column 2: Biography & 3-Column Services */}
           <div className="sk-footer-col sk-menu-center-col">
-            
-            {/* Top Half Section: About Doctor Biography */}
-            <div className="sk-top-menus">
-              <div className="sk-menu-block">
-                <h4 className="sk-menu-heading">About Dr. Shashi Kumar</h4>
-                <p className="sk-footer-bio-text" style={{ fontSize: '13px', lineHeight: '1.6', color: '#b0b3b8', marginBottom: '15px' }}>
-                  One of the leading Nephrologists in Bihar with 11+ years of experience. Currently serving as Director & Head of Department (Nephrology) at Paras Health, Patna. Expert in managing thousands of dialysis and kidney transplant cases.
-                </p>
-              </div>
+            <div className="sk-menu-block sk-bio-block">
+              <h4 className="sk-menu-heading">About Dr. Shashi Kumar</h4>
+              <p className="sk-footer-bio-text">
+                One of the leading Nephrologists in Bihar with 11+ years of experience. Currently serving as Director & Head of Department (Nephrology) at Paras Health, Patna. Expert in managing thousands of dialysis and kidney transplant cases.
+              </p>
             </div>
 
-            {/* Bottom Half Section with 3 Grid Columns */}
-            <div className="sk-bottom-services-grid">
-              
-              {/* Qualifications Column */}
+            {/* Inner Sub-Grid for Services */}
+            <div className="sk-services-inner-grid">
+              {/* Qualifications */}
               <div className="sk-sub-menu-block">
                 <h4 className="sk-menu-heading">Qualifications</h4>
                 <ul className="sk-menu-list">
@@ -73,7 +65,7 @@ const Footer = ({onBookClick}) => {
                 </ul>
               </div>
 
-              {/* Core Services Column */}
+              {/* Key Services */}
               <div className="sk-sub-menu-block">
                 <h4 className="sk-menu-heading">Key Services</h4>
                 <ul className="sk-menu-list">
@@ -85,7 +77,7 @@ const Footer = ({onBookClick}) => {
                 </ul>
               </div>
 
-              {/* Diagnostics & Areas Column */}
+              {/* Specialized Care */}
               <div className="sk-sub-menu-block">
                 <h4 className="sk-menu-heading">Specialized Care</h4>
                 <ul className="sk-menu-list">
@@ -95,31 +87,24 @@ const Footer = ({onBookClick}) => {
                   <li><a href="#access">Dialysis Access Procedures</a></li>
                 </ul>
               </div>
-
             </div>
           </div>
 
-          {/* Vertical Separator Divider Line */}
-          <div className="sk-vertical-divider"></div>
-
-          {/* Column 3: Website Navigation / Quick Links */}
-          <div className="sk-footer-col sk-portal-side-col">
+          {/* Column 3: Quick Links */}
+          <div className="sk-footer-col sk-links-col">
             <h4 className="sk-menu-heading">Quick Links</h4>
             <ul className="sk-menu-list">
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Doctor</a></li>
               <li><a href="#services">Our Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#gallery">Gallery</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
               <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
-          {/* Vertical Separator Divider Line */}
-          <div className="sk-vertical-divider"></div>
-
-          {/* Column 4: Patient Resources & Info */}
-          <div className="sk-footer-col sk-portal-side-col">
+          {/* Column 4: Patient Portal */}
+          <div className="sk-footer-col sk-links-col">
             <h4 className="sk-menu-heading">Patient Portal</h4>
             <ul className="sk-menu-list">
               <li><a href="#register">Registration Forms</a></li>
@@ -132,16 +117,16 @@ const Footer = ({onBookClick}) => {
 
         </div>
 
-        {/* Decorative Divider Line */}
+        {/* Gold Divider Line */}
         <div className="sk-horizontal-gold-divider"></div>
 
-        {/* Copyright & Developer Credits Bar */}
+        {/* Bottom Bar: Copyright & Credits */}
         <div className="sk-footer-bottom-bar">
           <p className="sk-copyright-text">
-            © 2026 Dr. Shashi Kumar Kidney Care Clinic. All rights reserved. | <span className="sk-tag-highlight">Expert Kidney Care, Compassionate Treatment.</span>
+            © 2026 Dr. Shashi Kumar Kidney Care Clinic. All rights reserved. 
+            <span className="sk-tag-highlight"> Expert Kidney Care, Compassionate Treatment.</span>
           </p>
           <div className="sk-developer-credits">
-            <div className="sk-rays-logo-placeholder"></div>
             <span>Developed by <Link to="https://raysonline.in/" target="_blank" className="sk-developer-link">Rays Edutech Pvt. Ltd.</Link></span>
           </div>
         </div>

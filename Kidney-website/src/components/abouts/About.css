@@ -285,7 +285,7 @@
 /* 1. Laptops & Small Desktops */
 @media screen and (max-width: 1200px) {
   .cine-wrapper { gap: 40px; }
-  .cine-features-bar { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .cine-features-bar { grid-template-columns: repeat(4, 1fr); gap: 20px; }
 }
 
 /* 2. iPads & Tablets (Portrait & Landscape Switches) */
@@ -300,6 +300,13 @@
     margin: 0 auto 15px;
   }
 
+  .f-text-block h4{
+    font-size: 12px;
+  }
+
+  .f-text-block p{
+    font-size: 10px;
+  }
   .cine-main-headline{
     text-align: center;
   }

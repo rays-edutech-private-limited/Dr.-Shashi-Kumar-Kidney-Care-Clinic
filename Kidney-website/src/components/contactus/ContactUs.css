@@ -357,7 +357,7 @@
     }
 
     .form-intro-header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 12px;
         margin-bottom: 25px;

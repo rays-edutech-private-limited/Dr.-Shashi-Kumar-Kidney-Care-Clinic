@@ -63,7 +63,7 @@ function ContactUs() {
         {/* LEFT SIDE: Form Card */}
         <div className="form-container-card">
           <div className="form-intro-header">
-            <div className="icon-bubble">📅</div>
+            <div className="icon-bubble"><i className="fa-solid fa-calendar-days"></i></div>
             <div className="intro-text-block">
               <span className="tagline">APPOINTMENT / ENQUIRY</span>
               <h3>Book Your Consultation</h3>

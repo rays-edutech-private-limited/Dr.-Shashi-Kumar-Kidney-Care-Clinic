@@ -223,34 +223,38 @@ function VideosTestimonials({onBookClick}) {
         <div className="vt-strip-item"><span className="vt-strip-icon">🩺</span> Expert Medical Team</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🛡️</span> Personalized Treatment</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🤝</span> Compassionate Support</div>
-        <div className="vt-strip-item"><span className="vt-strip-icon">📈</span> Better Outcomes, Healthier Lives</div>
+       
       </div>
 
-      <div className="vt-footer-action-panel">
-        <div className="vt-footer-badge-item">
-          <div className="vt-f-icon">🛡️</div>
-          <div className="vt-f-labels">
-            <h4>Trusted by Thousands</h4>
-            <p>Expert care you can rely on</p>
-          </div>
-        </div>
+     <div className="vt-footer-action-panel">
 
-        <button className="vt-main-cta-glow-pill" onClick={onBookClick}>
-          <div className="vt-cta-calendar-box">📅</div>
-          <div className="vt-cta-text-bundle">
-            <h4>BOOK APPOINTMENT</h4>
-            <p>Consult Dr. Shashi Kumar</p>
-          </div>
-        </button>
+  <div className="vt-footer-badge-item">
+    <div className="vt-f-icon">🛡️</div>
+    <div className="vt-f-labels">
+      <h4>Trusted by Thousands</h4>
+      <p>Expert care you can rely on</p>
+    </div>
+  </div>
 
-        <div className="vt-footer-badge-item">
-          <div className="vt-f-icon">👥</div>
-          <div className="vt-f-labels">
-            <h4>Your Health, Our Priority</h4>
-            <p>We are here for you, always</p>
-          </div>
-        </div>
-      </div>
+  <div className="vt-footer-badge-item">
+    <div className="vt-f-icon">👥</div>
+    <div className="vt-f-labels">
+      <h4>Your Health, Our Priority</h4>
+      <p>We are here for you, always</p>
+    </div>
+  </div>
+
+  <button className="vt-main-cta-glow-pill" onClick={onBookClick}>
+    <div className="vt-cta-calendar-box">
+      <i className="fa-solid fa-calendar-days"></i>
+    </div>
+    <div className="vt-cta-text-bundle">
+      <h4>BOOK APPOINTMENT</h4>
+      <p>Consult Dr. Shashi Kumar</p>
+    </div>
+  </button>
+
+</div>
          
       {activeVideo && (
         <div className="vt-popup-overlay" onClick={closeVideoPopup}>
