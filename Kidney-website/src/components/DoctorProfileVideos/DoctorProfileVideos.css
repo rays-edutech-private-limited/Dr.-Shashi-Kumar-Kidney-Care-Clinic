@@ -162,7 +162,7 @@
   background-color: #000000;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 2px solid #00bfa5;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -305,9 +305,14 @@
 }
 
 /* Grid System Responsive Tuning Blueprint */
+/* ==========================================
+   3. Bottom Video Cards Collection Deck Layout
+   ========================================== */
+
+/* ग्रिड सिस्टम को फिक्स किया गया ताकि एक लाइन में अधिकतम 4 ही कार्ड्स आएं */
 .gallery-thumbnails-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Core system for auto layout resizing */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* बड़ी स्क्रीन पर हमेशा 4 कॉलम */
   gap: 20px;
 }
 

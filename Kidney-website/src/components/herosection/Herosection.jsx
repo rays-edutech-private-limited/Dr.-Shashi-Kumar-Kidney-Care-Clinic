@@ -1,6 +1,6 @@
 import React from 'react';
 import './Herosection.css';
-import hero from "../../assets/image/hero-image1.png";
+import hero from "../../assets/image/heroImage.png";
 
 const Herosection = ({ onBookClick }) => {
   return (

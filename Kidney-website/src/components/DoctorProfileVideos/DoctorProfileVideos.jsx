@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './DoctorProfileVideos.css';
+import featureVideos from "../../assets/image/dr.shashi-kumar-feature-videos.mp4";
+import featurethumbnal from "../../assets/image/feature-thumbnal.png"
 
 const DoctorCyberHub = () => {
   const profileSegments = [
@@ -11,7 +13,7 @@ const DoctorCyberHub = () => {
       tagline: "Trusted by thousands",
       desc: "Evidence-based knowledge, advanced treatments, and patient-first care.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-a-patient-in-a-clinic-41617-large.mp4",
-      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFMOQA4BcK6kVvtW7MoBvJy7ViGBJGvnEEUYr3ovR3vw&s=10",
+      youtubeUrl: "https://youtu.be/l2XqrmeMcg8?si=O6asNTpYS0FvJTqH",
       stat: "25+",
       statLabel: "Years Experience",
       iconType: "experience",
@@ -27,7 +29,7 @@ const DoctorCyberHub = () => {
       tagline: "Latest & safest care",
       desc: "Deep-dive into advanced therapies for chronic kidney diseases (CKD).",
       url: "https://assets.mixkit.co/videos/preview/mixkit-medical-equipment-in-a-surgical-room-40544-large.mp4",
-      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdjVr2V6frloB97B49uDzOD8VFeOcE-wcFhMa5XE4H4g&s=10",
+      youtubeUrl: "https://youtu.be/RoRzsGnhl2g?si=h2v4tYeSsTrLI0UQ",
       stat: "10K+",
       statLabel: "Patients Treated",
       iconType: "patients",
@@ -43,7 +45,7 @@ const DoctorCyberHub = () => {
       tagline: "Empowering better health",
       desc: "Exploring our fully automated testing systems.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-scientist-working-with-a-microscope-in-a-laboratory-40552-large.mp4",
-      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQluZB_x1DzYAAD-uzoU3KRGcOt6FXDvp5Tt6E88YxXzw&s=10",
+      youtubeUrl: "https://youtu.be/Vhne9yfYp2U?si=vVD-462ObX7d9_OI",
       stat: "1M+",
       statLabel: "YouTube Views",
       iconType: "views",
@@ -59,20 +61,147 @@ const DoctorCyberHub = () => {
       tagline: "Patients come first",
       desc: "A presentation of our high-hygiene recovery beds.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-hospital-ward-with-empty-beds-and-medical-equipment-40548-large.mp4",
-      youtubeUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVdf5PXy2gargIR4HPrx63eE0ZfKsvvSJk00yr970q4A&s=10",
+      youtubeUrl: "https://youtu.be/eJpgmry4fHk?si=8T7auIsKd9Gk1iP5",
       stat: "15+",
       statLabel: "Awards & Honors",
       iconType: "awards",
       duration: "7:36",
       views: "6.1K views",
       timeAgo: "3 weeks ago"
+    },
+    {
+      id: "extra1",
+      tabTitle: "05. DIET",
+      title: "Kidney Detox Drinks Myths vs Facts",
+      subtitle: "Healthy Nutrition",
+      tagline: "Eat clean, live long",
+      desc: "The truth behind popular kidney detox juices.",
+      url: "https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-a-patient-in-a-clinic-41617-large.mp4",
+      youtubeUrl: "https://youtu.be/Ht0QPM17y54?si=eUtVwj_8EPPtTkNZ",
+      stat: "50+",
+      statLabel: "Health Seminars",
+      iconType: "experience",
+      duration: "5:20",
+      views: "1.8K views",
+      timeAgo: "1 month ago"
+    },
+    {
+      id: "extra2",
+      tabTitle: "06. CARE",
+      title: "Early Signs of Kidney Issues You Shouldn't Ignore",
+      subtitle: "Symptoms Awareness",
+      tagline: "Early detection saves lives",
+      desc: "Understand critical warning signs of early kidney diseases.",
+      url: "https://assets.mixkit.co/videos/preview/mixkit-medical-equipment-in-a-surgical-room-40544-large.mp4",
+      youtubeUrl: "https://youtu.be/QbPxBK9iwNM?si=wOkFYdmd9rAgzUQN",
+      stat: "500+",
+      statLabel: "Successful Transplants",
+      iconType: "patients",
+      duration: "12:40",
+      views: "9.3K views",
+      timeAgo: "1 month ago"
+    },
+    {
+      id: "extra3",
+      tabTitle: "07. HEALTH",
+      title: "Kidney Disease Prevention Guide",
+      subtitle: "Medical Guidance",
+      tagline: "Stay safe, stay healthy",
+      desc: "Important medical guidelines for kidney care.",
+      url: "https://assets.mixkit.co/videos/preview/mixkit-scientist-working-with-a-microscope-in-a-laboratory-40552-large.mp4",
+      youtubeUrl: "https://youtu.be/2fs0uBS0Umw?si=e1-BwpItND-zBm62",
+      stat: "300+",
+      statLabel: "Consultations",
+      iconType: "experience",
+      duration: "11:15",
+      views: "2.5K views",
+      timeAgo: "1 month ago"
+    },
+    {
+      id: "extra4",
+      tabTitle: "08. LIVE",
+      title: "Kidney Care Live Q&A Session",
+      subtitle: "Live Stream",
+      tagline: "Interact with experts live",
+      desc: "Answering critical questions about kidney health live.",
+      url: "https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-a-patient-in-a-clinic-41617-large.mp4",
+      youtubeUrl: "https://www.youtube.com/live/0d9-L3azrP8?si=x4JM5a3ZL0nI0fbU",
+      stat: "5K+",
+      statLabel: "Live Viewers",
+      iconType: "views",
+      duration: "45:00",
+      views: "12K views",
+      timeAgo: "2 months ago"
+    },
+    {
+      id: "extra5",
+      tabTitle: "09. TREATMENT",
+      title: "Chronic Kidney Disease Management",
+      subtitle: "Advanced Care",
+      tagline: "Better life through care",
+      desc: "How to manage CKD effectively.",
+      url: "https://assets.mixkit.co/videos/preview/mixkit-medical-equipment-in-a-surgical-room-40544-large.mp4",
+      youtubeUrl: "https://youtu.be/NlPxrWKrbmU?si=Mzt2mpw_LK03aKO7",
+      stat: "40+",
+      statLabel: "Expert Doctors",
+      iconType: "experience",
+      duration: "14:20",
+      views: "7.1K views",
+      timeAgo: "2 months ago"
+    },
+    {
+      id: "extra6",
+      tabTitle: "10. NUTRITION",
+      title: "Superfoods for Kidney Health",
+      subtitle: "Dietary Routine",
+      tagline: "Fuel your body right",
+      desc: "Top recommended superfoods for a healthy kidney.",
+      url: "https://assets.mixkit.co/videos/preview/mixkit-hospital-ward-with-empty-beds-and-medical-equipment-40548-large.mp4",
+      youtubeUrl: "https://youtu.be/mdukTArrmH0?si=qJQilTKhcMjn4erg",
+      stat: "80+",
+      statLabel: "Diet Plans Created",
+      iconType: "awards",
+      duration: "8:05",
+      views: "4.2K views",
+      timeAgo: "3 months ago"
     }
   ];
 
-  const [activeSegment, setActiveSegment] = useState(profileSegments[0]);
-  const [isPlaying, setIsPlaying] = useState(false); // Bada video play ho raha hai ya nahi
+  const featuredVideo = profileSegments[0];
+  const [isMainPlaying, setIsMainPlaying] = useState(false);
+  const [popupVideo, setPopupVideo] = useState(null);
+  const [showAllVideos, setShowAllVideos] = useState(false);
 
-  // Icons Helper function
+  const visibleVideos = showAllVideos ? profileSegments : profileSegments.slice(0, 4);
+
+  // --- Helper to convert regular YouTube URL to Embed URL ---
+  const getYoutubeEmbedUrl = (url) => {
+    if (!url) return '';
+    let videoId = '';
+    if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1].split('?')[0];
+    } else if (url.includes('youtube.com/live/')) {
+      videoId = url.split('youtube.com/live/')[1].split('?')[0];
+    } else if (url.includes('v=')) {
+      videoId = url.split('v=')[1].split('&')[0];
+    }
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  // --- Helper to extract Thumbnail from YouTube URL ---
+  const getYoutubeThumbnail = (url) => {
+    if (!url) return '';
+    let videoId = '';
+    if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1].split('?')[0];
+    } else if (url.includes('youtube.com/live/')) {
+      videoId = url.split('youtube.com/live/')[1].split('?')[0];
+    } else if (url.includes('v=')) {
+      videoId = url.split('v=')[1].split('&')[0];
+    }
+    return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`; 
+  };
+
   const renderIcon = (type) => {
     switch (type) {
       case 'experience':
@@ -113,7 +242,6 @@ const DoctorCyberHub = () => {
     <div className="dark-kiosk-wrapper">
       {/* Top Split Hero Section */}
       <div className="dark-kiosk-hero">
-        
         {/* Left Side Info Panel */}
         <div className="dark-kiosk-hero-left">
           <h1 className="dark-kiosk-headline">
@@ -129,7 +257,7 @@ const DoctorCyberHub = () => {
           </p>
 
           <div className="dark-kiosk-cta-row">
-            <button onClick={() => setIsPlaying(true)} className="btn-solid-teal" style={{ border: 'none', cursor: 'pointer' }}>
+            <button onClick={() => setIsMainPlaying(true)} className="btn-solid-teal" style={{ border: 'none', cursor: 'pointer' }}>
               <svg className="icon-play" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z"/>
               </svg>
@@ -138,9 +266,8 @@ const DoctorCyberHub = () => {
             <button className="btn-outline-dark">Subscribe</button>
           </div>
 
-          {/* Quick Stats Grid Row */}
           <div className="dark-kiosk-stats-row">
-            {profileSegments.map((seg) => (
+            {profileSegments.slice(0, 4).map((seg) => (
               <div key={seg.id} className="stat-item-box">
                 <div className="stat-icon-wrapper">
                   {renderIcon(seg.iconType)}
@@ -154,39 +281,35 @@ const DoctorCyberHub = () => {
           </div>
         </div>
 
-        {/* Right Side Immersive Video Player Window (MAIN PLAYER) */}
+        {/* Right Side Immersive Video Player Window */}
         <div className="dark-kiosk-hero-right">
           <div className="cinema-viewport-card" style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
-            
-            {isPlaying ? (
-              /* Play karne par asli video load hogi bina muted tag ke (Full Audio) */
+            {isMainPlaying ? (
+              
               <video
-                key={activeSegment.id}
-                src={activeSegment.url}
+                key={featuredVideo.id}
+                src={featureVideos}
+                title={featuredVideo.title}
                 className="viewport-video-element"
-                autoPlay
+                style={{ width: '100%', height: '100%', border: 'none', objectFit: 'cover' }}
                 controls
-                playsInline
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                autoPlay
               />
             ) : (
-              /* Default State: Pehle Thumbnail image aur play button dikhega */
               <div 
                 className="video-thumbnail-placeholder" 
-                onClick={() => setIsPlaying(true)} 
+                onClick={() => setIsMainPlaying(true)} 
                 style={{ width: '100%', height: '100%', cursor: 'pointer', position: 'relative' }}
               >
                 <img 
-                  src={activeSegment.youtubeUrl} 
-                  alt={activeSegment.title} 
+                  src={featurethumbnal} 
+                  alt={featuredVideo.title} 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                
-                {/* Custom Circular Play Button Overlay */}
                 <div className="video-play-overlay" style={{
                   position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: 'rgba(0, 0, 0, 0.4)'
+                  
                 }}>
                   <div className="play-circle" style={{
                     width: '70px', height: '70px', backgroundColor: '#008080',
@@ -200,14 +323,13 @@ const DoctorCyberHub = () => {
                 </div>
               </div>
             )}
-
           </div>
         </div>
       </div>
 
-      {/* Middle Core Features Horizontal Ribbon Bar */}
+      {/* Middle Core Features Ribbon */}
       <div className="dark-kiosk-features-ribbon">
-        {profileSegments.map((seg) => (
+        {profileSegments.slice(0, 4).map((seg) => (
           <div key={seg.id} className="ribbon-feature-card">
             <div className="feature-icon-wrapper">
               {renderIcon(seg.iconType)}
@@ -224,31 +346,45 @@ const DoctorCyberHub = () => {
       <div className="dark-kiosk-gallery-section">
         <div className="gallery-header-row">
           <h2 className="gallery-section-title">LATEST VIDEOS</h2>
-          <span className="gallery-view-all-link">
-            View all videos 
-            <svg className="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
+          
+          {profileSegments.length > 4 && (
+            <span 
+              className="gallery-view-all-link" 
+              onClick={() => setShowAllVideos(!showAllVideos)}
+              style={{ cursor: 'pointer', userSelect: 'none' }}
+            >
+              {showAllVideos ? "View less videos" : "View more videos"} 
+              <svg 
+                className="icon-arrow-right" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2"
+                style={{ 
+                  transform: showAllVideos ? 'rotate(-90deg)' : 'rotate(90deg)', 
+                  transition: 'transform 0.3s ease',
+                  marginLeft: '5px'
+                }}
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          )}
         </div>
 
         <div className="gallery-thumbnails-grid">
-          {profileSegments.map((seg) => {
-            const isCardActive = activeSegment.id === seg.id;
+          {visibleVideos.map((seg) => {
             return (
               <div 
                 key={seg.id} 
-                className={`thumbnail-video-card ${isCardActive ? 'thumbnail-card-active' : ''}`}
-                onClick={() => {
-                  setActiveSegment(seg);
-                  setIsPlaying(false); // Naya video select hote hi use pehle thumbnail state me lao
-                }}
+                className="thumbnail-video-card"
+                onClick={() => setPopupVideo(seg)} 
+                style={{ cursor: 'pointer' }}
               >
                 <div className="thumbnail-preview-frame" >
-                  {/* Niche sirf static thumbnails photo dikhenge */}
                   <img 
-                    src={seg.youtubeUrl} 
+                    src={getYoutubeThumbnail(seg.youtubeUrl)} 
                     alt={seg.title} 
                     className="thumbnail-bg-video" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -268,6 +404,51 @@ const DoctorCyberHub = () => {
           })}
         </div>
       </div>
+
+      {/* --- VIDEO POPUP MODAL --- */}
+      {popupVideo && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+          backgroundColor: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center',
+          justifyContent: 'center', zIndex: 9999
+        }} onClick={() => setPopupVideo(null)}>
+          
+          <div style={{
+            position: 'relative', width: '90%', maxWidth: '800px', 
+            backgroundColor: '#111', borderRadius: '12px', overflow: 'hidden',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+          }} onClick={(e) => e.stopPropagation()}>
+            
+            <button 
+              onClick={() => setPopupVideo(null)} 
+              style={{
+                position: 'absolute', top: '15px', right: '15px', 
+                background: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', 
+                fontSize: '18px', padding: '5px 12px', borderRadius: '50%', 
+                cursor: 'pointer', zIndex: 10
+              }}
+            >
+              ✕
+            </button>
+
+            <div style={{ aspectRatio: '16/9', width: '100%' }}>
+              <iframe 
+                src={`${getYoutubeEmbedUrl(popupVideo.youtubeUrl)}?autoplay=1`}
+                title={popupVideo.title}
+                style={{ width: '100%', height: '100%', border: 'none' }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            <div style={{ padding: '20px', color: '#fff' }}>
+              <span style={{ color: '#008080', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px' }}>{popupVideo.subtitle}</span>
+              <h3 style={{ margin: '10px 0', fontSize: '20px' }}>{popupVideo.title}</h3>
+              <p style={{ color: '#aaa', fontSize: '14px', margin: 0 }}>{popupVideo.desc}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
