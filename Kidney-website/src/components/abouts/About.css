@@ -183,7 +183,7 @@
 .purple-text { color: #8b5cf6; }
 .orange-text { color: #f97316; }
 .red-text { color: #ef4444; }
-.stat-p { font-size: 11px; color: #64748b; font-weight: 600; line-height: 1.3; }
+.stat-p { font-size: 11px; color: #cdd7e6; font-weight: 600; line-height: 1.3; }
 .stat-bottom-line { position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; }
 .bg-cyan { background: #06b6d4; }
 .bg-purple { background: #8b5cf6; }
@@ -251,13 +251,13 @@
 
 /* Affiliations Logos Node */
 .cine-logos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.logo-node { background: #ffffff; border: 1px solid #f1f5f9; padding: 12px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; min-height: 80px; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
+.logo-node { background: #ffffff; border: 2px solid #0891b2; padding: 12px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; min-height: 80px; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
 .node-initial { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10.5px; font-weight: 800; margin-bottom: 6px; }
 .node-isn .node-initial { background: #f5f3ff; color: #7c3aed; }
 .node-ima .node-initial { background: #eff6ff; color: #2563eb; }
 .node-api .node-initial { background: #ecfeff; color: #0891b2; }
 .node-int .node-initial { background: #fff7ed; color: #ea580c; }
-.logo-node p { margin: 0; font-size: 11.5px; color: #475569; font-weight: 600; line-height: 1.3; }
+.logo-node p { margin: 0; font-size: 11.5px; color: #011834; font-weight: 900; line-height: 1.3; }
 
 /* Timeline Container */
 .timeline-node-container { position: relative; padding-left: 6px; }

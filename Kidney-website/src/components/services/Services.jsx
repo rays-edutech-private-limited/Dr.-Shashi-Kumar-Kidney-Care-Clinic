@@ -125,7 +125,7 @@ const Services = () => {
           <span className="hybrid-tag">
             <span className="tag-icon"><i className='fas fa-stethoscope'></i></span> DEPARTMENT OF NEPHROLOGY
           </span>
-          <h2 className="hybrid-title">Renal Specialities, <span>Redefined.</span></h2>
+          <h2 className="hybrid-title">Kidney Specialities, <span>Services.</span></h2>
           <p className="hybrid-subtitle">
             Advanced care. Expert nephrologists. Better outcomes.<br/>
             Compassionate kidney care for a healthier tomorrow.

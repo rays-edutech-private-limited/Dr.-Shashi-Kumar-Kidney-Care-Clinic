@@ -59,8 +59,8 @@ const About = ({ onBookClick }) => {
           </div>
           
           <h2 className="cine-main-headline">
-            Restoring Health.<br />
-            <span className="text-gradient-cyan-blue">Renewing Hope.</span>
+            Protecting Kidneys<br />
+            <span className="text-gradient-cyan-blue">Changing Lives.</span>
           </h2>
           
           <blockquote className="cine-luxury-quote">
