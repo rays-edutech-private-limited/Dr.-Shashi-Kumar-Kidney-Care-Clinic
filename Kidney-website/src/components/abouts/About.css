@@ -160,12 +160,12 @@
   font-size: clamp(14px, 1.5vw, 16px); font-style: italic; color: #475569; line-height: 1.55; font-weight: 500;
 }
 .quote-mark { font-size: 36px; color: #06b6d4; position: absolute; left: 6px; top: -10px; font-family: serif; }
-.cine-narrative{ font-size: 15px; color: #475569; line-height: 1.65; margin-bottom: 25px; }
+.cine-narrative{ font-family: sans-serif; font-size: 15px; color: #272e37; line-height: 1.65; margin-bottom: 25px; }
 
 /* --- STATS MATRIX --- */
 .cine-stats-matrix { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .cine-stat-item {
-  position: relative; background: #ffffff; border: 1px solid #f1f5f9; border-radius: 16px 16px 12px 12px; padding: 16px 10px;
+  position: relative; background: #011834; border: 1px solid #f1f5f9; border-radius: 16px 16px 12px 12px; padding: 16px 10px;
   text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); overflow: hidden;
 }
 .stat-icon-circle {
@@ -175,6 +175,8 @@
 .purple-bg { background: #f5f3ff; color: #8b5cf6; }
 .orange-bg { background: #fff7ed; color: #f97316; }
 .red-bg { background: #fef2f2; color: #ef4444; }
+
+
 
 .stat-num { font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; color: #0f172a; margin-bottom: 2px; }
 .cyan-text { color: #06b6d4; }
@@ -187,6 +189,7 @@
 .bg-purple { background: #8b5cf6; }
 .bg-orange { background: #f97316; }
 .bg-red { background: #ef4444; }
+
 
 /* --- CORE FEATURES BAR --- */
 .cine-features-wrapper {
@@ -230,14 +233,14 @@
 .bg-image-about4 { background-image: url("../../assets/image/about4.png"); background-size: 100% 100%; background-repeat: no-repeat; }
 .bg-image-about5 { background-image: url("../../assets/image/about5.png"); background-size: 100% 100%; background-repeat: no-repeat; }
 
-.block-header-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.block-header-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px;  background-color: #011834; padding: 5px; border-radius: 5px;}
 .header-icon-box { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
 .b-blue { background: #eff6ff; color: #2563eb; }
 .b-green { background: #f0fdf4; color: #16a34a; }
 .b-gold { background: #fff7ed; color: #ea580c; }
 .b-purple { background: #f5f3ff; color: #7c3aed; }
 .b-teal { background: #f0fdfa; color: #0d9488; }
-.block-header-row h3 { margin: 0; font-size: 13px; font-weight: 800; color: #1e293b; letter-spacing: 0.3px; }
+.block-header-row h3 { margin: 0; font-size: 13px; font-weight: 800; color: #fff; letter-spacing: 0.3px; }
 
 .cine-list { list-style: none; padding: 0; margin: 0; }
 .cine-list li { font-size: 13.5px; color: #475569; line-height: 1.6; margin-bottom: 10px; position: relative; padding-left: 22px; font-weight: 500; }
@@ -310,9 +313,7 @@
   .cine-main-headline{
     text-align: center;
   }
-  .cine-narrative{
-    text-align: center;
-  }
+ 
 }
 
 /* 3. Small Tablets & Big Mobile Screens */

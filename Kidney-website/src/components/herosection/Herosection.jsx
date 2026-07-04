@@ -21,7 +21,7 @@ const Herosection = ({ onBookClick }) => {
           
           <h1 className="hero-main-title">
             Expert <span className="neon-teal-text">Kidney Care</span> <br />
-            By Dr. Shashi Kumar
+            By <span style={{color:"#26dfc0"}}>Dr. Shashi Kumar</span>
           </h1>
           
           <p className="hero-description-text">

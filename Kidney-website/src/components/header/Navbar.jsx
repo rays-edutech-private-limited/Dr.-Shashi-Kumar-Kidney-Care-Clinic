@@ -18,7 +18,7 @@ const Navbar = ({onBookClick}) => {
           </div>
           <div className="logo-brand">
             <span className="logo-main-title">Dr.<span className="thin">Shashi Kumar </span></span>
-            <span className="logo-tag">Kidney Care Clinic</span>
+            <span className="logo-tag">Kidney Hospital & Research Institute</span>
           </div>
         </a>
 

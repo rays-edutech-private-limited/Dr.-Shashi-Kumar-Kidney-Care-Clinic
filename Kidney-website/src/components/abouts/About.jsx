@@ -65,7 +65,7 @@ const About = ({ onBookClick }) => {
           
           <blockquote className="cine-luxury-quote">
             <span className="quote-mark">“</span>
-            "Every patient deserves world-class renal care. We combine advanced global science with absolute precision to give your life a fresh start."
+            "Every patient deserves world-class renal care. We combine advanced global science with absolute precision to give your life a fresh start:- Dr. Shashi Kumar"
           </blockquote>
           
           <p className="cine-narrative">
@@ -109,7 +109,7 @@ const About = ({ onBookClick }) => {
       </div>
 
       {/* --- HORIZONTAL CORE FEATURES ROW --- */}
-      <div className="cine-features-wrapper">
+      {/* <div className="cine-features-wrapper">
         <div className="cine-features-bar">
           <div className="feature-bar-item">
             <div className="f-icon-circle f-cyan"><i className="fa-solid fa-circle-check"></i></div>
@@ -140,7 +140,7 @@ const About = ({ onBookClick }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* --- Professional Dashboard Grid --- */}
       <div className="cine-dashboard-wrapper">
