@@ -48,7 +48,7 @@ const Footer = ({ onBookClick }) => {
               </div>
               <div className="sk-contact-item">
                 <i className="fa-solid fa-location-dot sk-icon-gold"></i>
-                <span>Plot 10, Main Street, Patna, Bihar</span>
+                <span>Patel Path, Raja Bazar, Bailey Road, Patna, Bihar</span>
               </div>
               <div className="sk-contact-item">
                 <i className="fa-solid fa-envelope sk-icon-gold"></i>

@@ -28,16 +28,16 @@ const Topbar = () => {
         <div className="topbar-right">
           <div className="topbar-actions">
             <p>Follow Us</p>
-            <Link to="#" className="sm-icon-link instagram" aria-label="Instagram">
+            <Link to="https://instagram.com" className="sm-icon-link instagram" rel="noreferrer"  target="_blank" aria-label="Instagram">
               <i className="fab fa-instagram"></i>
             </Link>
-            <Link to="#" className="sm-icon-link facebook" aria-label="Facebook">
+            <Link to="https://facebook.com" className="sm-icon-link facebook" target="_blank" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
             </Link>
-            <Link to="#" className="sm-icon-link youtube" aria-label="Youtube">
+            <Link to="https://youtube.com" className="sm-icon-link youtube" target="_blank" aria-label="Youtube">
               <i className="fab fa-youtube"></i>
             </Link>
-            <Link to="#" className="sm-icon-link twitter" aria-label="Twitter">
+            <Link to="https://twitter.com" className="sm-icon-link twitter" target="_blank" aria-label="Twitter">
               <i className="fab fa-x-twitter"></i>
             </Link>
           </div>
