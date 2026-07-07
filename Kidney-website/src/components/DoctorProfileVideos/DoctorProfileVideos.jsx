@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './DoctorProfileVideos.css';
 import featureVideos from "../../assets/image/dr.shashi-kumar-feature-videos.mp4";
 import featurethumbnal from "../../assets/image/feature-thumbnal.png"
+import ScrollReveal from "../../ScrollReveal"
 
 const DoctorCyberHub = () => {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   const profileSegments = [
     {
       id: "intro",
@@ -239,7 +241,7 @@ const DoctorCyberHub = () => {
   };
 
   return (
-    <div className="dark-kiosk-wrapper">
+    <div className="dark-kiosk-wrapper reveal-on-scroll">
       {/* Top Split Hero Section */}
       <div className="dark-kiosk-hero">
         {/* Left Side Info Panel */}

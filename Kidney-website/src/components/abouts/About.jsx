@@ -1,11 +1,13 @@
 import React from 'react';
 import './About.css';
 import kidneyImg from "../../assets/image/about-img.png"; 
-import doctor from "../../assets/image/hero-image1.png"; 
+import doctor from "../../assets/image/heroImage.png"; 
+import ScrollReveal from "../../ScrollReveal"
 
 const About = ({ onBookClick }) => {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   return (
-    <section className="cinematic-about-section">
+    <section className="cinematic-about-section reveal-on-scroll">
       <div className="cine-wrapper">
         
         {/* --- LEFT PANEL: IMAGE 1 ARCHITECTURE --- */}

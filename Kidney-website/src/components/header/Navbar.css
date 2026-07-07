@@ -73,7 +73,7 @@
 }
 
 .logo-main-title .thin {
-  color: #00b8d4;
+  color: #26dfc0;
 }
 
 .logo-tag {
@@ -108,7 +108,7 @@
 
 .lux-nav-links a:hover, 
 .lux-nav-links .active-link {
-  color: #00b8d4;
+  color: #26dfc0;
 }
 
 /* Modern Minimalist Link Line Animation */
@@ -119,7 +119,7 @@
   left: 0;
   width: 0;
   height: 2.5px;
-  background: #00b8d4;
+  background: #26dfc0;
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -170,7 +170,7 @@
 
 .lux-dropdown-card li a:hover {
   background-color: #f1f5f9;
-  color: #00b8d4;
+  color: #26dfc0;
   padding-left: 20px;
 }
 
@@ -182,7 +182,7 @@
 
 /* 3D Glass Glow Booking Button (Desktop) */
 .btn-glow-effect {
-  background: linear-gradient(135deg, #40bca3 0%, #00b4d8 100%);
+  background: linear-gradient(135deg, #26dfc0 0%, #26dfc0 100%);
   color: #ffffff;
   border: none;
   padding: 12px 24px;

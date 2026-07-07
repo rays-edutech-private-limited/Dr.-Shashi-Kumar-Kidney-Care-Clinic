@@ -5,7 +5,7 @@
   background-color: #011834;
   color: #e2e8f0;
   font-family: 'Montserrat', sans-serif;
-  padding: 50px 0 20px 0;
+  padding: 60px 0 20px 0;
   position: relative;
   width: 100%;
 }
@@ -18,19 +18,19 @@
 
 .sk-footer-container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 /* ==========================================================================
-   MOBILE FIRST LAYOUT (Default for screens from 0px to 767px)
+   MOBILE FIRST LAYOUT
    ========================================================================== */
 
 .sk-footer-main-grid {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 40px;
   width: 100%;
 }
 
@@ -38,30 +38,28 @@
   width: 100%;
 }
 
-/* Brand Section Responsive Settings */
+/* Brand Section */
 .sk-brand-col {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 210, 255, 0.15);
-  padding-bottom: 30px;
 }
 
 .sk-logo-section {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .sk-clinic-logo {
-  width: 65px;
+  width: 75px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.4));
 }
 
 .sk-brand-title {
   font-family: 'Cinzel', serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #00d2ff;
   line-height: 1.2;
@@ -72,11 +70,11 @@
   font-size: 18px;
   font-weight: 500;
   color: #ffffff;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .sk-brand-tagline {
-  font-size: 12.5px;
+  font-size: 13px;
   font-style: italic;
   color: #94a3b8;
   margin-top: 8px;
@@ -84,131 +82,135 @@
 
 /* Fluid Appointment Button */
 .sk-appointment-btn {
-  background: linear-gradient(135deg, #5dcfe8 0%, #aae8f6 50%, #00d2ff 100%);
-  border: 1px solid #00d2ff;
+  background: linear-gradient(135deg, #5dcfe8 0%, #00d2ff 100%);
+  border: none;
   color: #011834;
   font-weight: 700;
-  font-size: 14.5px;
-  padding: 14px 20px;
-  border-radius: 8px;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   width: 100%;
-  max-width: 290px;
-  margin: 0 auto 25px auto;
-  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
+  max-width: 260px;
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.25);
   transition: all 0.3s ease;
 }
 
 .sk-appointment-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.4);
 }
 
-/* Contact Items Alignment fixed */
+/* Common Headings */
+.sk-menu-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: #00d2ff;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Quick Links */
+.sk-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.sk-menu-list li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.sk-menu-list li a:hover {
+  color: #00d2ff;
+  padding-left: 5px;
+}
+
+/* Contact Details */
 .sk-contact-details {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  max-width: 300px;
+  gap: 18px;
+  align-items: center;
 }
 
 .sk-contact-item {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  gap: 12px;
-  font-size: 13.5px;
+  gap: 15px;
+  font-size: 14px;
   color: #cbd5e1;
-  line-height: 1.4;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 250px;
 }
 
 .sk-icon-gold {
   color: #00d2ff;
-  margin-top: 3px;
-  font-size: 14px;
+  margin-top: 4px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
 .sk-email-text {
-  word-break: break-all; /* Mobile par email box se bahar nahi jayegi */
+  word-break: break-all;
 }
 
-/* Center Section (Bio & Services Grid) */
-.sk-menu-center-col {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.sk-footer-bio-text {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: #b0b3b8;
-  text-align: justify;
-}
-
-/* Sub-grid: Mobile standard stacked, tablet 2col, desktop 3col */
-.sk-services-inner-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-  border-top: 1px solid rgba(0, 210, 255, 0.15);
-  padding-top: 20px;
-}
-
-.sk-menu-heading {
-  font-family: 'Cinzel', serif;
-  font-size: 16px;
-  color: #00d2ff;
+/* Social Media Section */
+.sk-social-text {
+  font-size: 13px;
+  color: #94a3b8;
   margin-bottom: 15px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  text-align: center;
+  line-height: 1.5;
 }
 
-.sk-menu-list {
-  list-style: none;
+.sk-social-icons {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+  justify-content: center;
 }
 
-.sk-menu-list li {
-  position: relative;
-  padding-left: 15px;
-}
-
-.sk-menu-list li::before {
-  content: '•';
+.sk-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 210, 255, 0.1);
   color: #00d2ff;
-  position: absolute;
-  left: 0;
-  top: -1px;
-  font-size: 14px;
-}
-
-.sk-menu-list li a {
-  color: #cbd5e1;
+  font-size: 18px;
   text-decoration: none;
-  font-size: 13.5px;
-  transition: all 0.2s ease;
-  display: inline-block;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
-.sk-menu-list li a:hover {
-  color: #ffffff;
-  transform: translateX(4px);
+.sk-social-link:hover {
+  background: #00d2ff;
+  color: #011834;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
 }
 
-/* Bottom Strip Settings */
+/* Bottom Divider & Credits */
 .sk-horizontal-gold-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(0, 210, 255, 0.3) 20%, rgba(0, 210, 255, 0.3) 80%, transparent);
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 25px;
 }
 
@@ -221,19 +223,19 @@
 }
 
 .sk-copyright-text {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #94a3b8;
   line-height: 1.6;
 }
 
 .sk-tag-highlight {
-  display: block; /* Mobile par clean separate line */
+  display: block;
   color: #00d2ff;
   margin-top: 5px;
 }
 
 .sk-developer-credits {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #94a3b8;
 }
 
@@ -241,105 +243,73 @@
   color: #00d2ff;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+.sk-developer-link:hover {
+  color: #ffffff;
 }
 
-
 /* ==========================================================================
-   TABLET & IPAD BREAKPOINT (Min-width: 600px to 1023px)
+   TABLET & DESKTOP BREAKPOINTS
    ========================================================================== */
-@media (min-width: 600px) {
-  .sk-services-inner-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablet */
-  }
 
+@media (min-width: 768px) {
   .sk-footer-main-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Split screen into two */
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
-
+  
   .sk-brand-col {
-    border-bottom: none;
-    padding-bottom: 0;
-    border-right: 1px solid rgba(0, 210, 255, 0.1);
-    padding-right: 20px;
     align-items: flex-start;
     text-align: left;
   }
-
+  
   .sk-appointment-btn {
-    margin: 0 0 25px 0;
-    font-size: 13.5px;
+    margin: 0;
   }
 
-  .sk-footer-bottom-bar {
-    flex-direction: row;
-    justify-content: space-between;
+  .sk-menu-heading {
     text-align: left;
+  }
+  
+  .sk-menu-list, .sk-contact-details {
+    align-items: flex-start;
+  }
+  
+  .sk-social-text {
+    text-align: left;
+  }
+  
+  .sk-social-icons {
+    justify-content: flex-start;
   }
 
   .sk-tag-highlight {
     display: inline;
     margin-top: 0;
   }
-.sk-menu-heading {
-    font-family: 'Cinzel', serif;
-    font-size: 16px;
-    color: #00d2ff;
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-align: center;
+  
+  .sk-footer-bottom-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 }
 
-}
-
-@media (max-width: 600px) {
-.sk-menu-heading {
-   
-    text-align: center;
-}
-.sk-footer-bio-text{
-  text-align: center;
-}
-.sk-menu-list{
-  text-align: center;
-}
-.sk-menu-list li::before {
-  content: '';
-}
-.sk-contact-details{
-  align-items: center;
-
-}
-}
-
-
-/* ==========================================================================
-   LAPTOP & DESKTOP BREAKPOINT (Min-width: 1024px and up)
-   ========================================================================== */
 @media (min-width: 1024px) {
   .sk-footer-main-grid {
-    grid-template-columns: 1.2fr 2.5fr 0.9fr 0.9fr; /* Perfect Wide-screen Proportions */
+    /* Perfect 4 Column Grid for Desktop */
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
     gap: 30px;
   }
 
-  .sk-brand-col {
-    border-right: 1px solid rgba(0, 210, 255, 0.15);
-    padding-right: 25px;
-  }
-
-  .sk-menu-center-col {
-    border-right: 1px solid rgba(0, 210, 255, 0.15);
-    padding-right: 25px;
-  }
-
-  .sk-services-inner-grid {
-    grid-template-columns: repeat(3, 1fr); /* Full 3 column lists side-by-side */
-    gap: 20px;
+  .sk-footer-col {
+    padding: 0 10px;
   }
   
-  .sk-brand-title {
-    font-size: 24px;
+  .sk-brand-col {
+    border-right: 1px solid rgba(0, 210, 255, 0.15);
+    padding-right: 30px;
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './TextTestimonials.css';
+import ScrollReveal from "../../ScrollReveal"
 
 const textData = [
   {
@@ -37,6 +38,7 @@ const textData = [
 ];
 
 function TextTestimonials() {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   const [activeIndex, setActiveIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -98,7 +100,7 @@ function TextTestimonials() {
   };
 
   return (
-    <div className="tt-premium-section">
+    <div className="tt-premium-section reveal-on-scroll">
       {/* Background Lights */}
       <div className="tt-glow-orb-top"></div>
       <div className="tt-glow-orb-bottom"></div>

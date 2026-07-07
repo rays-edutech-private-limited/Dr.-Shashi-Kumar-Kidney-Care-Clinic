@@ -1,7 +1,9 @@
 import React from 'react';
 import './Services.css';
+import ScrollReveal from "../../ScrollReveal"
 
 const Services = () => {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   const serviceCards = [
   { 
     title: "Chronic Kidney Disease (CKD)", 
@@ -67,22 +69,22 @@ const Services = () => {
     bgColor: "#fce7f3",
     desc: "Managing kidney complications caused by high blood pressure and vascular disorders." 
   },
-  { 
-    title: "Interventional Nephrology", 
-    icon: "fa-solid fa-syringe", 
-    badge: "SPECIALIZED PROCEDURES", 
-    themeColor: "#0d9488",
-    bgColor: "#ccfbf1",
-    desc: "Advanced procedures including dialysis access creation and catheter management." 
-  },
-  { 
-    title: "Renal Biopsy & Diagnostics", 
-    icon: "fa-solid fa-microscope", 
-    badge: "ADVANCED DIAGNOSTICS", 
-    themeColor: "#4f46e5",
-    bgColor: "#e0e7ff",
-    desc: "Precision diagnostic testing and renal biopsy for accurate kidney disease evaluation." 
-  }
+  // { 
+  //   title: "Interventional Nephrology", 
+  //   icon: "fa-solid fa-syringe", 
+  //   badge: "SPECIALIZED PROCEDURES", 
+  //   themeColor: "#0d9488",
+  //   bgColor: "#ccfbf1",
+  //   desc: "Advanced procedures including dialysis access creation and catheter management." 
+  // },
+  // { 
+  //   title: "Renal Biopsy & Diagnostics", 
+  //   icon: "fa-solid fa-microscope", 
+  //   badge: "ADVANCED DIAGNOSTICS", 
+  //   themeColor: "#4f46e5",
+  //   bgColor: "#e0e7ff",
+  //   desc: "Precision diagnostic testing and renal biopsy for accurate kidney disease evaluation." 
+  // }
 ];
 
   const features = [
@@ -117,7 +119,7 @@ const Services = () => {
 ];
 
   return (
-    <section className="services-hybrid-section">
+    <section className="services-hybrid-section reveal-on-scroll">
       <div className="hybrid-container">
         
         {/* Header Block */}

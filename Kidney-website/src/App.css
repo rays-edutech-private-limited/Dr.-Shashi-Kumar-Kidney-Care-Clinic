@@ -11,3 +11,104 @@ body {
   overflow-x: hidden; 
 }
 
+
+
+/* ==========================================================================
+   GLOBAL MULTI-EFFECT SCROLL REVEAL CSS
+   ========================================================================== */
+
+/* 1. डिफ़ॉल्ट रूप से सभी एलिमेंट्स छिपे रहेंगे और अपनी शुरुआती पोजीशन पर होंगे */
+
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomInFloat {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatElement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* जब स्क्रॉल होकर एक्टिव क्लास आएगी, तब एनिमेशन ट्रिगर होगा */
+.reveal-on-scroll.active .cine-visual-container {
+  animation: fadeInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-on-scroll.active .cine-right-content-panel {
+  animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-on-scroll.active .cine-stat-item {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-on-scroll.active .cine-stat-item:nth-child(1) { animation-delay: 0.2s; }
+.reveal-on-scroll.active .cine-stat-item:nth-child(2) { animation-delay: 0.3s; }
+.reveal-on-scroll.active .cine-stat-item:nth-child(3) { animation-delay: 0.4s; }
+.reveal-on-scroll.active .cine-stat-item:nth-child(4) { animation-delay: 0.5s; }
+
+.reveal-on-scroll.active .cine-dashboard-block {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-on-scroll.active .cine-layout-3col .cine-dashboard-block:nth-child(1) { animation-delay: 0.4s; }
+.reveal-on-scroll.active .cine-layout-3col .cine-dashboard-block:nth-child(2) { animation-delay: 0.5s; }
+.reveal-on-scroll.active .cine-layout-3col .cine-dashboard-block:nth-child(3) { animation-delay: 0.6s; }
+.reveal-on-scroll.active .cine-layout-2col .cine-dashboard-block:nth-child(1) { animation-delay: 0.7s; }
+.reveal-on-scroll.active .cine-layout-2col .cine-dashboard-block:nth-child(2) { animation-delay: 0.8s; }
+
+.reveal-on-scroll.active .cine-btn-luxury {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease;
+  will-change: transform, opacity;
+}
+
+/* 2. अलग-अलग इफेक्ट्स की शुरुआती पोजीशन (जब तक स्क्रॉल न किया जाए) */
+.reveal-on-scroll[data-reveal="up"] {
+  transform: translateY(60px); /* नीचे छिपा रहेगा */
+}
+
+.reveal-on-scroll[data-reveal="left"] {
+  transform: translateX(-80px); /* लेफ्ट में छिपा रहेगा */
+}
+
+.reveal-on-scroll[data-reveal="right"] {
+  transform: translateX(80px); /* राइट में छिपा रहेगा */
+}
+
+.reveal-on-scroll[data-reveal="zoom"] {
+  transform: scale(0.7); /* छोटा होकर छिपा रहेगा */
+}
+
+
+/* 3. एक्टिव होने पर (जब स्क्रॉल होकर स्क्रीन पर आएगा) - सब अपनी असली पोजीशन पर आ जाएंगे */
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1) !important;
+}
+
+
+/* 4. Staggered Delay (अगर एक के बाद एक एलिमेंट्स को लाना हो) */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }

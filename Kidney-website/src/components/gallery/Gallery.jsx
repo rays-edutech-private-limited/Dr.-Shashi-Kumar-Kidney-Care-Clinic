@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Gallery.css';
+import ScrollReveal from "../../ScrollReveal"
 
 const Gallery = () => {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   const [selectedImage, setSelectedImage] = useState(null);
 
   // image_5722e2.png ke flow ke hisab se different random vertical heights wali images
@@ -17,10 +19,10 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="pinterest-gallery-wrapper">
+    <div className="pinterest-gallery-wrapper reveal-on-scroll">
       
       {/* Clinic Header Section */}
-      <div className="clinic-top-header">
+      <div className="clinic-top-header ">
         <div className="branding-badge">Premium Facility Tour</div>
         <h1 className="doctor-main-title">DR. SHASHI KUMAR</h1>
         <p className="clinic-sub-tag">Kidney Care Clinic Gallery</p>

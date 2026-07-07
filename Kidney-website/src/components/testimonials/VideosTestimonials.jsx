@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './VideosTestimonials.css';
+import ScrollReveal from "../../ScrollReveal"
 
 const testimonialsData = [
+  
   {
     id: 1,
     caseCode: "PATIENT ID #4012",
@@ -35,6 +37,7 @@ const testimonialsData = [
 ];
 
 function VideosTestimonials({onBookClick}) {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   const [currentIndex, setCurrentIndex] = useState(2); 
   const [isPaused, setIsPaused] = useState(false); 
   const [activeVideo, setActiveVideo] = useState(null); 
@@ -123,7 +126,7 @@ function VideosTestimonials({onBookClick}) {
   };
 
   return (
-    <div className="vt-prime-container">
+    <div className="vt-prime-container reveal-on-scroll">
       <div className="vt-grid-overlay"></div>
       <div className="vt-plasma-orb-1"></div>
 

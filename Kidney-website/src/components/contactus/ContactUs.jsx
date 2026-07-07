@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
+import ScrollReveal from "../../ScrollReveal"
 
 function ContactUs() {
+  ScrollReveal('.reveal-on-scroll', 0.15)
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -42,7 +44,7 @@ function ContactUs() {
     window.open(whatsappUrl, '_blank');
   };
   return (
-    <div className="contact-page-wrapper">
+    <div className="contact-page-wrapper reveal-on-scroll">
       {/* Top Header Section */}
       <div className="contact-header-section">
         <span className="top-badge">🩺 DR. SHASHI | KIDNEY CARE CENTER</span>

@@ -61,12 +61,58 @@
   box-sizing: border-box;
 }
 
+/* ==========================================
+   ADDED: Left and Right Panel Entrance Animations
+   ========================================== */
+
 .hero-left-panel {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  /* शुरुआत में छुपा रहेगा और animation शुरू होने पर अपनी जगह आएगा */
+  opacity: 0;
+  animation: slideFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.2s; /* हल्का सा डिले स्मूद लोडिंग के लिए */
 }
+
+.hero-right-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /* शुरुआत में छुपा रहेगा और animation शुरू होने पर अपनी जगह आएगा */
+  opacity: 0;
+  animation: slideFromRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+/* Keyframes For Left Panel (बाएं से दाएं) */
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* 100px बाएं से शुरू होगा */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* अपनी असली जगह पर रुक जाएगा */
+  }
+}
+
+/* Keyframes For Right Panel (दाएं से बाएं) */
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* 100px दाएं से शुरू होगा */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* अपनी असली जगह पर रुक जाएगा */
+  }
+}
+
+/* ========================================== */
 
 .premium-tag {
   display: inline-flex;
@@ -112,7 +158,7 @@
 /* Action Buttons */
 .hero-cta-buttons {
   display: flex;
-  flex-wrap: wrap; /* डेस्कटॉप पर रैपिंग की अनुमति */
+  flex-wrap: wrap; 
   align-items: center;
   gap: 16px;
   margin-bottom: clamp(30px, 5vw, 45px);
@@ -190,15 +236,6 @@
 .text-hero p { font-size: 11px; color: #5c6e7e; margin: 0; line-height: 1.4; }
 .board-divider { width: 1px; height: 45px; background-color: rgba(0, 0, 0, 0.08); align-self: center; flex-shrink: 0; }
 
-/* Right Side Layout Fix */
-.hero-right-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
 .artwork-wrapper {
   position: relative;
   width: 100%;
@@ -269,13 +306,11 @@
     Responsive Breakpoints
    ========================================== */
 
-/* Large Laptops / Desktops */
 @media (max-width: 1280px) {
   :root { --container-padding: 5%; }
   .artwork-wrapper { max-width: 450px; }
 }
 
-/* Tablets & Small Laptops */
 @media (max-width: 992px) {
   .premium-hero-section { padding: 60px 0; min-height: auto; }
   .hero-grid-container { grid-template-columns: 1fr; text-align: center; gap: 40px; }
@@ -285,9 +320,18 @@
   .glass-stats-board { margin: 0 auto;  }
   .hero-right-panel { grid-row: 1; } 
   .artwork-wrapper { max-width: 380px; }
+  
+  /* मोबाइल/टैबलेट पर लेआउट ऊपर-नीचे होने के कारण एनिमेशन को थोड़ा एडजस्ट किया ताकि अजीब न दिखे */
+  @keyframes slideFromLeft {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideFromRight {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 }
 
-/* Portrait Tablets */
 @media (max-width: 768px) {
   .premium-hero-section { padding: 50px 0; }
   .glass-stats-board { padding: 16px; gap: 16px; }
@@ -296,86 +340,35 @@
   .floating-glass-pill { transform: scale(0.9); }
 }
 
-/* Medium & Small Mobiles */
 @media (max-width: 580px) {
   :root { --container-padding: 20px; }
   .premium-hero-section { padding: 40px 0; }
-  .hero-icon{
-    font-size: 13px;
-    min-width: 30px;
-    height: 30px;
-  }
-  .text-hero h3 {
-    font-size: 10px;
-    font-weight: 900;
-  }
-
-  .text-hero p{
-    font-size: 8px;
-  }
-  /* FIXED: यहाँ flex-direction: row और flex-wrap: nowrap सेट किया है ताकि बटन्स एक ही लाइन में रहें */
-  .hero-cta-buttons { 
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap; 
-    gap: 10px; /* मोबाइल पर गैप थोड़ा कम किया */
-    width: 100%;
-  }
- 
-  
-.hero-description-text {
-        font-size: clamp(12px, 1.3vw, 12px);
-    } 
-  
-  /* दोनों बटन्स को आधी-आधी जगह (50-50) देने और ओवरफ्लो रोकने के लिए */
-  .btn-neon-glow, .btn-outline-glass { 
-    flex: 1; 
-    padding: 12px 16px; /* छोटी पैडिंग ताकि टेक्स्ट बाहर न भागे */
-    font-size: 11px; /* मोबाइल फ्रेंडली फॉन्ट साइज */
-    white-space: nowrap; 
-    text-align: center;
-  }
-  
+  .hero-icon{ font-size: 13px; min-width: 30px; height: 30px; }
+  .text-hero h3 { font-size: 10px; font-weight: 900; }
+  .text-hero p{ font-size: 8px; }
+  .hero-cta-buttons { display: flex; flex-direction: row; flex-wrap: nowrap; gap: 10px; width: 100%; }
+  .hero-description-text { font-size: clamp(12px, 1.3vw, 12px); } 
+  .btn-neon-glow, .btn-outline-glass { flex: 1; padding: 12px 16px; font-size: 11px; white-space: nowrap; text-align: center; }
   .glass-stats-board { flex-direction: row; gap: 4px; padding: 14px; }
- 
   .stat-card-box { width: 100%; }
   .artwork-wrapper { max-width: 290px; }
-  .floating-glass-pill {  padding: 6px;  transform: scale(0.8); bottom: -5%; right: 22%; }
- .pill-info h5 { font-size: 11px; color: #ffffff; margin: 0; font-weight: 700; white-space: nowrap; }
-.pill-info p { font-size: 10px; color: #92a7b9; margin: 2px 0 0 0; }
-.pill-info .sub-text-p { font-size: 9px; color: #617788; }
-.pill-avatar-icon-blue {
-  font-size: 16px; background: rgba(22, 207, 182, 0.15); color: #16cfb6;
-  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 10px;
-}
+  .floating-glass-pill { padding: 6px; transform: scale(0.8); bottom: -5%; right: 22%; }
+  .pill-info h5 { font-size: 11px; color: #ffffff; margin: 0; font-weight: 700; white-space: nowrap; }
+  .pill-info p { font-size: 10px; color: #92a7b9; margin: 2px 0 0 0; }
+  .pill-info .sub-text-p { font-size: 9px; color: #617788; }
+  .pill-avatar-icon-blue { font-size: 16px; background: rgba(22, 207, 182, 0.15); color: #16cfb6; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
   .biomedical-glow-shape { margin-bottom: 10px; }
 }
 
-/* Super Small Screen Optimization (e.g., Galaxy Fold) */
 @media (max-width: 360px) {
   .hero-main-title { font-size: 24px; }
   .artwork-wrapper { max-width: 230px; }
- .floating-glass-pill {  padding: 6px;  transform: scale(0.8); bottom: -10%; right: 12%; }
- .pill-info h5 { font-size: 11px; color: #ffffff; margin: 0; font-weight: 700; white-space: nowrap; }
-.pill-info p { font-size: 10px; color: #92a7b9; margin: 2px 0 0 0; }
-.pill-info .sub-text-p { font-size: 9px; color: #617788; }
-.pill-avatar-icon-blue {
-  font-size: 16px; background: rgba(22, 207, 182, 0.15); color: #16cfb6;
-  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 10px;
-}
- 
-  
-  /* बेहद छोटी स्क्रीन पर बटन की साइज को और ऑप्टिमाइज़ किया ताकि वे एक ही रो (Row) में रहें */
-  .btn-neon-glow, .btn-outline-glass {
-    font-size: 9px;
-    padding: 10px 10px;
-  }
-    .text-hero h3 {
-    font-size: 9px;
-    font-weight: 900;
-  }
-
-  .text-hero p{
-    font-size: 8px;
-  }
+  .floating-glass-pill { padding: 6px; transform: scale(0.8); bottom: -10%; right: 12%; }
+  .pill-info h5 { font-size: 11px; color: #ffffff; margin: 0; font-weight: 700; white-space: nowrap; }
+  .pill-info p { font-size: 10px; color: #92a7b9; margin: 2px 0 0 0; }
+  .pill-info .sub-text-p { font-size: 9px; color: #617788; }
+  .pill-avatar-icon-blue { font-size: 16px; background: rgba(22, 207, 182, 0.15); color: #16cfb6; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+  .btn-neon-glow, .btn-outline-glass { font-size: 9px; padding: 10px 10px; }
+  .text-hero h3 { font-size: 9px; font-weight: 900; }
+  .text-hero p{ font-size: 8px; }
 }
