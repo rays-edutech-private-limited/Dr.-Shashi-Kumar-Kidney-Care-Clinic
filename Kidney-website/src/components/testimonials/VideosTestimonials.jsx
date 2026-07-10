@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
 import './VideosTestimonials.css';
 import ScrollReveal from "../../ScrollReveal"
 
 const testimonialsData = [
-  
   {
     id: 1,
     caseCode: "PATIENT ID #4012",
@@ -97,10 +97,9 @@ function VideosTestimonials({onBookClick}) {
     if (!isDragging.current) return;
     const diff = clientX - dragStartX.current;
 
-    // 50px ड्रैग करने पर स्लाइड चेंज होगी
     if (diff > 50) {
       prevSlide();
-      isDragging.current = false; // बार-बार ट्रिगर होने से रोकने के लिए
+      isDragging.current = false;
     } else if (diff < -50) {
       nextSlide();
       isDragging.current = false;
@@ -125,22 +124,32 @@ function VideosTestimonials({onBookClick}) {
     return "vt-slot-hidden";
   };
 
+  // कॉमन एनीमेशन सेटिंग्स अंदर के कंटेंट के लिए
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.2 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
   return (
+    // मेन कंटेनर को नार्मल div ही रखा है ताकि लेआउट या बैकग्राउंड न हिले
     <div className="vt-prime-container reveal-on-scroll">
       <div className="vt-grid-overlay"></div>
       <div className="vt-plasma-orb-1"></div>
 
-      <div className="vt-cinematic-header">
+      {/* 1. हेडर एनीमेशन */}
+      <motion.div className="vt-cinematic-header" {...fadeInUp}>
         <h1 className="vt-glowing-title">Stories of Recovery & Hope</h1>
         <div className="vt-cyber-subbar">
           <span className="vt-text-cyan">HEAR FROM OUR PATIENTS</span>
           <span className="vt-gold-dot">•</span>
           <span className="vt-text-gold">TRUE TRANSFORMATIONS</span>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Drag & Touch events added here */}
-      <div 
+      {/* 2. मुख्य स्लाइडर और कार्ड्स एनीमेशन */}
+      <motion.div 
         className="vt-slider-viewport"
         onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
         onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
@@ -149,6 +158,8 @@ function VideosTestimonials({onBookClick}) {
         onMouseMove={(e) => handleDragMove(e.clientX)}
         onMouseUp={handleDragEnd}
         onMouseLeave={() => { handleDragEnd(); setIsPaused(false); }}
+        {...fadeInUp}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} // हल्का सा डिले ताकि हेडर के बाद आए
       >
         <div className="vt-cards-wrapper">
           {testimonialsData.map((item, index) => {
@@ -179,7 +190,6 @@ function VideosTestimonials({onBookClick}) {
                 </div>
 
                 <div className="vt-video-frame">
-                  {/* draggable="false" handles browser native image dragging conflicts */}
                   <img 
                     src={item.image} 
                     alt="Patient Testimonial" 
@@ -200,9 +210,10 @@ function VideosTestimonials({onBookClick}) {
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="vt-control-dashboard">
+      {/* 3. कंट्रोल्स और डॉट्स एनीमेशन */}
+      <motion.div className="vt-control-dashboard" {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
         <div className="vt-dots-row">
           {testimonialsData.map((_, idx) => (
             <span 
@@ -219,46 +230,45 @@ function VideosTestimonials({onBookClick}) {
           <button className="vt-orb-btn vt-cyan-gradient" onClick={nextSlide}>›</button>
           <span className="vt-orb-label">NEXT</span>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="vt-trust-horizontal-strip">
+      {/* 4. हॉरिजॉन्टल स्ट्रिप एनीमेशन */}
+      <motion.div className="vt-trust-horizontal-strip" {...fadeInUp} transition={{ duration: 0.6, delay: 0.25 }}>
         <div className="vt-strip-item"><span className="vt-strip-icon">🫁</span> Advanced Kidney Care</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🩺</span> Expert Medical Team</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🛡️</span> Personalized Treatment</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🤝</span> Compassionate Support</div>
-       
-      </div>
+      </motion.div>
 
-     <div className="vt-footer-action-panel">
+      {/* 5. फुटर एक्शन पैनल (नियुक्ति बटन) एनीमेशन */}
+      <motion.div className="vt-footer-action-panel" {...fadeInUp} transition={{ duration: 0.6, delay: 0.3 }}>
+        <div className="vt-footer-badge-item">
+          <div className="vt-f-icon">🛡️</div>
+          <div className="vt-f-labels">
+            <h4>Trusted by Thousands</h4>
+            <p>Expert care you can rely on</p>
+          </div>
+        </div>
 
-  <div className="vt-footer-badge-item">
-    <div className="vt-f-icon">🛡️</div>
-    <div className="vt-f-labels">
-      <h4>Trusted by Thousands</h4>
-      <p>Expert care you can rely on</p>
-    </div>
-  </div>
+        <div className="vt-footer-badge-item">
+          <div className="vt-f-icon">👥</div>
+          <div className="vt-f-labels">
+            <h4>Your Health, Our Priority</h4>
+            <p>We are here for you, always</p>
+          </div>
+        </div>
 
-  <div className="vt-footer-badge-item">
-    <div className="vt-f-icon">👥</div>
-    <div className="vt-f-labels">
-      <h4>Your Health, Our Priority</h4>
-      <p>We are here for you, always</p>
-    </div>
-  </div>
-
-  <button className="vt-main-cta-glow-pill" onClick={onBookClick}>
-    <div className="vt-cta-calendar-box">
-      <i className="fa-solid fa-calendar-days"></i>
-    </div>
-    <div className="vt-cta-text-bundle">
-      <h4>BOOK APPOINTMENT</h4>
-      <p>Consult Dr. Shashi Kumar</p>
-    </div>
-  </button>
-
-</div>
-         
+        <button className="vt-main-cta-glow-pill" onClick={onBookClick}>
+          <div className="vt-cta-calendar-box">
+            <i className="fa-solid fa-calendar-days"></i>
+          </div>
+          <div className="vt-cta-text-bundle">
+            <h4>BOOK APPOINTMENT</h4>
+            <p>Consult Dr. Shashi Kumar</p>
+          </div>
+        </button>
+      </motion.div>
+          
       {activeVideo && (
         <div className="vt-popup-overlay" onClick={closeVideoPopup}>
           <div className="vt-popup-window" onClick={(e) => e.stopPropagation()}>

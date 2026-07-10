@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; // Framer Motion इम्पोर्टेड
 import './DoctorProfileVideos.css';
 import featureVideos from "../../assets/image/dr.shashi-kumar-feature-videos.mp4";
-import featurethumbnal from "../../assets/image/feature-thumbnal.png"
-import ScrollReveal from "../../ScrollReveal"
+import featurethumbnal from "../../assets/image/feature-thumbnal.png";
+import ScrollReveal from "../../ScrollReveal";
 
 const DoctorCyberHub = () => {
-  ScrollReveal('.reveal-on-scroll', 0.15)
+  ScrollReveal('.reveal-on-scroll', 0.15);
+  
   const profileSegments = [
     {
       id: "intro",
@@ -176,7 +178,6 @@ const DoctorCyberHub = () => {
 
   const visibleVideos = showAllVideos ? profileSegments : profileSegments.slice(0, 4);
 
-  // --- Helper to convert regular YouTube URL to Embed URL ---
   const getYoutubeEmbedUrl = (url) => {
     if (!url) return '';
     let videoId = '';
@@ -190,7 +191,6 @@ const DoctorCyberHub = () => {
     return `https://www.youtube.com/embed/${videoId}`;
   };
 
-  // --- Helper to extract Thumbnail from YouTube URL ---
   const getYoutubeThumbnail = (url) => {
     if (!url) return '';
     let videoId = '';
@@ -202,6 +202,21 @@ const DoctorCyberHub = () => {
       videoId = url.split('v=')[1].split('&')[0];
     }
     return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`; 
+  };
+
+  // कॉमन नीचे से ऊपर आने का एनीमेशन वेरिएंट
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
+  // स्टैगर पैरेंट कंटेनर इफेक्ट
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08 }
+    }
   };
 
   const renderIcon = (type) => {
@@ -241,24 +256,51 @@ const DoctorCyberHub = () => {
   };
 
   return (
+    // मुख्य पैरेंट कंटेनर को साधारण div ही रखा है ताकि बैकग्राउंड न हिले
     <div className="dark-kiosk-wrapper reveal-on-scroll">
-      {/* Top Split Hero Section */}
+      
+      {/* 1. हीरो सेक्शन कंटेंट एनीमेशन */}
       <div className="dark-kiosk-hero">
-        {/* Left Side Info Panel */}
         <div className="dark-kiosk-hero-left">
-          <h1 className="dark-kiosk-headline">
+          
+          <motion.h1 
+            className="dark-kiosk-headline"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             EXPERT INSIGHTS.<br />
             BETTER KIDNEY CARE.<br />
             <span className="accent-teal">HEALTHIER LIVES.</span>
-          </h1>
-          <div className="accent-bar-teal"></div>
+          </motion.h1>
           
-          <p className="dark-kiosk-description">
+          <motion.div 
+            className="accent-bar-teal"
+            initial={{ width: 0 }}
+            whileInView={{ width: "80px" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          ></motion.div>
+          
+          <motion.p 
+            className="dark-kiosk-description"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             Evidence-based knowledge, advanced treatments, and patient-first care.<br />
             Watch, Learn & Stay Healthy.
-          </p>
+          </motion.p>
 
-          <div className="dark-kiosk-cta-row">
+          <motion.div 
+            className="dark-kiosk-cta-row"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <button onClick={() => setIsMainPlaying(true)} className="btn-solid-teal" style={{ border: 'none', cursor: 'pointer' }}>
               <svg className="icon-play" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z"/>
@@ -266,11 +308,18 @@ const DoctorCyberHub = () => {
               Watch Latest Video
             </button>
             <button className="btn-outline-dark">Subscribe</button>
-          </div>
+          </motion.div>
 
-          <div className="dark-kiosk-stats-row">
+          {/* स्टेट्स बॉक्स एनीमेशन जो एक के बाद एक स्मूथली पॉपअप होंगे */}
+          <motion.div 
+            className="dark-kiosk-stats-row"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {profileSegments.slice(0, 4).map((seg) => (
-              <div key={seg.id} className="stat-item-box">
+              <motion.div key={seg.id} className="stat-item-box" variants={fadeInUp}>
                 <div className="stat-icon-wrapper">
                   {renderIcon(seg.iconType)}
                 </div>
@@ -278,16 +327,22 @@ const DoctorCyberHub = () => {
                   <span className="stat-number-text">{seg.stat}</span>
                   <span className="stat-label-text">{seg.statLabel}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Right Side Immersive Video Player Window */}
+        {/* राइट साइड का सिनेमा व्यू-पोर्ट (मुख्य वीडियो थंबनेल) */}
         <div className="dark-kiosk-hero-right">
-          <div className="cinema-viewport-card" style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+          <motion.div 
+            className="cinema-viewport-card" 
+            style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             {isMainPlaying ? (
-              
               <video
                 key={featuredVideo.id}
                 src={featureVideos}
@@ -311,28 +366,38 @@ const DoctorCyberHub = () => {
                 <div className="video-play-overlay" style={{
                   position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  
                 }}>
-                  <div className="play-circle" style={{
-                    width: '70px', height: '70px', backgroundColor: '#008080',
-                    borderRadius: '50%', display: 'flex', alignItems: 'center', 
-                    justifyContent: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.5)'
-                  }}>
+                  <motion.div 
+                    className="play-circle" 
+                    style={{
+                      width: '70px', height: '70px', backgroundColor: '#008080',
+                      borderRadius: '50%', display: 'flex', alignItems: 'center', 
+                      justifyContent: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.5)'
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <svg viewBox="0 0 24 24" fill="white" width="40" height="40">
                       <path d="M8 5v14l11-7z"/>
                     </svg>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Middle Core Features Ribbon */}
-      <div className="dark-kiosk-features-ribbon">
+      {/* 2. मिडल फीचर्स रिबन एनीमेशन */}
+      <motion.div 
+        className="dark-kiosk-features-ribbon"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {profileSegments.slice(0, 4).map((seg) => (
-          <div key={seg.id} className="ribbon-feature-card">
+          <motion.div key={seg.id} className="ribbon-feature-card" variants={fadeInUp}>
             <div className="feature-icon-wrapper">
               {renderIcon(seg.iconType)}
             </div>
@@ -340,13 +405,21 @@ const DoctorCyberHub = () => {
               <h4 className="feature-main-title">{seg.subtitle}</h4>
               <p className="feature-sub-tagline">{seg.tagline}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* Bottom Layout Gallery View Grid */}
+      {/* 3. नीचे का वीडियो गैलरी सेक्शन एनीमेशन */}
       <div className="dark-kiosk-gallery-section">
-        <div className="gallery-header-row">
+        
+        {/* गैलरी हेडर रो एनीमेशन */}
+        <motion.div 
+          className="gallery-header-row"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="gallery-section-title">LATEST VIDEOS</h2>
           
           {profileSegments.length > 4 && (
@@ -373,16 +446,26 @@ const DoctorCyberHub = () => {
               </svg>
             </span>
           )}
-        </div>
+        </motion.div>
 
-        <div className="gallery-thumbnails-grid">
+        {/* ग्रिड के अंदर के थंबनेल कार्ड्स स्क्रॉल करने पर एक-एक करके पॉप होंगे */}
+        <motion.div 
+          className="gallery-thumbnails-grid" 
+          layout
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {visibleVideos.map((seg) => {
             return (
-              <div 
+              <motion.div 
                 key={seg.id} 
                 className="thumbnail-video-card"
                 onClick={() => setPopupVideo(seg)} 
                 style={{ cursor: 'pointer' }}
+                variants={fadeInUp}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
               >
                 <div className="thumbnail-preview-frame" >
                   <img 
@@ -401,57 +484,69 @@ const DoctorCyberHub = () => {
                     <span>{seg.timeAgo}</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
 
-      {/* --- VIDEO POPUP MODAL --- */}
-      {popupVideo && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
-          backgroundColor: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center',
-          justifyContent: 'center', zIndex: 9999
-        }} onClick={() => setPopupVideo(null)}>
-          
-          <div style={{
-            position: 'relative', width: '90%', maxWidth: '800px', 
-            backgroundColor: '#111', borderRadius: '12px', overflow: 'hidden',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-          }} onClick={(e) => e.stopPropagation()}>
-            
-            <button 
-              onClick={() => setPopupVideo(null)} 
+      {/* वीडियो पॉपअप मोडल एनीमेशन (AnimatePresence के साथ सुरक्षित ट्रांजिशन) */}
+      <AnimatePresence>
+        {popupVideo && (
+          <motion.div 
+            style={{
+              position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+              backgroundColor: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center',
+              justifyContent: 'center', zIndex: 9999
+            }} 
+            onClick={() => setPopupVideo(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
               style={{
-                position: 'absolute', top: '15px', right: '15px', 
-                background: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', 
-                fontSize: '18px', padding: '5px 12px', borderRadius: '50%', 
-                cursor: 'pointer', zIndex: 10
-              }}
+                position: 'relative', width: '90%', maxWidth: '800px', 
+                backgroundColor: '#111', borderRadius: '12px', overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+              }} 
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.4 }}
             >
-              ✕
-            </button>
+              <button 
+                onClick={() => setPopupVideo(null)} 
+                style={{
+                  position: 'absolute', top: '15px', right: '15px', 
+                  background: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', 
+                  fontSize: '18px', padding: '5px 12px', borderRadius: '50%', 
+                  cursor: 'pointer', zIndex: 10
+                }}
+              >
+                ✕
+              </button>
 
-            <div style={{ aspectRatio: '16/9', width: '100%' }}>
-              <iframe 
-                src={`${getYoutubeEmbedUrl(popupVideo.youtubeUrl)}?autoplay=1`}
-                title={popupVideo.title}
-                style={{ width: '100%', height: '100%', border: 'none' }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
+              <div style={{ aspectRatio: '16/9', width: '100%' }}>
+                <iframe 
+                  src={`${getYoutubeEmbedUrl(popupVideo.youtubeUrl)}?autoplay=1`}
+                  title={popupVideo.title}
+                  style={{ width: '100%', height: '100%', border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
 
-            <div style={{ padding: '20px', color: '#fff' }}>
-              <span style={{ color: '#008080', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px' }}>{popupVideo.subtitle}</span>
-              <h3 style={{ margin: '10px 0', fontSize: '20px' }}>{popupVideo.title}</h3>
-              <p style={{ color: '#aaa', fontSize: '14px', margin: 0 }}>{popupVideo.desc}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
+              <div style={{ padding: '20px', color: '#fff' }}>
+                <span style={{ color: '#008080', fontSize: '12px', fontWeight: 'bold', letterSpacing: '1px' }}>{popupVideo.subtitle}</span>
+                <h3 style={{ margin: '10px 0', fontSize: '20px' }}>{popupVideo.title}</h3>
+                <p style={{ color: '#aaa', fontSize: '14px', margin: 0 }}>{popupVideo.desc}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

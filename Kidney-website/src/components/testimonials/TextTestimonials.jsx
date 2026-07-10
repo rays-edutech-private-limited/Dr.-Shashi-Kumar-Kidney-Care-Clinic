@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
 import './TextTestimonials.css';
 import ScrollReveal from "../../ScrollReveal"
 
@@ -59,7 +60,7 @@ function TextTestimonials() {
         setActiveIndex((prevIndex) =>
           prevIndex === textData.length - 1 ? 0 : prevIndex + 1
         ),
-      6000 // Every 6 seconds change testimonial
+      6000
     );
 
     return () => {
@@ -85,10 +86,9 @@ function TextTestimonials() {
     if (!isDragging.current) return;
     const diff = clientX - dragStartX.current;
 
-    // 50px ड्रैग करने पर नेक्स्ट या प्रीवियस स्लाइड होगी
     if (diff > 50) {
       prevSlide();
-      isDragging.current = false; // बार-बार ट्रिगर होने से रोकने के लिए
+      isDragging.current = false;
     } else if (diff < -50) {
       nextSlide();
       isDragging.current = false;
@@ -99,21 +99,30 @@ function TextTestimonials() {
     isDragging.current = false;
   };
 
+  // कॉमन एनीमेशन ऑब्जेक्ट अंदर के कंटेंट के लिए
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.15 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
   return (
+    // मेन कंटेनर को साधारण div रखा है ताकि लेआउट या ओर्ब्स का बैकग्राउंड न हिले
     <div className="tt-premium-section reveal-on-scroll">
       {/* Background Lights */}
       <div className="tt-glow-orb-top"></div>
       <div className="tt-glow-orb-bottom"></div>
       
-      {/* Section Header */}
-      <div className="tt-header-area">
+      {/* 1. सेक्शन हेडर एनीमेशन */}
+      <motion.div className="tt-header-area" {...fadeInUp}>
         <div className="tt-badge-top">CLINICAL EXCELLENCE</div>
         <h2 className="tt-main-title">Words of Gratitude</h2>
         <p className="tt-subtitle">Real recovery experiences from our verified kidney care patients</p>
-      </div>
+      </motion.div>
 
-      {/* Main Testimonial Showcase Arena with Drag/Touch events */}
-      <div 
+      {/* 2. मुख्य डिस्प्ले एरीना (कार्ड्स) एनीमेशन */}
+      <motion.div 
         className="tt-display-arena"
         onTouchStart={(e) => handleDragStart(e.touches[0].clientX)}
         onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
@@ -122,6 +131,8 @@ function TextTestimonials() {
         onMouseMove={(e) => handleDragMove(e.clientX)}
         onMouseUp={handleDragEnd}
         onMouseLeave={handleDragEnd}
+        {...fadeInUp}
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} // हल्का सा डिले
       >
         <div className="tt-cards-container">
           {textData.map((item, index) => {
@@ -163,10 +174,10 @@ function TextTestimonials() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
-      {/* Modern Sleek Navigation Line Controller */}
-      <div className="tt-navigator-dashboard">
+      {/* 3. नेविगेटर डैशबोर्ड एनीमेशन */}
+      <motion.div className="tt-navigator-dashboard" {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
         {textData.map((_, idx) => (
           <div 
             key={idx} 
@@ -176,9 +187,10 @@ function TextTestimonials() {
             {idx === activeIndex && <div className="tt-progress-fill"></div>}
           </div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="tt-trust-footer-bar">
+      {/* 4. ट्रस्ट फुटर बार एनीमेशन */}
+      <motion.div className="tt-trust-footer-bar" {...fadeInUp} transition={{ duration: 0.6, delay: 0.25 }}>
         <div className="tt-trust-item">
           <div className="tt-trust-icon-box blue-bg">🏅</div>
           <div>
@@ -207,7 +219,7 @@ function TextTestimonials() {
             <p>Your Health, Our Priority</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
 import './Gallery.css';
-import ScrollReveal from "../../ScrollReveal"
+import ScrollReveal from "../../ScrollReveal";
 
 const Gallery = () => {
-  ScrollReveal('.reveal-on-scroll', 0.15)
+  ScrollReveal('.reveal-on-scroll', 0.15);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // image_5722e2.png ke flow ke hisab se different random vertical heights wali images
   const clinicImages = [
     { id: 1, title: "Advanced Dialysis Wing", category: "Equipment", url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" },
     { id: 2, title: "Main Clinic Entrance", category: "Lobby", url: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" },
@@ -22,26 +22,36 @@ const Gallery = () => {
     <div className="pinterest-gallery-wrapper reveal-on-scroll">
       
       {/* Clinic Header Section */}
-      <div className="clinic-top-header ">
+      <motion.div 
+        className="clinic-top-header"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="branding-badge">Premium Facility Tour</div>
         <h1 className="doctor-main-title">DR. SHASHI KUMAR</h1>
         <p className="clinic-sub-tag">Kidney Care Clinic Gallery</p>
         <div className="glowing-line-divider"></div>
-      </div>
+      </motion.div>
 
       {/* Pure Pinterest Style Vertical Fluid Columns Grid */}
       <div className="pinterest-grid">
         {clinicImages.map((image) => (
-          <div 
+          <motion.div 
             key={image.id} 
             className="pinterest-item"
             onClick={() => setSelectedImage(image)}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ y: -5, scale: 1.01 }} // प्रीमियम लिफ्ट और होवर स्केल इफ़ेक्ट
           >
             <div className="card-media-box">
-              {/* Image handles its own native vertical height seamlessly */}
               <img src={image.url} alt={image.title} className="pinterest-img" />
               
-              {/* Info Overlay (Bottom Left text) */}
+              {/* Info Overlay */}
               <div className="media-text-info">
                 <span className="media-tag">{image.category}</span>
                 <h4 className="media-title">{image.title}</h4>
@@ -58,33 +68,48 @@ const Gallery = () => {
               </div>
 
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* --- CENTER FULL SIZE POPUP MODAL --- */}
-      {selectedImage && (
-        <div className="center-popup-overlay" onClick={() => setSelectedImage(null)}>
-          <div className="center-popup-box" onClick={(e) => e.stopPropagation()}>
-            
-            {/* Close Button */}
-            <button className="popup-close-btn" onClick={() => setSelectedImage(null)}>✕</button>
-            
-            <div className="popup-image-container">
-              <img src={selectedImage.url} alt={selectedImage.title} className="popup-full-img" />
-            </div>
-
-            <div className="popup-details-footer">
-              <div>
-                <span className="popup-badge-tag">{selectedImage.category}</span>
-                <h3 className="popup-display-title">{selectedImage.title}</h3>
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            className="center-popup-overlay" 
+            onClick={() => setSelectedImage(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
+              className="center-popup-box" 
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 120, damping: 18 }}
+            >
+              
+              {/* Close Button */}
+              <button className="popup-close-btn" onClick={() => setSelectedImage(null)}>✕</button>
+              
+              <div className="popup-image-container">
+                <img src={selectedImage.url} alt={selectedImage.title} className="popup-full-img" />
               </div>
-              <p className="popup-brand-text">Dr. Shashi Kumar Kidney Care</p>
-            </div>
 
-          </div>
-        </div>
-      )}
+              <div className="popup-details-footer">
+                <div>
+                  <span className="popup-badge-tag">{selectedImage.category}</span>
+                  <h3 className="popup-display-title">{selectedImage.title}</h3>
+                </div>
+                <p className="popup-brand-text">Dr. Shashi Kumar Kidney Care</p>
+              </div>
+
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

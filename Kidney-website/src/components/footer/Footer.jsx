@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
 import './Footer.css'; 
 import { Link } from 'react-router-dom';
 import logo from "../../assets/image/logo.png";
@@ -6,7 +7,14 @@ import logo from "../../assets/image/logo.png";
 const Footer = ({ onBookClick }) => {
   return (
     <footer className="sk-premium-footer">
-      <div className="sk-footer-container">
+      {/* फुटर कंटेनर को स्क्रॉल करते ही व्यू में आने पर स्मूथली लोड करने के लिए motion.div बनाया */}
+      <motion.div 
+        className="sk-footer-container"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-20px" }}
+        transition={{ duration: 0.6 }}
+      >
         
         {/* Main Grid Wrapper */}
         <div className="sk-footer-main-grid">
@@ -19,22 +27,28 @@ const Footer = ({ onBookClick }) => {
               <h3 className="sk-brand-subtitle">Kidney Care Clinic</h3>
               <p className="sk-brand-tagline">Advanced Kidney Care & Dialysis Solutions</p>
             </div>
-            {/* Appointment Button */}
-            <button className="sk-appointment-btn" onClick={onBookClick}>
+            {/* Appointment Button with hover and tap scale */}
+            <motion.button 
+              className="sk-appointment-btn" 
+              onClick={onBookClick}
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+            >
               <i className="fa-solid fa-calendar-days"></i> Book Appointment
-            </button>
+            </motion.button>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="sk-footer-col sk-links-col">
             <h4 className="sk-menu-heading">Quick Links</h4>
             <ul className="sk-menu-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Doctor</a></li>
-              <li><a href="#services">Our Services</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              {/* हर लिंक पर होवर करने पर थोड़ा सा राइट साइड (x: 5) खिसकने का प्रीमियम इफ़ेक्ट */}
+              <motion.li whileHover={{ x: 5 }}><a href="#home">Home</a></motion.li>
+              <motion.li whileHover={{ x: 5 }}><a href="#about">About Doctor</a></motion.li>
+              <motion.li whileHover={{ x: 5 }}><a href="#services">Our Services</a></motion.li>
+              <motion.li whileHover={{ x: 5 }}><a href="#gallery">Gallery</a></motion.li>
+              <motion.li whileHover={{ x: 5 }}><a href="#testimonials">Testimonials</a></motion.li>
+              <motion.li whileHover={{ x: 5 }}><a href="#contact">Contact Us</a></motion.li>
             </ul>
           </div>
 
@@ -62,18 +76,19 @@ const Footer = ({ onBookClick }) => {
             <h4 className="sk-menu-heading">Connect With Us</h4>
             <p className="sk-social-text">Follow us on social media for health tips and clinic updates.</p>
             <div className="sk-social-icons">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="sk-social-link">
+              {/* सोशल लिंक्स पर होवर करने पर हल्का सा ऊपर उठने (y: -4) का एनिमेशन */}
+              <motion.a whileHover={{ y: -4, scale: 1.1 }} href="https://facebook.com" target="_blank" rel="noreferrer" className="sk-social-link">
                 <i className="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="sk-social-link">
+              </motion.a>
+              <motion.a whileHover={{ y: -4, scale: 1.1 }} href="https://instagram.com" target="_blank" rel="noreferrer" className="sk-social-link">
                 <i className="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="sk-social-link">
+              </motion.a>
+              <motion.a whileHover={{ y: -4, scale: 1.1 }} href="https://twitter.com" target="_blank" rel="noreferrer" className="sk-social-link">
                 <i className="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="sk-social-link">
+              </motion.a>
+              <motion.a whileHover={{ y: -4, scale: 1.1 }} href="https://youtube.com" target="_blank" rel="noreferrer" className="sk-social-link">
                 <i className="fa-brands fa-youtube"></i>
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -93,7 +108,7 @@ const Footer = ({ onBookClick }) => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </footer>
   );
 };

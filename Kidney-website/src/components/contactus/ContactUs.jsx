@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
 import './ContactUs.css';
-import ScrollReveal from "../../ScrollReveal"
+import ScrollReveal from "../../ScrollReveal";
 
 function ContactUs() {
-  ScrollReveal('.reveal-on-scroll', 0.15)
+  ScrollReveal('.reveal-on-scroll', 0.15);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -16,7 +17,7 @@ function ContactUs() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     // Target WhatsApp Number
@@ -43,10 +44,16 @@ function ContactUs() {
     // Redirect to WhatsApp App/Web securely
     window.open(whatsappUrl, '_blank');
   };
+
   return (
     <div className="contact-page-wrapper reveal-on-scroll">
       {/* Top Header Section */}
-      <div className="contact-header-section">
+      <motion.div 
+        className="contact-header-section"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <span className="top-badge">🩺 DR. SHASHI | KIDNEY CARE CENTER</span>
         <h1 className="main-heading">Expert Kidney Care & Consultation</h1>
         <p className="sub-heading-desc">
@@ -57,13 +64,19 @@ function ContactUs() {
           <span className="circle-dot active"></span>
           <span className="line-dot"></span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Grid Layout */}
       <div className="contact-grid-layout">
         
         {/* LEFT SIDE: Form Card */}
-        <div className="form-container-card">
+        <motion.div 
+          className="form-container-card"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <div className="form-intro-header">
             <div className="icon-bubble"><i className="fa-solid fa-calendar-days"></i></div>
             <div className="intro-text-block">
@@ -152,14 +165,25 @@ function ContactUs() {
               </div>
             </div>
 
-            <button type="submit" className="submit-action-btn">
+            <motion.button 
+              type="submit" 
+              className="submit-action-btn"
+              whileHover={{ scale: 1.02, y: -2 }} // होवर करने पर बटन थोड़ा ऊपर उठेगा
+              whileTap={{ scale: 0.98 }} // क्लिक करने पर हल्का सा दबेगा
+            >
               <span className="btn-icon">🚀</span> SEND TO WHATSAPP
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
 
         {/* RIGHT SIDE: Map & Info Stack */}
-        <div className="widgets-stack-column">
+        <motion.div 
+          className="widgets-stack-column"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           
           {/* Google Map Widget */}
           <div className="embedded-map-card">
@@ -176,26 +200,34 @@ function ContactUs() {
 
           {/* Quick Action Contact Pills */}
           <div className="quick-action-cards-row">
-            <a href="mailto:drshashi@kidneycare.in" className="action-pill-card">
+            <motion.a 
+              href="mailto:drshashi@kidneycare.in" 
+              className="action-pill-card"
+              whileHover={{ x: 5 }} // होवर करने पर राइट साइड में थोड़ा मूव होगा
+            >
               <div className="pill-icon-bubble blue-tint">✉️</div>
               <div className="pill-data-info">
                 <small>EMAIL DOCTOR</small>
                 <strong>drshashi@kidneycare.in</strong>
               </div>
               <span className="arrow-trigger">→</span>
-            </a>
+            </motion.a>
 
-            <a href="tel:+919308654075" className="action-pill-card">
+            <motion.a 
+              href="tel:+919308654075" 
+              className="action-pill-card"
+              whileHover={{ x: 5 }} // होवर करने पर राइट साइड में थोड़ा मूव होगा
+            >
               <div className="pill-icon-bubble green-tint">📞</div>
               <div className="pill-data-info">
                 <small>EMERGENCY CALL / HELPLINE</small>
                 <strong>+91-9308654075</strong>
               </div>
               <span className="arrow-trigger">→</span>
-            </a>
+            </motion.a>
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
     </div>
