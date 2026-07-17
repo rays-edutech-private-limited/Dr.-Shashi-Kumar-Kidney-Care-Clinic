@@ -7,13 +7,13 @@ import logo from "../../assets/image/logo.png";
 const Footer = ({ onBookClick }) => {
   return (
     <footer className="sk-premium-footer">
-      {/* फुटर कंटेनर को स्क्रॉल करते ही व्यू में आने पर स्मूथली लोड करने के लिए motion.div बनाया */}
+      {/* फुटर कंटेनर को स्क्रॉल डाउन और स्क्रॉल अप दोनों पर बार-बार स्मूथली लोड करने के लिए once: false सेट किया */}
       <motion.div 
         className="sk-footer-container"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-20px" }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: false, margin: "-20px" }} // once: false से स्क्रॉल-अप पर भी दोबारा एनिमेट होगा
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         
         {/* Main Grid Wrapper */}

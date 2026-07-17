@@ -1,20 +1,28 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
+import { motion } from 'framer-motion'; 
 import './About.css';
 import kidneyImg from "../../assets/image/about-img.png"; 
 import doctor from "../../assets/image/heroImage.png"; 
-import ScrollReveal from "../../ScrollReveal";
 
 const About = ({ onBookClick }) => {
-  ScrollReveal('.reveal-on-scroll', 0.15);
 
-  // नीचे से ऊपर आने वाले एलिमेंट्स के लिए कॉन्फ़िगरेशन
+  // नीचे से ऊपर आने वाले एलिमेंट्स के लिए स्मूथ कॉन्फ़िगरेशन
   const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { 
+      opacity: 0, 
+      y: 60, // थोड़ा और नीचे से शुरू होगा
+      scale: 0.95 
+    },
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { duration: 0.6, ease: "easeOut" } 
+      scale: 1,
+      transition: { 
+        type: "spring", // स्प्रिंग इफ़ेक्ट जिससे बहुत स्मूथ फील आए
+        stiffness: 70,
+        damping: 15,
+        duration: 0.8
+      } 
     }
   };
 
@@ -23,33 +31,36 @@ const About = ({ onBookClick }) => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
+      transition: { 
+        staggerChildren: 0.12 // एक कार्ड के आने के 0.12 सेकंड बाद दूसरा आएगा
+      }
     }
   };
 
+  // बार-बार एनीमेशन चलाने के लिए कॉमन व्यूपोर्ट सेटिंग्स
+  const viewportSettings = { 
+    once: false,      // TRUE को FALSE किया: इससे स्क्रॉल करने पर एनीमेशन बार-बार होगा!
+    amount: 0.15      // जैसे ही एलिमेंट का 15% हिस्सा स्क्रीन पर आएगा, एनीमेशन शुरू हो जाएगा
+  };
+
   return (
-    <section className="cinematic-about-section reveal-on-scroll">
+    <section className="cinematic-about-section">
       <div className="cine-wrapper">
         
-        {/* --- LEFT PANEL: IMAGE 1 ARCHITECTURE --- */}
+        {/* --- LEFT PANEL: IMAGE ARCHITECTURE --- */}
         <div className="cine-visual-container">
           <motion.div 
             className="cine-canvas-stage"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={{
-              hidden: { opacity: 0, scale: 0.95 },
-              visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } }
-            }}
+            viewport={viewportSettings}
+            variants={fadeInUp}
           >
-            
             {/* The main glowing capsule frame */}
             <div className="cine-hologram-pod">
               <div className="cine-scanner-beam"></div>
               <div className="pod-internal-core"></div>
               <img src={kidneyImg} alt="Kidney Blueprint" className="cine-main-kidney-img" />
-              
               <div className="pod-wave-grid">
                 <span></span><span></span><span></span><span></span><span></span>
               </div>
@@ -58,10 +69,7 @@ const About = ({ onBookClick }) => {
             {/* Floating Badge: Top Right */}
             <motion.div 
               className="cine-glass-card card-top-right"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              variants={fadeInUp}
             >
               <div className="card-badge-header">
                 <span className="badge-star-icon"><i className="fas fa-star"></i></span>
@@ -78,10 +86,7 @@ const About = ({ onBookClick }) => {
             {/* Doctor Profile Card Frame: Bottom Left */}
             <motion.div 
               className="cine-doctor-profile-card"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              variants={fadeInUp}
             >
               <div className="doc-avatar-wrapper">
                 <img className='doc-avatar-fallback' src={doctor} alt="Dr. Shashi Kumar" />
@@ -102,8 +107,8 @@ const About = ({ onBookClick }) => {
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ staggerChildren: 0.1 }}
+            viewport={viewportSettings}
+            variants={containerVariants}
           >
             <motion.div className="cine-super-badge" variants={fadeInUp}>
               <span className="badge-star-icon"><i className="fas fa-star"></i></span> BIHAR'S LEADING KIDNEY CARE DESTINATION
@@ -120,7 +125,7 @@ const About = ({ onBookClick }) => {
             </motion.blockquote>
             
             <motion.p className="cine-narrative" variants={fadeInUp}>
-              Dr. Shashi Kumar is a distinguished pioneer in Nephrology, widely recognized for his unmatched clinical expertise and breakthrough treatments. As the <strong>Director & Head of Department at Paras Health, Patna</strong>, he has engineered state-of-the-art dialysis units and spearheaded highly successful kidney transplant systems, saving thousands of critical renal patients across Eastern India.
+             Dr. Shashi Kumar is a renowned Nephrologist with 16 years of experience, currently practicing at Paras HMRI Hospital and Kidney Hospital & Research Institute, Patna. Over the years, he has performed over 1000 successful Hemodialysis and Peritoneal Dialysis procedures, reflecting his deep expertise in kidney care. He specializes in Chronic Kidney Disease Management, Proteinuria Management, Kidney Dialysis, and Nephrectomy. His contributions to the field have been recognized with the Second Best Paper Award at IIT Bhubaneswar. He is also an esteemed member of several prestigious medical bodies, including the Indian Society of Nephrology, International Society of Nephrology, American Society of Nephrology, Indian Society of Organ Transplant, Peritoneal Dialysis Society of India, and the European Renal Association.
             </motion.p>
           </motion.div>
 
@@ -130,7 +135,7 @@ const About = ({ onBookClick }) => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={viewportSettings}
           >
             <motion.div className="cine-stat-item border-cyan" variants={fadeInUp}>
               <div className="stat-icon-circle cyan-bg"><i className="fa-solid fa-stethoscope"></i></div>
@@ -173,7 +178,7 @@ const About = ({ onBookClick }) => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportSettings}
         >
           {/* Block 1: Academic Pedigree */}
           <motion.div className="cine-dashboard-block bg-image-about1" variants={fadeInUp}>
@@ -229,7 +234,7 @@ const About = ({ onBookClick }) => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportSettings}
         >
           {/* Block 4: Elite Institutional Affiliations */}
           <motion.div className="cine-dashboard-block bg-image-about4" variants={fadeInUp}>
@@ -243,16 +248,16 @@ const About = ({ onBookClick }) => {
                 <p>Indian Society of Nephrology</p>
               </div>
               <div className="logo-node node-ima">
-                <span className="node-initial">IMA</span>
-                <p>Indian Medical Association</p>
+                <span className="node-initial">ISN</span>
+                <p>International Society of Nephrology</p>
               </div>
               <div className="logo-node node-api">
-                <span className="node-initial">API</span>
-                <p>Association of Physicians of India</p>
+                <span className="node-initial">ASN</span>
+                <p>American Society of Nephrology</p>
               </div>
               <div className="logo-node node-int">
-                <span className="node-initial">INT</span>
-                <p>International Society of Nephrology</p>
+                <span className="node-initial">ISOT</span>
+                <p>Indian Society of Organ Transplant</p>
               </div>
             </div>
           </motion.div>
@@ -292,7 +297,7 @@ const About = ({ onBookClick }) => {
           className="cine-cta-container"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={viewportSettings}
           transition={{ duration: 0.5 }}
         >
           <button className="cine-btn-luxury" onClick={onBookClick}>

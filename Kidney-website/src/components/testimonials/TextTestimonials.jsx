@@ -99,11 +99,11 @@ function TextTestimonials() {
     isDragging.current = false;
   };
 
-  // कॉमन एनीमेशन ऑब्जेक्ट अंदर के कंटेंट के लिए
+  // कॉमन एनीमेशन ऑब्जेक्ट - once: false करने से यह स्क्रॉल डाउन और स्क्रॉल अप दोनों पर दोबारा ट्रिगर होगा
   const fadeInUp = {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.15 },
+    viewport: { once: false, amount: 0.15 }, // 15% एलिमेंट दिखाई देने पर एनिमेट होगा
     transition: { duration: 0.6, ease: "easeOut" }
   };
 
@@ -132,7 +132,7 @@ function TextTestimonials() {
         onMouseUp={handleDragEnd}
         onMouseLeave={handleDragEnd}
         {...fadeInUp}
-        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} // हल्का सा डिले
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} // हल्का सा डिले ताकि हेडर के बाद लोड हो
       >
         <div className="tt-cards-container">
           {textData.map((item, index) => {
@@ -177,7 +177,7 @@ function TextTestimonials() {
       </motion.div>
 
       {/* 3. नेविगेटर डैशबोर्ड एनीमेशन */}
-      <motion.div className="tt-navigator-dashboard" {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
+      <motion.div className="tt-navigator-dashboard" {...fadeInUp} transition={{ duration: 0.6, delay: 0.15 }}>
         {textData.map((_, idx) => (
           <div 
             key={idx} 
@@ -190,7 +190,7 @@ function TextTestimonials() {
       </motion.div>
 
       {/* 4. ट्रस्ट फुटर बार एनीमेशन */}
-      <motion.div className="tt-trust-footer-bar" {...fadeInUp} transition={{ duration: 0.6, delay: 0.25 }}>
+      <motion.div className="tt-trust-footer-bar" {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
         <div className="tt-trust-item">
           <div className="tt-trust-icon-box blue-bg">🏅</div>
           <div>

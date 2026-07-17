@@ -45,13 +45,20 @@ function ContactUs() {
     window.open(whatsappUrl, '_blank');
   };
 
+  // कॉमन एनीमेशन सेटिंग्स - once: false करने से यह स्क्रॉल अप/डाउन दोनों पर ट्रिगर होगा
+  const fadeInUp = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false, amount: 0.15 }, // 15% एलिमेंट स्क्रीन पर आते ही एनीमेशन शुरू होगा
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
   return (
     <div className="contact-page-wrapper reveal-on-scroll">
       {/* Top Header Section */}
       <motion.div 
         className="contact-header-section"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
+        {...fadeInUp}
         transition={{ duration: 0.6 }}
       >
         <span className="top-badge">🩺 DR. SHASHI | KIDNEY CARE CENTER</span>
@@ -72,10 +79,9 @@ function ContactUs() {
         {/* LEFT SIDE: Form Card */}
         <motion.div 
           className="form-container-card"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          {...fadeInUp}
+          viewport={{ once: false, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
         >
           <div className="form-intro-header">
             <div className="icon-bubble"><i className="fa-solid fa-calendar-days"></i></div>
@@ -120,7 +126,7 @@ function ContactUs() {
 
             <div className="input-row-dual">
               <div className="custom-field-group">
-                <label>EMAIL ADDRESS</label>
+                <label>Email Address (Optional)</label>
                 <div className="input-with-icon">
                   <span className="field-icon">✉️</span>
                   <input 
@@ -129,7 +135,7 @@ function ContactUs() {
                     value={formData.email} 
                     onChange={handleChange} 
                     placeholder="Email address" 
-                    required 
+                  
                   />
                 </div>
               </div>
@@ -179,10 +185,9 @@ function ContactUs() {
         {/* RIGHT SIDE: Map & Info Stack */}
         <motion.div 
           className="widgets-stack-column"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          {...fadeInUp}
+          viewport={{ once: false, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
           
           {/* Google Map Widget */}

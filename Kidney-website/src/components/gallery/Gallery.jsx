@@ -2,31 +2,82 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
 import './Gallery.css';
 import ScrollReveal from "../../ScrollReveal";
+import g1 from "../../assets/image/g-1.jpeg"
+import g2 from "../../assets/image/g-2.jpeg"
+import g3 from "../../assets/image/g-3.jpeg"
+import g4 from "../../assets/image/g-4.jpeg"
+import g5 from "../../assets/image/g-5.jpeg"
+
+
+
 
 const Gallery = () => {
   ScrollReveal('.reveal-on-scroll', 0.15);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const clinicImages = [
-    { id: 1, title: "Advanced Dialysis Wing", category: "Equipment", url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" },
-    { id: 2, title: "Main Clinic Entrance", category: "Lobby", url: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" },
-    { id: 3, title: "Dr. Shashi Kumar Consultation Suite", category: "Doctor Room", url: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" },
-    { id: 4, title: "Intensive Kidney Care Station", category: "ICU Unit", url: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" },
-    { id: 5, title: "Patient Recovery Lounge", category: "Ward", url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" },
-    { id: 6, title: "High-Tech Diagnostics Lab Room", category: "Laboratory", url: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" },
-    { id: 7, title: "Premium Operation Theater", category: "OT", url: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=600" },
-    { id: 8, title: "Sterilization & Safety Zone", category: "Lab", url: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=600" }
-  ];
+  {
+    id: 1,
+    title: "Dr. Shashi Kumar Kidney Care Centre",
+    category: "Clinic Exterior",
+    url: g1
+  },
+  {
+    id: 2,
+    title: "Comfortable Patient Waiting Area",
+    category: "Reception",
+    url: g2
+  },
+  {
+    id: 3,
+    title: "Modern Patient Lounge & Registration",
+    category: "Patient Lounge",
+    url: g3
+  },
+  {
+    id: 4,
+    title: "Spacious Patient Waiting Hall",
+    category: "Waiting Area",
+    url: g4
+  },
+  {
+    id: 5,
+    title: "Expert Consultation with Dr. Shashi Kumar",
+    category: "Consultation",
+    url: g5
+  }
+];
+
+  // ग्रिड आइटम्स के लिए स्टैगर एनीमेशन पैरेंट कॉन्फ़िगरेशन
+  const gridContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08 // हर इमेज कार्ड के बीच हल्का सा डिले
+      }
+    }
+  };
+
+  // सिंगल इमेज कार्ड का एनीमेशन वेरिएंट
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: "spring", stiffness: 60, damping: 12, duration: 0.5 } 
+    }
+  };
 
   return (
     <div className="pinterest-gallery-wrapper reveal-on-scroll">
       
-      {/* Clinic Header Section */}
+      {/* 1. क्लीनिक हेडर सेक्शन - scroll down / up दोनों पर रिएक्ट करेगा */}
       <motion.div 
         className="clinic-top-header"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.3 }} // once: false से यह ऊपर स्क्रॉल करने पर भी वापस एनिमेट होगा
         transition={{ duration: 0.6 }}
       >
         <div className="branding-badge">Premium Facility Tour</div>
@@ -35,18 +86,21 @@ const Gallery = () => {
         <div className="glowing-line-divider"></div>
       </motion.div>
 
-      {/* Pure Pinterest Style Vertical Fluid Columns Grid */}
-      <div className="pinterest-grid">
+      {/* 2. पिंटरेस्ट स्टाइल ग्रिड - इसमें सभी कार्ड्स सिस्टेमैटिक तरीके से पॉप होंगे */}
+      <motion.div 
+        className="pinterest-grid"
+        variants={gridContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }} // 10% ग्रिड एरिया दिखते ही एनीमेशन ट्रिगर होगा
+      >
         {clinicImages.map((image) => (
           <motion.div 
             key={image.id} 
             className="pinterest-item"
             onClick={() => setSelectedImage(image)}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ y: -5, scale: 1.01 }} // प्रीमियम लिफ्ट और होवर स्केल इफ़ेक्ट
+            variants={cardVariants}
+            whileHover={{ y: -5, scale: 1.015, transition: { duration: 0.2 } }} // प्रीमियम होवर और लिफ्ट इफ़ेक्ट
           >
             <div className="card-media-box">
               <img src={image.url} alt={image.title} className="pinterest-img" />
@@ -70,9 +124,9 @@ const Gallery = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* --- CENTER FULL SIZE POPUP MODAL --- */}
+      {/* 3. सेंटर पॉपअप मोडल (स्मूथ पॉप-अप एनीमेशन) */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div 

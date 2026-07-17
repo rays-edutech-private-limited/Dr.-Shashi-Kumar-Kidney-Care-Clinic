@@ -4,6 +4,10 @@ import './Herosection.css';
 import hero from "../../assets/image/heroImage.png";
 
 const Herosection = ({ onBookClick }) => {
+  
+  // कॉमन व्यूपोर्ट कॉन्फ़िगरेशन - once: false से यह स्क्रॉल डाउन और अप दोनों पर काम करेगा
+  const scrollViewportSettings = { once: false, amount: 0.15 };
+
   return (
     <section className="premium-hero-section">
       {/* Background Abstract Glowing Orbs & Lines */}
@@ -21,7 +25,8 @@ const Herosection = ({ onBookClick }) => {
           <motion.div 
             className="premium-tag"
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={scrollViewportSettings}
             transition={{ duration: 0.5 }}
           >
             <span className="sparkle-gold"><i className="fa-solid fa-user-doctor"></i></span> Center for Advanced Nephrology
@@ -31,8 +36,9 @@ const Herosection = ({ onBookClick }) => {
           <motion.h1 
             className="hero-main-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={scrollViewportSettings}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             Expert <span className="neon-teal-text">Kidney Care</span> <br />
             By <span style={{color:"#26dfc0"}}>Dr. Shashi Kumar</span>
@@ -42,8 +48,9 @@ const Herosection = ({ onBookClick }) => {
           <motion.p 
             className="hero-description-text"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={scrollViewportSettings}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             Director & HOD, Nephrology | 11+ Years of Experience <br />
             Kidney Disease, Dialysis & Transplant Specialist.
@@ -53,23 +60,34 @@ const Herosection = ({ onBookClick }) => {
           <motion.div 
             className="hero-cta-buttons"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={scrollViewportSettings}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <button className="btn-neon-glow" onClick={onBookClick}>
+            <motion.button 
+              className="btn-neon-glow" 
+              onClick={onBookClick}
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+            >
               <i className="fa-solid fa-calendar-days"></i> Book Appointment
-            </button>
-            <button className="btn-outline-glass">
+            </motion.button>
+            <motion.button 
+              className="btn-outline-glass"
+              whileHover={{ scale: 1.03, x: 3 }}
+              whileTap={{ scale: 0.97 }}
+            >
               Explore Our Facility <i className="fa-solid fa-arrow-right"></i>
-            </button>
+            </motion.button>
           </motion.div>
 
           {/* 5. Bottom Stats Board Animation */}
           <motion.div 
             className="glass-stats-board"
             initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={scrollViewportSettings}
+            transition={{ duration: 0.7, delay: 0.4 }}
           >
             <div className="stat-card-box">
               <div className="hero-icon">
@@ -114,9 +132,10 @@ const Herosection = ({ onBookClick }) => {
             {/* 6. Doctor Image Frame Animation */}
             <motion.div 
               className="biomedical-glow-shape"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={scrollViewportSettings}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <img 
                 src={hero} 
@@ -125,18 +144,19 @@ const Herosection = ({ onBookClick }) => {
               />
             </motion.div>
 
-            {/* 7. Floating Glass Pill Animation (Fade-in with slow constant float) */}
+            {/* 7. Floating Glass Pill Animation (Scroll Triggered + Continuous Float) */}
             <motion.div 
               className="floating-glass-pill pill-patients"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ 
                 opacity: 1, 
                 x: 0,
-                y: [0, -8, 0] // बिना CSS बिगाड़े हवा में तैरने का इफ़ेक्ट देगा
+                y: [0, -8, 0] // स्क्रीन में आने के बाद लगातार हवा में तैरता रहेगा
               }}
+              viewport={{ once: false, amount: 0.15 }}
               transition={{
-                x: { duration: 0.6, delay: 0.9 },
-                opacity: { duration: 0.6, delay: 0.9 },
+                x: { duration: 0.6, delay: 0.4 },
+                opacity: { duration: 0.6, delay: 0.4 },
                 y: {
                   duration: 3.5,
                   repeat: Infinity,

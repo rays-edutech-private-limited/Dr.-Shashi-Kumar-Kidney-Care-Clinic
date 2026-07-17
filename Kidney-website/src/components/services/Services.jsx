@@ -1,13 +1,16 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Framer Motion इम्पोर्ट किया
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // URL नेविगेशन के लिए Link इम्पोर्ट किया
 import './Services.css';
 import ScrollReveal from "../../ScrollReveal";
 
 const Services = () => {
   ScrollReveal('.reveal-on-scroll', 0.15);
 
+  // सभी कार्ड्स में 'id' जोड़ी गई है ताकि पहचान आसान हो सके
   const serviceCards = [
     { 
+      id: "chronic-kidney-disease",
       title: "Chronic Kidney Disease (CKD)", 
       icon: "fas fa-stethoscope", 
       badge: "MANAGEMENT", 
@@ -16,6 +19,7 @@ const Services = () => {
       desc: "Long-term care & management to protect kidney function and improve quality of life." 
     },
     { 
+      id: "kidney-failure-treatment",
       title: "Kidney Failure Treatment", 
       icon: "fa-solid fa-bolt", 
       badge: "CARE & TREATMENT", 
@@ -24,6 +28,7 @@ const Services = () => {
       desc: "Personalized treatment plans for kidney failure with advanced medical support." 
     },
     { 
+      id: "hemodialysis",
       title: "Hemodialysis", 
       icon: "fa-solid fa-droplet", 
       badge: "DIALYSIS SUPPORT", 
@@ -32,6 +37,7 @@ const Services = () => {
       desc: "State-of-the-art dialysis facilities ensuring safety, comfort, and better outcomes." 
     },
     { 
+      id: "peritoneal-dialysis",
       title: "Peritoneal Dialysis (CAPD)", 
       icon: "fa-solid fa-house", 
       badge: "HOME THERAPY", 
@@ -40,6 +46,7 @@ const Services = () => {
       desc: "Gentle, effective dialysis you can do at home for a more flexible life." 
     },
     { 
+      id: "kidney-transplant-consultation",
       title: "Kidney Transplant Consultation", 
       icon: "fa-solid fa-user-doctor", 
       badge: "ADVANCED CARE", 
@@ -48,6 +55,7 @@ const Services = () => {
       desc: "Expert guidance for kidney transplant evaluation, preparation, and post-transplant care." 
     },
     { 
+      id: "acute-kidney-injury",
       title: "Acute Kidney Injury Treatment", 
       icon: "fa-solid fa-triangle-exclamation", 
       badge: "EMERGENCY CARE", 
@@ -56,6 +64,7 @@ const Services = () => {
       desc: "Rapid diagnosis and treatment for sudden loss of kidney function." 
     },
     { 
+      id: "diabetic-kidney-disease",
       title: "Diabetic Kidney Disease", 
       icon: "fa-solid fa-chart-line", 
       badge: "DIABETIC CARE", 
@@ -64,6 +73,7 @@ const Services = () => {
       desc: "Specialized monitoring and treatment to prevent diabetes-related kidney damage." 
     },
     { 
+      id: "hypertension-kidney-disorders",
       title: "Hypertension Kidney Disorders", 
       icon: "fa-solid fa-heart-pulse", 
       badge: "BLOOD PRESSURE CARE", 
@@ -108,16 +118,16 @@ const Services = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08 }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { type: "spring", stiffness: 60, damping: 12 } 
+      transition: { type: "spring", stiffness: 50, damping: 13, duration: 0.6 } 
     }
   };
 
@@ -125,11 +135,12 @@ const Services = () => {
     <section className="services-hybrid-section reveal-on-scroll">
       <div className="hybrid-container">
         
+        {/* 1. हेडर ब्लॉक */}
         <motion.div 
           className="hybrid-header-block central-mode"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <span className="hybrid-tag">
@@ -142,12 +153,13 @@ const Services = () => {
           </p>
         </motion.div>
 
+        {/* 2. सर्विसेज ग्रिड */}
         <motion.div 
           className="hybrid-services-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: false, amount: 0.1 }}
         >
           {serviceCards.map((service, index) => (
             <motion.div 
@@ -172,20 +184,26 @@ const Services = () => {
               </div>
 
               <div className="card-footer-flex-row">
-                <span className="explore-action-txt" style={{ color: service.themeColor }}>
+                {/* Explore Details को Router Link से बदला गया है ताकि सही id पर जा सके */}
+                <Link 
+                  to={`/services/${service.id}`} 
+                  className="explore-action-txt" 
+                  style={{ color: service.themeColor, textDecoration: 'none', display: 'inline-block' }}
+                >
                   Explore Details <span className="transition-arrow">→</span>
-                </span>
+                </Link>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* 3. नीचे का फीचर रिबन */}
         <motion.div 
           className="hybrid-feature-ribbon"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-20px" }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           {features.map((feature, index) => (
             <motion.div 

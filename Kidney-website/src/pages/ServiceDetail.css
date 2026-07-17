@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Professional Design Tokens */
+.pro-service-detail-wrapper {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+}
+
+/* Strict Max Width 1300px Constraint */
+.pro-detail-main-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb styling */
+.pro-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.pro-breadcrumb span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.pro-breadcrumb span:hover {
+  color: #0f172a;
+}
+
+.pro-breadcrumb .pro-current {
+  color: #0f172a;
+  font-weight: 600;
+  cursor: default;
+}
+
+.pro-breadcrumb .pro-sep {
+  color: #cbd5e1;
+  cursor: default;
+}
+
+/* Pro Layout Grid Structure (Split Content & Sidebar) */
+.pro-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px; /* Precise layout control */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Content Left Column */
+.pro-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Hero Section Enhancement */
+.pro-hero-card {
+  background: linear-gradient(135deg, #ffffff 0%, var(--service-bg) 100%);
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--service-theme);
+  border-radius: 20px;
+  padding: 45px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.pro-tag {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.pro-hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 15px 0;
+}
+
+.pro-hero-desc {
+  font-size: 17px;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* Section Formatting */
+.pro-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.pro-section-header h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.pro-indicator {
+  width: 4px;
+  height: 24px;
+  border-radius: 20px;
+}
+
+/* Accordion Stack System */
+.pro-accordion-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pro-accordion-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+.pro-accordion-card.is-open {
+  border-color: var(--service-theme);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+}
+
+.pro-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pro-accordion-title-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.pro-accordion-arrow {
+  font-size: 18px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+
+.pro-accordion-card.is-open .pro-accordion-arrow {
+  color: var(--service-theme);
+}
+
+.pro-accordion-body-content {
+  padding: 0 28px 24px 28px;
+  color: #475569;
+  font-size: 15.5px;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* Expert Physician Bio Layout */
+.pro-physician-profile-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 35px;
+}
+
+.pro-physician-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pro-physician-icon-box {
+  background: #f0fdf4;
+  color: #16a34a;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.pro-physician-meta h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.pro-physician-meta .pro-sub {
+  font-size: 13px;
+  color: #16a34a;
+  font-weight: 600;
+  margin: 2px 0 0 0;
+}
+
+.pro-bio-text {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 25px;
+}
+
+.pro-bullets-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.pro-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Sidebar Columns Styling (Sticky Context) */
+.pro-sidebar-column {
+  position: sticky;
+  top: 80px;
+}
+
+.pro-sticky-sidebar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.02);
+}
+
+.pro-sidebar-header h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.pro-sidebar-header p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+}
+
+/* Integrated Miniature Form Controls */
+.pro-sidebar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pro-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pro-input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pro-input-group input, 
+.pro-input-group select {
+  height: 46px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.pro-input-group input:focus,
+.pro-input-group select:focus {
+  outline: none;
+  border-color: #94a3b8;
+  background-color: #ffffff;
+}
+
+.pro-submit-btn {
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.pro-submit-btn:hover {
+  opacity: 0.95;
+}
+
+.pro-sidebar-divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.pro-sidebar-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.pro-sidebar-divider span {
+  background: #ffffff;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* Call Hotline Section */
+.pro-hotline-anchor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.pro-hotline-anchor:hover {
+  background: #f1f5f9;
+}
+
+.pro-hotline-icon {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #0284c7;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.pro-hotline-anchor .pro-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.pro-hotline-anchor .pro-number {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Fallback Screens styling */
+.pro-error-container {
+  text-align: center;
+  padding: 120px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pro-error-icon {
+  font-size: 56px;
+  color: #ef4444;
+  margin-bottom: 20px;
+}
+
+.pro-error-container h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.pro-error-container p {
+  color: #64748b;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.pro-back-btn {
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1100px) {
+  .pro-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .pro-sidebar-column {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .pro-hero-card {
+    padding: 25px;
+  }
+  .pro-hero-title {
+    font-size: 26px;
+  }
+  .pro-hero-desc {
+    font-size: 15px;
+  }
+}

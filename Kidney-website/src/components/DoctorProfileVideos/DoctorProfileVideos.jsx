@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'; // Framer Motion इम
 import './DoctorProfileVideos.css';
 import featureVideos from "../../assets/image/dr.shashi-kumar-feature-videos.mp4";
 import featurethumbnal from "../../assets/image/feature-thumbnal.png";
-import ScrollReveal from "../../ScrollReveal";
+
 
 const DoctorCyberHub = () => {
-  ScrollReveal('.reveal-on-scroll', 0.15);
   
   const profileSegments = [
     {
@@ -204,18 +203,22 @@ const DoctorCyberHub = () => {
     return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`; 
   };
 
-  // कॉमन नीचे से ऊपर आने का एनीमेशन वेरिएंट
+  // नीचे से ऊपर आने का एनीमेशन वेरिएंट जो स्क्रॉल-बैक करने पर वापस नीचे चला जाएगा
   const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    }
   };
 
-  // स्टैगर पैरेंट कंटेनर इफेक्ट
+  // पैरेंट स्टैगर इफ़ेक्ट - जो अपने अंदर के बच्चों को एक-एक करके एनिमेट करेगा
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08 }
+      transition: { staggerChildren: 0.12 }
     }
   };
 
@@ -256,10 +259,9 @@ const DoctorCyberHub = () => {
   };
 
   return (
-    // मुख्य पैरेंट कंटेनर को साधारण div ही रखा है ताकि बैकग्राउंड न हिले
     <div className="dark-kiosk-wrapper reveal-on-scroll">
       
-      {/* 1. हीरो सेक्शन कंटेंट एनीमेशन */}
+      {/* 1. हीरो सेक्शन */}
       <div className="dark-kiosk-hero">
         <div className="dark-kiosk-hero-left">
           
@@ -267,8 +269,8 @@ const DoctorCyberHub = () => {
             className="dark-kiosk-headline"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: false, amount: 0.3 }} // once: false से यह ऊपर स्क्रॉल करने पर दोबारा ट्रिगर होगा
+            transition={{ duration: 0.6 }}
           >
             EXPERT INSIGHTS.<br />
             BETTER KIDNEY CARE.<br />
@@ -279,7 +281,7 @@ const DoctorCyberHub = () => {
             className="accent-bar-teal"
             initial={{ width: 0 }}
             whileInView={{ width: "80px" }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           ></motion.div>
           
@@ -287,7 +289,7 @@ const DoctorCyberHub = () => {
             className="dark-kiosk-description"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             Evidence-based knowledge, advanced treatments, and patient-first care.<br />
@@ -298,7 +300,7 @@ const DoctorCyberHub = () => {
             className="dark-kiosk-cta-row"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <button onClick={() => setIsMainPlaying(true)} className="btn-solid-teal" style={{ border: 'none', cursor: 'pointer' }}>
@@ -310,13 +312,13 @@ const DoctorCyberHub = () => {
             <button className="btn-outline-dark">Subscribe</button>
           </motion.div>
 
-          {/* स्टेट्स बॉक्स एनीमेशन जो एक के बाद एक स्मूथली पॉपअप होंगे */}
+          {/* स्टेट्स बॉक्स एनीमेशन जो स्क्रॉल होने पर एक के बाद एक (Staggered) नीचे से ऊपर आएँगे */}
           <motion.div 
             className="dark-kiosk-stats-row"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }} // viewport से बाहर जाने पर रीसेट हो जाएगा
           >
             {profileSegments.slice(0, 4).map((seg) => (
               <motion.div key={seg.id} className="stat-item-box" variants={fadeInUp}>
@@ -332,14 +334,14 @@ const DoctorCyberHub = () => {
           </motion.div>
         </div>
 
-        {/* राइट साइड का सिनेमा व्यू-पोर्ट (मुख्य वीडियो थंबनेल) */}
+        {/* राइट साइड का सिनेमा थंबनेल व्यू-पोर्ट */}
         <div className="dark-kiosk-hero-right">
           <motion.div 
             className="cinema-viewport-card" 
             style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             {isMainPlaying ? (
@@ -388,13 +390,13 @@ const DoctorCyberHub = () => {
         </div>
       </div>
 
-      {/* 2. मिडल फीचर्स रिबन एनीमेशन */}
+      {/* 2. मिडल फीचर्स रिबन */}
       <motion.div 
         className="dark-kiosk-features-ribbon"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         {profileSegments.slice(0, 4).map((seg) => (
           <motion.div key={seg.id} className="ribbon-feature-card" variants={fadeInUp}>
@@ -409,15 +411,15 @@ const DoctorCyberHub = () => {
         ))}
       </motion.div>
 
-      {/* 3. नीचे का वीडियो गैलरी सेक्शन एनीमेशन */}
+      {/* 3. नीचे का वीडियो गैलरी सेक्शन */}
       <div className="dark-kiosk-gallery-section">
         
-        {/* गैलरी हेडर रो एनीमेशन */}
+        {/* गैलरी हेडर */}
         <motion.div 
           className="gallery-header-row"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
           <h2 className="gallery-section-title">LATEST VIDEOS</h2>
@@ -455,7 +457,7 @@ const DoctorCyberHub = () => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: false, amount: 0.1 }}
         >
           {visibleVideos.map((seg) => {
             return (
@@ -490,7 +492,7 @@ const DoctorCyberHub = () => {
         </motion.div>
       </div>
 
-      {/* वीडियो पॉपअप मोडल एनीमेशन (AnimatePresence के साथ सुरक्षित ट्रांजिशन) */}
+      {/* वीडियो पॉपअप मोडल */}
       <AnimatePresence>
         {popupVideo && (
           <motion.div 

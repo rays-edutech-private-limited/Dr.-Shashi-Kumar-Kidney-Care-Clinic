@@ -124,16 +124,15 @@ function VideosTestimonials({onBookClick}) {
     return "vt-slot-hidden";
   };
 
-  // कॉमन एनीमेशन सेटिंग्स अंदर के कंटेंट के लिए
+  // कॉमन एनीमेशन सेटिंग्स - once: false करने से यह स्क्रॉल डाउन और स्क्रॉल अप दोनों पर बार-बार ट्रिगर होगा
   const fadeInUp = {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
+    viewport: { once: false, amount: 0.15 }, // 15% एलिमेंट दिखते ही एनीमेशन शुरू हो जाएगा
     transition: { duration: 0.6, ease: "easeOut" }
   };
 
   return (
-    // मेन कंटेनर को नार्मल div ही रखा है ताकि लेआउट या बैकग्राउंड न हिले
     <div className="vt-prime-container reveal-on-scroll">
       <div className="vt-grid-overlay"></div>
       <div className="vt-plasma-orb-1"></div>
@@ -159,7 +158,7 @@ function VideosTestimonials({onBookClick}) {
         onMouseUp={handleDragEnd}
         onMouseLeave={() => { handleDragEnd(); setIsPaused(false); }}
         {...fadeInUp}
-        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} // हल्का सा डिले ताकि हेडर के बाद आए
+        transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} // हल्का सा डिले ताकि हेडर के बाद लोड हो
       >
         <div className="vt-cards-wrapper">
           {testimonialsData.map((item, index) => {
@@ -213,7 +212,7 @@ function VideosTestimonials({onBookClick}) {
       </motion.div>
 
       {/* 3. कंट्रोल्स और डॉट्स एनीमेशन */}
-      <motion.div className="vt-control-dashboard" {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
+      <motion.div className="vt-control-dashboard" {...fadeInUp} transition={{ duration: 0.6, delay: 0.15 }}>
         <div className="vt-dots-row">
           {testimonialsData.map((_, idx) => (
             <span 
@@ -233,7 +232,7 @@ function VideosTestimonials({onBookClick}) {
       </motion.div>
 
       {/* 4. हॉरिजॉन्टल स्ट्रिप एनीमेशन */}
-      <motion.div className="vt-trust-horizontal-strip" {...fadeInUp} transition={{ duration: 0.6, delay: 0.25 }}>
+      <motion.div className="vt-trust-horizontal-strip" {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
         <div className="vt-strip-item"><span className="vt-strip-icon">🫁</span> Advanced Kidney Care</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🩺</span> Expert Medical Team</div>
         <div className="vt-strip-item"><span className="vt-strip-icon">🛡️</span> Personalized Treatment</div>
@@ -241,7 +240,7 @@ function VideosTestimonials({onBookClick}) {
       </motion.div>
 
       {/* 5. फुटर एक्शन पैनल (नियुक्ति बटन) एनीमेशन */}
-      <motion.div className="vt-footer-action-panel" {...fadeInUp} transition={{ duration: 0.6, delay: 0.3 }}>
+      <motion.div className="vt-footer-action-panel" {...fadeInUp} transition={{ duration: 0.6, delay: 0.25 }}>
         <div className="vt-footer-badge-item">
           <div className="vt-f-icon">🛡️</div>
           <div className="vt-f-labels">
