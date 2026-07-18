@@ -32,7 +32,7 @@ const FloatingButtons = () => {
     <div className="floating-container">
       {/* 1. WhatsApp Button (Apna Number '91XXXXXXXXXX' ki jagah dalein) */}
       <a 
-        href="https://wa.me/91XXXXXXXXXX?text=Hello%20Dr.%20Shashi%20Kumar,%20I%20want%20to%20book%20an%20appointment." 
+        href="https://wa.me/917070337440?text=Hello%20Dr.%20Shashi%20Kumar,%20I%20want%20to%20book%20an%20appointment." 
         target="_blank" 
         rel="noopener noreferrer" 
         className="floating-btn whatsapp"
@@ -43,7 +43,7 @@ const FloatingButtons = () => {
 
       {/* 2. Phone Call Button (Apna Phone Number dalein) */}
       <a 
-        href="tel:+91XXXXXXXXXX" 
+        href="tel:+917070337440" 
         className="floating-btn phone"
         title="Call Us"
       >
