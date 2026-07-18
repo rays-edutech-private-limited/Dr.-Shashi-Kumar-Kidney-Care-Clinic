@@ -61,7 +61,7 @@ function ContactUs() {
         {...fadeInUp}
         transition={{ duration: 0.6 }}
       >
-        <span className="top-badge">🩺 DR. SHASHI | KIDNEY CARE CENTER</span>
+        <span className="top-badge">🩺 DR. SHASHI | Kidney Hospital & Research Institute</span>
         <h1 className="main-heading">Expert Kidney Care & Consultation</h1>
         <p className="sub-heading-desc">
           Apni kidney health ke liye behtar salah aur appointment book karne ke liye niche diye gaye form ko bharein ya direct call karein.
@@ -194,7 +194,7 @@ function ContactUs() {
           <div className="embedded-map-card">
             <iframe 
               title="Dr. Shashi Kidney Care Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.5812836243874!2d85.1311!3d25.6121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM2JzQzLjYiTiA4NcKwMDcnNTEuOSJF!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin" 
+              src="https://www.google.com/maps?q=J34R%2B263+Patna,+Bihar&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

@@ -24,7 +24,7 @@ const Footer = ({ onBookClick }) => {
             <div className="sk-logo-section">
               <img src={logo} className="sk-clinic-logo" alt="Dr. Shashi Kumar Kidney Care Logo" />
               <h2 className="sk-brand-title">Dr. Shashi Kumar</h2>
-              <h3 className="sk-brand-subtitle">Kidney Care Clinic</h3>
+              <h3 className="sk-brand-subtitle">Kidney Hospital & Research Institute</h3>
               <p className="sk-brand-tagline">Advanced Kidney Care & Dialysis Solutions</p>
             </div>
             {/* Appointment Button with hover and tap scale */}
@@ -100,7 +100,7 @@ const Footer = ({ onBookClick }) => {
         {/* Bottom Bar: Copyright & Credits */}
         <div className="sk-footer-bottom-bar">
           <p className="sk-copyright-text">
-            © 2026 Dr. Shashi Kumar Kidney Care Clinic. All rights reserved. 
+            © 2026 Dr. Shashi Kumar  Kidney Hospital & Research Institute. All rights reserved. 
             <span className="sk-tag-highlight"> Expert Kidney Care, Compassionate Treatment.</span>
           </p>
           <div className="sk-developer-credits">

@@ -19,31 +19,31 @@ const Gallery = () => {
   {
     id: 1,
     title: "Dr. Shashi Kumar Kidney Care Centre",
-    category: "Clinic Exterior",
+    category: "Clinic View",
     url: g1
   },
   {
     id: 2,
-    title: "Comfortable Patient Waiting Area",
-    category: "Reception",
+    title: "Comfortable Waiting Lounge",
+    category: "Patient Care",
     url: g2
   },
   {
     id: 3,
-    title: "Modern Patient Lounge & Registration",
-    category: "Patient Lounge",
+    title: "Reception & Registration Desk",
+    category: "Clinic Interior",
     url: g3
   },
   {
     id: 4,
-    title: "Spacious Patient Waiting Hall",
-    category: "Waiting Area",
+    title: "Dr. Shashi Kumar",
+    category: "Consultant Nephrologist",
     url: g4
   },
   {
     id: 5,
-    title: "Expert Consultation with Dr. Shashi Kumar",
-    category: "Consultation",
+    title: "Dr. Shashi Kumar",
+    category: "Consultant Nephrologist",
     url: g5
   }
 ];

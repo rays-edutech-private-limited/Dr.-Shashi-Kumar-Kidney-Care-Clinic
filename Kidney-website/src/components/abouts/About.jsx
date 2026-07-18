@@ -76,10 +76,10 @@ const About = ({ onBookClick }) => {
                 <span className="badge-title-text">DIRECTOR & DEPT. HEAD</span>
               </div>
               <div className="card-counter-value">
-                11+ <span className="counter-label-sub">Years of Trust</span>
+                16+ <span className="counter-label-sub">Years of Trust</span>
               </div>
               <div className="card-location-pill">
-                <span className="loc-icon">📍</span> Paras Health, Patna
+                <span className="loc-icon">📍</span> Kidney Hospital & Research Institute
               </div>
             </motion.div>
 
@@ -139,7 +139,7 @@ const About = ({ onBookClick }) => {
           >
             <motion.div className="cine-stat-item border-cyan" variants={fadeInUp}>
               <div className="stat-icon-circle cyan-bg"><i className="fa-solid fa-stethoscope"></i></div>
-              <div className="stat-num cyan-text">11+</div>
+              <div className="stat-num cyan-text">16+</div>
               <div className="stat-p">Years Clinical Leadership</div>
               <div className="stat-bottom-line bg-cyan"></div>
             </motion.div>
