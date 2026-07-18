@@ -242,7 +242,7 @@ const ServiceDetail = () => {
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
 
-    const targetNumber = "917368059080"; // आपका नंबर इंटरनेशनल फॉर्मेट में
+    const targetNumber = "917070337440"; // आपका नंबर इंटरनेशनल फॉर्मेट में
 
     // केस टाइप की सुंदर मैपिंग
     const serviceNames = {
@@ -379,7 +379,7 @@ const ServiceDetail = () => {
           {/* Right Column: Sticky Consultation Form & Info (Takes 35% width) */}
           <aside className="pro-sidebar-column">
             <div className="pro-sticky-sidebar-card">
-              <div className="pro-sidebar-header" style={{ borderTop: `4px solid ${service.themeColor}` }}>
+              <div className="pro-sidebar-header" >
                 <h3>Quick Consultation</h3>
                 <p>Submit your details for a priority scheduling appointment.</p>
               </div>

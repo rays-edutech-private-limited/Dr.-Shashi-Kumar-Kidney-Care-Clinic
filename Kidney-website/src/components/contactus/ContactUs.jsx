@@ -21,7 +21,7 @@ function ContactUs() {
     e.preventDefault();
     
     // Target WhatsApp Number
-    const whatsappNumber = "917368059080";
+    const whatsappNumber = "917070337440";
 
     // Pro-Level Medical Receipt Format (100% Device Compatible - No Crash Symbols)
     const messageText = 
@@ -219,14 +219,14 @@ function ContactUs() {
             </motion.a>
 
             <motion.a 
-              href="tel:+919308654075" 
+              href="tel:+917070337440" 
               className="action-pill-card"
               whileHover={{ x: 5 }} // होवर करने पर राइट साइड में थोड़ा मूव होगा
             >
               <div className="pill-icon-bubble green-tint">📞</div>
               <div className="pill-data-info">
                 <small>EMERGENCY CALL / HELPLINE</small>
-                <strong>+91-9308654075</strong>
+                <strong>+91-7070337440</strong>
               </div>
               <span className="arrow-trigger">→</span>
             </motion.a>

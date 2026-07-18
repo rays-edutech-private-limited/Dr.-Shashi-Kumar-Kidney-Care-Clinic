@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // Framer Motion इम्पोर्टेड
+import { motion, AnimatePresence } from 'framer-motion'; 
 import './DoctorProfileVideos.css';
 import featureVideos from "../../assets/image/dr.shashi-kumar-feature-videos.mp4";
 import featurethumbnal from "../../assets/image/feature-thumbnal.png";
 
-
 const DoctorCyberHub = () => {
-  
   const profileSegments = [
     {
       id: "intro",
@@ -80,7 +78,7 @@ const DoctorCyberHub = () => {
       tagline: "Eat clean, live long",
       desc: "The truth behind popular kidney detox juices.",
       url: "https://assets.mixkit.co/videos/preview/mixkit-doctor-talking-to-a-patient-in-a-clinic-41617-large.mp4",
-      youtubeUrl: "https://youtu.be/Ht0QPM17y54?si=eUtVwj_8EPPtTkNZ",
+      youtubeUrl: "https://youtu. elegant/Ht0QPM17y54?si=eUtVwj_8EPPtTkNZ",
       stat: "50+",
       statLabel: "Health Seminars",
       iconType: "experience",
@@ -203,7 +201,6 @@ const DoctorCyberHub = () => {
     return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`; 
   };
 
-  // नीचे से ऊपर आने का एनीमेशन वेरिएंट जो स्क्रॉल-बैक करने पर वापस नीचे चला जाएगा
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -213,7 +210,6 @@ const DoctorCyberHub = () => {
     }
   };
 
-  // पैरेंट स्टैगर इफ़ेक्ट - जो अपने अंदर के बच्चों को एक-एक करके एनिमेट करेगा
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -264,12 +260,11 @@ const DoctorCyberHub = () => {
       {/* 1. हीरो सेक्शन */}
       <div className="dark-kiosk-hero">
         <div className="dark-kiosk-hero-left">
-          
           <motion.h1 
             className="dark-kiosk-headline"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }} // once: false से यह ऊपर स्क्रॉल करने पर दोबारा ट्रिगर होगा
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
             EXPERT INSIGHTS.<br />
@@ -312,13 +307,12 @@ const DoctorCyberHub = () => {
             <button className="btn-outline-dark">Subscribe</button>
           </motion.div>
 
-          {/* स्टेट्स बॉक्स एनीमेशन जो स्क्रॉल होने पर एक के बाद एक (Staggered) नीचे से ऊपर आएँगे */}
           <motion.div 
             className="dark-kiosk-stats-row"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }} // viewport से बाहर जाने पर रीसेट हो जाएगा
+            viewport={{ once: false, amount: 0.2 }}
           >
             {profileSegments.slice(0, 4).map((seg) => (
               <motion.div key={seg.id} className="stat-item-box" variants={fadeInUp}>
@@ -334,7 +328,6 @@ const DoctorCyberHub = () => {
           </motion.div>
         </div>
 
-        {/* राइट साइड का सिनेमा थंबनेल व्यू-पोर्ट */}
         <div className="dark-kiosk-hero-right">
           <motion.div 
             className="cinema-viewport-card" 
@@ -413,8 +406,6 @@ const DoctorCyberHub = () => {
 
       {/* 3. नीचे का वीडियो गैलरी सेक्शन */}
       <div className="dark-kiosk-gallery-section">
-        
-        {/* गैलरी हेडर */}
         <motion.div 
           className="gallery-header-row"
           initial={{ opacity: 0, y: 20 }}
@@ -450,26 +441,26 @@ const DoctorCyberHub = () => {
           )}
         </motion.div>
 
-        {/* ग्रिड के अंदर के थंबनेल कार्ड्स स्क्रॉल करने पर एक-एक करके पॉप होंगे */}
+        {/* यहाँ बदलाव किया गया है: layout प्रprop और AnimatePresence का उपयोग */}
         <motion.div 
           className="gallery-thumbnails-grid" 
-          layout
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
+          layout="position"
         >
-          {visibleVideos.map((seg) => {
-            return (
+          <AnimatePresence mode="popLayout">
+            {visibleVideos.map((seg) => (
               <motion.div 
                 key={seg.id} 
                 className="thumbnail-video-card"
                 onClick={() => setPopupVideo(seg)} 
                 style={{ cursor: 'pointer' }}
-                variants={fadeInUp}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
               >
-                <div className="thumbnail-preview-frame" >
+                <div className="thumbnail-preview-frame">
                   <img 
                     src={getYoutubeThumbnail(seg.youtubeUrl)} 
                     alt={seg.title} 
@@ -487,8 +478,8 @@ const DoctorCyberHub = () => {
                   </div>
                 </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </AnimatePresence>
         </motion.div>
       </div>
 
