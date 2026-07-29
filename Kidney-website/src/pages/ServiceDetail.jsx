@@ -441,7 +441,7 @@ const ServiceDetail = () => {
                   <div className="pro-hotline-icon"><FiPhone /></div>
                   <div>
                     <span className="pro-label">Emergency Helpline</span>
-                    <span className="pro-number">+91 7070337440</span>
+                    <span className="pro-number">+91 7070337440 , 7250019913</span>
                   </div>
                 </a>
               </div>

@@ -68,6 +68,10 @@ const Footer = ({ onBookClick }) => {
                 <i className="fa-solid fa-envelope sk-icon-gold"></i>
                 <span className="sk-email-text">dr.kumar.kidney@care.com</span>
               </div>
+              <div className="sk-contact-item">
+                <i class="fa-solid fa-phone sk-icon-gold" ></i>
+                <span className="sk-email-text">7070337440, 7250019913</span>
+              </div>
             </div>
           </div>
 

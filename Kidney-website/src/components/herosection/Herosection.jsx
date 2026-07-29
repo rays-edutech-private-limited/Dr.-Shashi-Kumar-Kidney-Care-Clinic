@@ -52,7 +52,7 @@ const Herosection = ({ onBookClick }) => {
             viewport={scrollViewportSettings}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Director & HOD, Nephrology | 11+ Years of Experience <br />
+            Director & HOD, Nephrology | 18+ Years of Experience <br />
             Kidney Disease, Dialysis & Transplant Specialist.
           </motion.p>
 
@@ -168,7 +168,7 @@ const Herosection = ({ onBookClick }) => {
                 <i className="fa-solid fa-users"></i>
               </div>
               <div className="pill-info">
-                <h5>5000+</h5>
+                <h5>3L+</h5>
                 <p>Happy Patients</p>
                 <p className="sub-text-p">Trusted Care Since Years</p>
               </div>

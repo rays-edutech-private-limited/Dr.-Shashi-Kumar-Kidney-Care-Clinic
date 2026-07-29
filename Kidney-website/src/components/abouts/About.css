@@ -251,7 +251,12 @@
 
 /* Affiliations Logos Node */
 .cine-logos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.logo-node { background: #ffffff; border: 2px solid #0891b2; padding: 12px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; min-height: 80px; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
+.logo-node { background: #ffffff; border: 2px solid #0891b2; padding: 12px; border-radius: 12px;   min-height: 80px; box-shadow: 0 2px 8px rgba(0,0,0,0.01); }
+.menbership{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .node-initial { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10.5px; font-weight: 800; margin-bottom: 6px; }
 .node-isn .node-initial { background: #f5f3ff; color: #7c3aed; }
 .node-ima .node-initial { background: #eff6ff; color: #2563eb; }
@@ -274,7 +279,7 @@
 /* --- CALL TO ACTION BUTTON --- */
 .cine-cta-container { max-width: 1440px; margin: 30px auto 0 auto; text-align: center; }
 .cine-btn-luxury {
-  width: 100%; max-width: 520px; background: #001f3f; color: #ffffff; border: none; padding: 14px 24px; border-radius: 50px;
+  width: 100%; max-width: 620px; background: #001f3f; color: #ffffff; border: none; padding: 14px 24px; border-radius: 50px;
   cursor: pointer; display: inline-flex; align-items: center; justify-content: space-between; box-shadow: 0 10px 25px rgba(0, 31, 63, 0.15); transition: all 0.3s ease; gap: 12px;
 }
 .action-left-icon, .action-right-icon-arrow { width: 34px; height: 34px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
@@ -322,8 +327,12 @@
   .cine-features-bar { grid-template-columns: repeat(2, 1fr); }
   .card-top-right { right: 0; top: 2%; } 
   .cine-doctor-profile-card { left: 0; bottom: 2%; width: 270px; }
+ 
 
-  
+}
+@media screen and (max-width: 650px) {
+   .cine-logos-grid {  grid-template-columns: 1fr ; }
+ 
 }
 
 /* 4. Portrait Smartphones / iPhone & Android Mobile */

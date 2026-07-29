@@ -76,7 +76,7 @@ const About = ({ onBookClick }) => {
                 <span className="badge-title-text">DIRECTOR & DEPT. HEAD</span>
               </div>
               <div className="card-counter-value">
-                16+ <span className="counter-label-sub">Years of Trust</span>
+                18+ <span className="counter-label-sub">Years of Trust</span>
               </div>
               <div className="card-location-pill">
                 <span className="loc-icon">📍</span> Kidney Hospital & Research Institute
@@ -139,28 +139,28 @@ const About = ({ onBookClick }) => {
           >
             <motion.div className="cine-stat-item border-cyan" variants={fadeInUp}>
               <div className="stat-icon-circle cyan-bg"><i className="fa-solid fa-stethoscope"></i></div>
-              <div className="stat-num cyan-text">16+</div>
+              <div className="stat-num cyan-text">18+</div>
               <div className="stat-p">Years Clinical Leadership</div>
               <div className="stat-bottom-line bg-cyan"></div>
             </motion.div>
 
             <motion.div className="cine-stat-item border-purple" variants={fadeInUp}>
               <div className="stat-icon-circle purple-bg"><i className="fa-solid fa-users"></i></div>
-              <div className="stat-num purple-text">10K+</div>
+              <div className="stat-num purple-text">3.5L+</div>
               <div className="stat-p">Satisfied Healed Patients</div>
               <div className="stat-bottom-line bg-purple"></div>
             </motion.div>
 
             <motion.div className="cine-stat-item border-orange" variants={fadeInUp}>
               <div className="stat-icon-circle orange-bg"><i className="fa-solid fa-bolt"></i></div>
-              <div className="stat-num orange-text">5K+</div>
+              <div className="stat-num orange-text">35K+</div>
               <div className="stat-p">Advanced Dialysis Sessions</div>
               <div className="stat-bottom-line bg-orange"></div>
             </motion.div>
 
             <motion.div className="cine-stat-item border-red" variants={fadeInUp}>
               <div className="stat-icon-circle red-bg"><i className="fa-solid fa-shield-heart"></i></div>
-              <div className="stat-num red-text">500+</div>
+              <div className="stat-num red-text">100+</div>
               <div className="stat-p">Successful Transplants</div>
               <div className="stat-bottom-line bg-red"></div>
             </motion.div>
@@ -187,11 +187,11 @@ const About = ({ onBookClick }) => {
               <h3>ACADEMIC EXCELLENCE & QUALIFICATIONS</h3>
             </div>
             <ul className="cine-list list-type-blue-diamond">
-              <li><strong>MBBS</strong> — Premier Medical Institution</li>
-              <li><strong>MD (Internal Medicine)</strong> — Clinical Excellence</li>
-              <li><strong>DM (Nephrology)</strong> — SGPGIMS, Lucknow</li>
-              <li>Specialized Fellowship in Interventional Nephrology</li>
-              <li>Advanced Expert Training in Peritoneal Dialysis (CAPD)</li>
+              <li><strong>MBBS</strong> — Grant Medical College, Mumbai</li>
+              <li><strong>MD (Internal Medicine)</strong> — Patna Medical College, Bihar</li>
+              <li><strong>DM (Nephrology)</strong> — Sanjay Gandhi Postgraduate Institute of Medical Sciences Lucknow, Uttar Pradesh</li>
+              <li><strong>(Fellowship )</strong> — Renal Transplantation - Sanjay Gandhi Postgraduate Institute of Medical Sciences Lucknow,</li>
+              <li><strong>(Fellowship )</strong> — American Society of Nephrology</li>
             </ul>
           </motion.div>
 
@@ -243,22 +243,43 @@ const About = ({ onBookClick }) => {
               <h3>PROFESSIONAL MEMBERSHIPS & AFFILIATIONS</h3>
             </div>
             <div className="cine-logos-grid">
-              <div className="logo-node node-isn">
-                <span className="node-initial">ISN</span>
+              <div className="logo-node ">
+               <div className="menbership node-isn">
+                 <span className="node-initial">ISN</span>
                 <p>Indian Society of Nephrology</p>
-              </div>
-              <div className="logo-node node-ima">
-                <span className="node-initial">ISN</span>
+               </div> 
+               <div className="menbership node-int">
+                 <span className="node-initial">ISN</span>
                 <p>International Society of Nephrology</p>
-              </div>
-              <div className="logo-node node-api">
+               </div> 
+               <div className="menbership node-api">
                 <span className="node-initial">ASN</span>
                 <p>American Society of Nephrology</p>
-              </div>
-              <div className="logo-node node-int">
+               </div> 
+               <div className="menbership node-ima">
                 <span className="node-initial">ISOT</span>
                 <p>Indian Society of Organ Transplant</p>
+               </div> 
               </div>
+              <div className="logo-node ">
+                 <div className="menbership node-int">
+                <span className="node-initial node-ima">PDSI</span>
+                <p>Peritoneal Diaslysis Society of India</p>
+               </div> 
+               <div className="menbership node-ima">
+                <span className="node-initial node-ima">ERA</span>
+                <p>European Renal Association</p>
+               </div> 
+               <div className="menbership node-isn">
+                <span className="node-initial node-ima">API</span>
+                <p>Association physicians of india</p>
+               </div> 
+               <div className="menbership node-api">
+                <span className="node-initial node-ima">RSSDI</span>
+                <p>Research society for the study of Diabetes in india</p>
+               </div> 
+              </div>
+             
             </div>
           </motion.div>
 

@@ -11,7 +11,7 @@ const Topbar = () => {
         <div className="topbar-left">
           <a href="tel:+917070337440" className="topbar-item topbar-phone">
             <span className="icon"><i class="fa-solid fa-phone" ></i></span> 
-            <span className="text">+91 7070337440</span>
+            <span className="text">+91 7070337440, 7250019913</span>
           </a>
         </div>
 

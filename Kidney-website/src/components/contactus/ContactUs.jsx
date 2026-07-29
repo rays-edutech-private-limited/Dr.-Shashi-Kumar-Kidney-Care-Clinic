@@ -226,7 +226,7 @@ function ContactUs() {
               <div className="pill-icon-bubble green-tint">📞</div>
               <div className="pill-data-info">
                 <small>EMERGENCY CALL / HELPLINE</small>
-                <strong>+91-7070337440</strong>
+                <strong>+91-7070337440, <br />+91-7250019913</strong>
               </div>
               <span className="arrow-trigger">→</span>
             </motion.a>

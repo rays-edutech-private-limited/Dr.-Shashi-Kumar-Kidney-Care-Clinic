@@ -158,15 +158,15 @@
   
 
   .topbar-phone {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 5px 8px;
+    font-size: 10px;
     gap: 6px;
   }
 
   .sm-icon-link {
-    width: 32px; 
-    height: 32px;
-    font-size: 14px;
+    width: 23px; 
+    height: 23px;
+    font-size: 11px;
   }
 }
 
@@ -191,8 +191,8 @@
 }
 
   .sm-icon-link {
-    width: 25px; 
-    height: 25px;
-    font-size: 13px;
+    width: 20px; 
+    height: 20px;
+    font-size: 11px;
   }
 }
