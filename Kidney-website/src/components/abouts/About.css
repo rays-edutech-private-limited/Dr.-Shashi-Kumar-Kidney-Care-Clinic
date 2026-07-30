@@ -359,7 +359,7 @@
 /* 5. Ultra Micro Screens / Small Phones */
 @media screen and (max-width: 420px) {
   .cine-canvas-stage { height: 460px; }
-  .card-top-right { top: 0; right: 10%; transform: translateX(50%); width: 200px; text-align: center; }
+  .card-top-right { top: -20px; right: 20%; transform: translateX(50%); width: 200px; text-align: center; }
   .card-badge-header { justify-content: center; }
   .cine-doctor-profile-card { bottom: 0; left: 10%; transform: translateX(-50%); width: 260px; }
 }
