@@ -13,7 +13,9 @@ const Topbar = () => {
             <span className="icon"><i class="fa-solid fa-phone" ></i></span> 
             <span className="text">+91 7070337440, 7250019913</span>
           </a>
+          
         </div>
+        
 
         {/* Middle Section: OPD Hours */}
         <div className="topbar-middle">

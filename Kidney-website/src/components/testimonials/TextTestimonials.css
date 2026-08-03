@@ -1,6 +1,7 @@
 /* Premium Text Testimonials Container - Light Mode Revamp */
 .tt-premium-section {
-   background: #fff; 
+   /* background: #fff;  */
+     background: linear-gradient(180deg, #edf5ff 100%, #ffffff 12%, #ffffff 88%, #edf5ff 100%);
     width: 100%;
     /* min-height: 85vh; */
     padding: 60px 20px;

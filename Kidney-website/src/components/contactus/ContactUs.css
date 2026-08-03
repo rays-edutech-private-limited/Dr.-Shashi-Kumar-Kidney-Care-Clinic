@@ -1,6 +1,7 @@
 /* Layout Wrapper & Medical Theme Canvas */
 .contact-page-wrapper {
-    background: linear-gradient(180deg, #edf5ff 100%, #ffffff 12%, #ffffff 88%, #edf5ff 100%);
+    /* background: linear-gradient(180deg, #edf5ff 100%, #ffffff 12%, #ffffff 88%, #edf5ff 100%); */
+    background-color: #fff;
     width: 100%;
     /* min-height: 100vh; */
     padding: 60px 20px; 
