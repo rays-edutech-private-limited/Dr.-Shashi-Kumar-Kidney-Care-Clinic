@@ -3,7 +3,7 @@ import Herosection from './components/herosection/Herosection'
 import About from './components/abouts/About'
 import Services from './components/services/Services'
 // import Specialists from './components/specialists/Specialists'
-// import VideosTestimonials from './components/testimonials/VideosTestimonials'
+import VideosTestimonials from './components/testimonials/VideosTestimonials'
 import TextTestimonials from './components/testimonials/TextTestimonials'
 import ContactUs from './components/contactus/ContactUs'
 import Gallery from './components/gallery/Gallery'
@@ -38,7 +38,7 @@ const Home = () => {
 
       {/* Testimonials section wrapper */}
       <div id="testimonials">
-        {/* <VideosTestimonials onBookClick={toggleModal} /> */}
+        <VideosTestimonials onBookClick={toggleModal} />
         <TextTestimonials onBookClick={toggleModal} />
       </div>
 
