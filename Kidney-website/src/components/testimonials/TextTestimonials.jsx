@@ -9,7 +9,7 @@ const textData = [
     caseId: "PATIENT ID #9082",
     recoveryTime: "3 MONTHS RECOVERY",
     conditionTag: "DIALYSIS SUPPORT",
-    quote: "“Mujhe lagta tha ki yeh kabhi theek nahi hoga. Lekin sahi guidance aur up-to-date technique se meri life poori tarah badal gayi. Staff aur care ka level ekdum top-notch tha!”",
+    quote: "“I thought my condition would never improve. However, with the right guidance and advanced treatment techniques, my life changed completely. The level of care, support, and professionalism provided by the staff was truly exceptional.”",
     verifiedStatus: "Verified Patient"
   },
   {
@@ -17,7 +17,7 @@ const textData = [
     caseId: "PATIENT ID #4419",
     recoveryTime: "6 WEEKS RECOVERY",
     conditionTag: "CKD MANAGEMENT",
-    quote: "“Sabse achhi baat yeh thi ki privacy ka poora dhyan rakha gaya. Shuruat se lekar aakhiri tak har cheez transparent thi. Highly professional experience.”",
+    quote: "“What impressed me most was the complete attention to privacy and patient comfort. From the initial consultation to the final stage of treatment, everything was transparent, professional, and well-organized.”",
     verifiedStatus: "Verified Patient"
   },
   {
@@ -25,7 +25,7 @@ const textData = [
     caseId: "PATIENT ID #7204",
     recoveryTime: "5 MONTHS RECOVERY",
     conditionTag: "KIDNEY TRANSPLANT CARE",
-    quote: "“Treatment ke dauran jo confidence mujhe mila, woh bemisaal hai. Modern equipment aur world-class infrastructure ne mera poora bharosa jeet liya.”",
+    quote: "“The confidence and reassurance I received throughout my treatment journey were invaluable. The advanced technology, modern facilities, and expert medical team earned my complete trust.”",
     verifiedStatus: "Verified Patient"
   },
   {
@@ -33,7 +33,7 @@ const textData = [
     caseId: "PATIENT ID #3122",
     recoveryTime: "2 MONTHS RECOVERY",
     conditionTag: "NEPHROLOGY CARE",
-    quote: "“Maine bohot jagah consult kiya tha, par jo clinical excellence aur customized plan mujhe yahan mila, woh kahin nahi mila. Truly international standards!”",
+    quote: "“I consulted several healthcare providers before coming here, but the level of clinical expertise and personalized treatment I received was unmatched. The quality of care truly reflects international standards.”",
     verifiedStatus: "Verified Patient"
   }
 ];
